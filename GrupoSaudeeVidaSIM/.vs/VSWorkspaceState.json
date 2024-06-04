@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProjetoGrupoSaudeeVidaSim"
   ],
-  "SelectedNode": "\\ProjetoGrupoSaudeeVidaSim.sln",
+  "SelectedNode": "\\ProjetoGrupoSaudeeVidaSim\\FormTelaPrincipal.cs",
   "PreviewInSolutionExplorer": false
 }

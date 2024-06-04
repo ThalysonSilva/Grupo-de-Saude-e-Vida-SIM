@@ -98,123 +98,127 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAgendaMedica.cs">
+    <Compile Include="DAO\ConexaoDB.cs" />
+    <Compile Include="DTO\Medico.cs" />
+    <Compile Include="DTO\Paciente.cs" />
+    <Compile Include="DTO\Pessoas.cs" />
+    <Compile Include="VIEW\FormAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAgendaMedica.Designer.cs">
+    <Compile Include="VIEW\FormAgendaMedica.Designer.cs">
       <DependentUpon>FormAgendaMedica.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAtendimentoMedico.cs">
+    <Compile Include="VIEW\FormAtendimentoMedico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAtendimentoMedico.Designer.cs">
+    <Compile Include="VIEW\FormAtendimentoMedico.Designer.cs">
       <DependentUpon>FormAtendimentoMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDeMedicos.cs">
+    <Compile Include="VIEW\FormCadastroDeMedicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDeMedicos.Designer.cs">
+    <Compile Include="VIEW\FormCadastroDeMedicos.Designer.cs">
       <DependentUpon>FormCadastroDeMedicos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastroDePacientes.cs">
+    <Compile Include="VIEW\FormCadastroDePacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroDePacientes.Designer.cs">
+    <Compile Include="VIEW\FormCadastroDePacientes.Designer.cs">
       <DependentUpon>FormCadastroDePacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultarAgendaMedica.cs">
+    <Compile Include="VIEW\FormConsultarAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsultarAgendaMedica.Designer.cs">
+    <Compile Include="VIEW\FormConsultarAgendaMedica.Designer.cs">
       <DependentUpon>FormConsultarAgendaMedica.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultarDadosPaciente.cs">
+    <Compile Include="VIEW\FormConsultarDadosPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsultarDadosPaciente.Designer.cs">
+    <Compile Include="VIEW\FormConsultarDadosPaciente.Designer.cs">
       <DependentUpon>FormConsultarDadosPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultarPorTipo.cs">
+    <Compile Include="VIEW\FormConsultarPorTipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsultarPorTipo.Designer.cs">
+    <Compile Include="VIEW\FormConsultarPorTipo.Designer.cs">
       <DependentUpon>FormConsultarPorTipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormConsultasMarcadas.cs">
+    <Compile Include="VIEW\FormConsultasMarcadas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsultasMarcadas.Designer.cs">
+    <Compile Include="VIEW\FormConsultasMarcadas.Designer.cs">
       <DependentUpon>FormConsultasMarcadas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormControleDeUsuarios.cs">
+    <Compile Include="VIEW\FormControleDeUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormControleDeUsuarios.Designer.cs">
+    <Compile Include="VIEW\FormControleDeUsuarios.Designer.cs">
       <DependentUpon>FormControleDeUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMarcarConsultas.cs">
+    <Compile Include="VIEW\FormMarcarConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMarcarConsultas.Designer.cs">
+    <Compile Include="VIEW\FormMarcarConsultas.Designer.cs">
       <DependentUpon>FormMarcarConsultas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTelaDeRegistroUsuario.cs">
+    <Compile Include="VIEW\FormTelaDeRegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTelaDeRegistroUsuario.Designer.cs">
+    <Compile Include="VIEW\FormTelaDeRegistroUsuario.Designer.cs">
       <DependentUpon>FormTelaDeRegistroUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTelaLogin.cs">
+    <Compile Include="VIEW\FormTelaLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTelaLogin.Designer.cs">
+    <Compile Include="VIEW\FormTelaLogin.Designer.cs">
       <DependentUpon>FormTelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTelaPrincipal.cs">
+    <Compile Include="VIEW\FormTelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTelaPrincipal.Designer.cs">
+    <Compile Include="VIEW\FormTelaPrincipal.Designer.cs">
       <DependentUpon>FormTelaPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAgendaMedica.resx">
+    <EmbeddedResource Include="VIEW\FormAgendaMedica.resx">
       <DependentUpon>FormAgendaMedica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAtendimentoMedico.resx">
+    <EmbeddedResource Include="VIEW\FormAtendimentoMedico.resx">
       <DependentUpon>FormAtendimentoMedico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDeMedicos.resx">
+    <EmbeddedResource Include="VIEW\FormCadastroDeMedicos.resx">
       <DependentUpon>FormCadastroDeMedicos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastroDePacientes.resx">
+    <EmbeddedResource Include="VIEW\FormCadastroDePacientes.resx">
       <DependentUpon>FormCadastroDePacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarAgendaMedica.resx">
+    <EmbeddedResource Include="VIEW\FormConsultarAgendaMedica.resx">
       <DependentUpon>FormConsultarAgendaMedica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarDadosPaciente.resx">
+    <EmbeddedResource Include="VIEW\FormConsultarDadosPaciente.resx">
       <DependentUpon>FormConsultarDadosPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultarPorTipo.resx">
+    <EmbeddedResource Include="VIEW\FormConsultarPorTipo.resx">
       <DependentUpon>FormConsultarPorTipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormConsultasMarcadas.resx">
+    <EmbeddedResource Include="VIEW\FormConsultasMarcadas.resx">
       <DependentUpon>FormConsultasMarcadas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormControleDeUsuarios.resx">
+    <EmbeddedResource Include="VIEW\FormControleDeUsuarios.resx">
       <DependentUpon>FormControleDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMarcarConsultas.resx">
+    <EmbeddedResource Include="VIEW\FormMarcarConsultas.resx">
       <DependentUpon>FormMarcarConsultas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTelaDeRegistroUsuario.resx">
+    <EmbeddedResource Include="VIEW\FormTelaDeRegistroUsuario.resx">
       <DependentUpon>FormTelaDeRegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTelaLogin.resx">
+    <EmbeddedResource Include="VIEW\FormTelaLogin.resx">
       <DependentUpon>FormTelaLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTelaPrincipal.resx">
+    <EmbeddedResource Include="VIEW\FormTelaPrincipal.resx">
       <DependentUpon>FormTelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -240,5 +244,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

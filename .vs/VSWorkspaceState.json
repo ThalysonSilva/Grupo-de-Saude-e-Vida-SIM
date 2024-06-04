@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GrupoSaudeeVidaSim",
-    "\\GrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim"
+    "\\GrupoSaudeeVidaSIM",
+    "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim",
+    "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO"
   ],
+  "SelectedNode": "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO\\ConexaoDB.cs",
   "PreviewInSolutionExplorer": false
 }
