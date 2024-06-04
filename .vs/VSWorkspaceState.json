@@ -3,8 +3,9 @@
     "",
     "\\GrupoSaudeeVidaSIM",
     "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim",
-    "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO"
+    "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO",
+    "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO"
   ],
-  "SelectedNode": "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO\\ConexaoDB.cs",
+  "SelectedNode": "\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim.sln",
   "PreviewInSolutionExplorer": false
 }

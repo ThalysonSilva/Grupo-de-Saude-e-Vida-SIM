@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim.DTO
 {
@@ -19,7 +20,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DTO
         {
             Cpf = cpf;
             Contato = contato;
-            DataNascimento = dataNascimento;
+            DataNascimento = dataNascimento.Date;
             Cep = cep;
             Endereco = endereco;
             NumCasa = numCasa;

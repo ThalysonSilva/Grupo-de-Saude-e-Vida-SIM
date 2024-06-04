@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\projetogruposaudeevidasim\\dto\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\dto\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\projetogruposaudeevidasim\\dto\\pessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\dto\\pessoas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\projetogruposaudeevidasim\\dto\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|d:\\grupo-de-saude-e-vida-sim\\gruposaudeevidasim\\projetogruposaudeevidasim\\dto\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\dto\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|d:\\grupo-de-saude-e-vida-sim\\gruposaudeevidasim\\projetogruposaudeevidasim\\dao\\conexaodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\dao\\conexaodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\projetogruposaudeevidasim\\view\\formtelaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\view\\formtelaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\projetogruposaudeevidasim\\view\\formtelaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\view\\formtelaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -67,77 +47,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Medico.cs",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO\\Medico.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\DTO\\Medico.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO\\Medico.cs",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\DTO\\Medico.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:18:12.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Paciente.cs",
               "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO\\Paciente.cs",
               "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\DTO\\Paciente.cs",
               "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO\\Paciente.cs",
               "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\DTO\\Paciente.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAANAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAuwAkAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:18:03.013Z",
+              "WhenOpened": "2024-06-04T20:24:35.122Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Pessoas.cs",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO\\Pessoas.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\DTO\\Pessoas.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DTO\\Pessoas.cs",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\DTO\\Pessoas.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:17:51.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ConexaoDB.cs",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO\\ConexaoDB.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\DAO\\ConexaoDB.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO\\ConexaoDB.cs",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\DAO\\ConexaoDB.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:17:40.129Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormTelaPrincipal.cs",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAAAMoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:08:39.603Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormTelaPrincipal.cs [Design]",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs [Design]",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormTelaPrincipal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:08:03.542Z"
             }
           ]
         },
