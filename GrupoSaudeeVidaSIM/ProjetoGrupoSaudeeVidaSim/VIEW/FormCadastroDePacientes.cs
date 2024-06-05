@@ -12,7 +12,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         private string data_source = "datasource=localhost;username=root;password=;database=clinica";
         private ConexaoDB conexao;
         //private int? idContatoSelecionado = null;
-
+        
 
         public FormCadastroDePacientes()
         {
@@ -36,15 +36,8 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         private void btnCadastrarFormCadPaciente_Click(object sender, EventArgs e)
         {
-            Conexao = new MySqlConnection(data_source);
 
-            Conexao.Open();
-
-            MySqlCommand cmd = new MySqlCommand(); //montagem de objeto no mysql
-
-            cmd.Connection = Conexao;
-
-            //idContatoSelecionado = Convert.ToInt32(txtCodFormCadPaciente.Text);
+            IniciarConexao();
 
             try
             {
@@ -77,28 +70,27 @@ namespace ProjetoGrupoSaudeeVidaSim
                 Conexao.Close();
             }
 
-
         }
         private void cadastrarPaciente()
         {
-            string nome = txtNomeFormCadPaciente.Text.Trim();
-            string cpf = maskedTextBoxCPFFormCadPaciente.Text; ;
+            string nome = txtNomeFormCadPaciente.Text.ToUpper();
+            string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", "");
             string contato = maskedTextBoxContatoFormCadPaciente.Text;
             DateTime dataNasc = DateTime.Parse(maskedTextBoxDataNascFormCadPaciente.Text);
             dataNasc = dataNasc.Date;
             string cep = maskedTextBoxCepFormCadPaciente.Text;
-            string endereco = txtLogradouroFormCadPaciente.Text.Trim();
+            string endereco = txtLogradouroFormCadPaciente.Text.ToUpper().Trim();
             int numCasa = Convert.ToInt32(txtNumFormCadPaciente.Text.Trim());
-            string bairro = txtBairroFormCadPaciente.Text.Trim();
-            string cidade = txtCidadeFormCadPaciente.Text.Trim();
-            string uf = txtUFFormCadPaciente.Text;
+            string bairro = txtBairroFormCadPaciente.Text.ToUpper().Trim();
+            string cidade = txtCidadeFormCadPaciente.Text.ToUpper().Trim();
+            string uf = txtUFFormCadPaciente.Text.ToUpper();
 
 
-            Paciente paciente = new Paciente(0, nome, cpf, contato, dataNasc.Date, cep, endereco, numCasa, bairro, cidade, uf);
+            Paciente paciente = new Paciente(0, nome, cpf, contato, dataNasc, cep, endereco, numCasa, bairro, cidade, uf);
             conexao = new ConexaoDB();
             try
             {
-                conexao.SalvarPaciente(paciente); //chama a classe conexao DB. VAI EXECUTAR O METODO
+                conexao.SalvarPaciente(paciente); //chama a classe ConexaoDB. VAI EXECUTAR O METODO
                 MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
                                , MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -186,6 +178,17 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
 
             return true;
+        }
+        
+        private void IniciarConexao()
+        {
+            Conexao = new MySqlConnection(data_source);
+
+            Conexao.Open();
+
+            MySqlCommand cmd = new MySqlCommand(); //montagem de objeto no mysql
+
+            cmd.Connection = Conexao;
         }
     }
 }

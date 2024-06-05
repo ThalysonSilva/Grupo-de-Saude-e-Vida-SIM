@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/06/2024 às 22:22
+-- Tempo de geração: 05/06/2024 às 15:53
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -77,7 +77,9 @@ INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `ende
 (14, 'adsdasdasdas', '151,616,515-61', '(12) 31231-2312', '2000-02-12', '11111-111', 'dasdasda', 12, 'sdasdasda', 'asdasdas', 'RN'),
 (15, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
 (16, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
-(17, 'asdasdasd', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '31231-231', 'asd asdasd', 21, 'ad sda', 'asdasda', 'Rn');
+(17, 'asdasdasd', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '31231-231', 'asd asdasd', 21, 'ad sda', 'asdasda', 'Rn'),
+(18, 'ddqwdqwqwxwq1', '123.123.123-12', '(12) 31231-2312', '2222-01-12', '12312-312', 'sadasdasd', 12, 'asdasda', 'sdasdasd', 'RN'),
+(19, 'ASDASDAS', '12312312123', '(12) 31231-2311', '2020-02-12', '12312-312', 'ASDASDASD', 12, 'ADSDA', 'ASDASD', 'PB');
 
 --
 -- Índices para tabelas despejadas
@@ -109,7 +111,7 @@ ALTER TABLE `medico`
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
