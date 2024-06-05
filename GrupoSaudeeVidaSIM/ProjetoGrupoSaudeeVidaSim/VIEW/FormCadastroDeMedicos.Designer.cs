@@ -44,8 +44,6 @@
             this.labNCrmFormCadastroDeMedico = new System.Windows.Forms.Label();
             this.txtNomeFormCadastroDeMedico = new System.Windows.Forms.TextBox();
             this.labNomeFormCadastroDeMedico = new System.Windows.Forms.Label();
-            this.txtCodFormCadastroDeMedico = new System.Windows.Forms.TextBox();
-            this.labCodFormCadastroDeMedico = new System.Windows.Forms.Label();
             this.LabIdFormCadastroDeMedico = new System.Windows.Forms.Label();
             this.panelFormCadastroDeMedico.SuspendLayout();
             this.SuspendLayout();
@@ -66,8 +64,6 @@
             this.panelFormCadastroDeMedico.Controls.Add(this.labNCrmFormCadastroDeMedico);
             this.panelFormCadastroDeMedico.Controls.Add(this.txtNomeFormCadastroDeMedico);
             this.panelFormCadastroDeMedico.Controls.Add(this.labNomeFormCadastroDeMedico);
-            this.panelFormCadastroDeMedico.Controls.Add(this.txtCodFormCadastroDeMedico);
-            this.panelFormCadastroDeMedico.Controls.Add(this.labCodFormCadastroDeMedico);
             this.panelFormCadastroDeMedico.Controls.Add(this.LabIdFormCadastroDeMedico);
             this.panelFormCadastroDeMedico.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFormCadastroDeMedico.Location = new System.Drawing.Point(0, 0);
@@ -78,40 +74,40 @@
             // btnExcluirFormCadastroDeMedico
             // 
             this.btnExcluirFormCadastroDeMedico.BackColor = System.Drawing.Color.Red;
-            this.btnExcluirFormCadastroDeMedico.Location = new System.Drawing.Point(709, 442);
+            this.btnExcluirFormCadastroDeMedico.Location = new System.Drawing.Point(709, 415);
             this.btnExcluirFormCadastroDeMedico.Name = "btnExcluirFormCadastroDeMedico";
             this.btnExcluirFormCadastroDeMedico.Size = new System.Drawing.Size(154, 56);
-            this.btnExcluirFormCadastroDeMedico.TabIndex = 16;
+            this.btnExcluirFormCadastroDeMedico.TabIndex = 14;
             this.btnExcluirFormCadastroDeMedico.Text = "Excluir";
             this.btnExcluirFormCadastroDeMedico.UseVisualStyleBackColor = false;
             // 
             // btnEditarFormCadastroDeMedico
             // 
             this.btnEditarFormCadastroDeMedico.BackColor = System.Drawing.Color.MistyRose;
-            this.btnEditarFormCadastroDeMedico.Location = new System.Drawing.Point(518, 442);
+            this.btnEditarFormCadastroDeMedico.Location = new System.Drawing.Point(518, 415);
             this.btnEditarFormCadastroDeMedico.Name = "btnEditarFormCadastroDeMedico";
             this.btnEditarFormCadastroDeMedico.Size = new System.Drawing.Size(154, 56);
-            this.btnEditarFormCadastroDeMedico.TabIndex = 15;
+            this.btnEditarFormCadastroDeMedico.TabIndex = 13;
             this.btnEditarFormCadastroDeMedico.Text = "Editar";
             this.btnEditarFormCadastroDeMedico.UseVisualStyleBackColor = false;
             // 
             // btnCadastrarFormCadastroDeMedico
             // 
             this.btnCadastrarFormCadastroDeMedico.BackColor = System.Drawing.Color.White;
-            this.btnCadastrarFormCadastroDeMedico.Location = new System.Drawing.Point(328, 442);
+            this.btnCadastrarFormCadastroDeMedico.Location = new System.Drawing.Point(328, 415);
             this.btnCadastrarFormCadastroDeMedico.Name = "btnCadastrarFormCadastroDeMedico";
             this.btnCadastrarFormCadastroDeMedico.Size = new System.Drawing.Size(154, 56);
-            this.btnCadastrarFormCadastroDeMedico.TabIndex = 14;
+            this.btnCadastrarFormCadastroDeMedico.TabIndex = 12;
             this.btnCadastrarFormCadastroDeMedico.Text = "Salvar ";
             this.btnCadastrarFormCadastroDeMedico.UseVisualStyleBackColor = false;
             // 
             // btnNovoFormCadastroDeMedico
             // 
             this.btnNovoFormCadastroDeMedico.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNovoFormCadastroDeMedico.Location = new System.Drawing.Point(138, 442);
+            this.btnNovoFormCadastroDeMedico.Location = new System.Drawing.Point(138, 415);
             this.btnNovoFormCadastroDeMedico.Name = "btnNovoFormCadastroDeMedico";
             this.btnNovoFormCadastroDeMedico.Size = new System.Drawing.Size(154, 56);
-            this.btnNovoFormCadastroDeMedico.TabIndex = 13;
+            this.btnNovoFormCadastroDeMedico.TabIndex = 11;
             this.btnNovoFormCadastroDeMedico.Text = "Novo Médico";
             this.btnNovoFormCadastroDeMedico.UseVisualStyleBackColor = false;
             // 
@@ -125,18 +121,18 @@
             "14:00h - 16:00h ",
             "14:00h - 17:00h ",
             "14:00h - 18:00h "});
-            this.cbhorarioFormCadastroDeMedico.Location = new System.Drawing.Point(239, 337);
+            this.cbhorarioFormCadastroDeMedico.Location = new System.Drawing.Point(239, 310);
             this.cbhorarioFormCadastroDeMedico.Name = "cbhorarioFormCadastroDeMedico";
             this.cbhorarioFormCadastroDeMedico.Size = new System.Drawing.Size(260, 33);
-            this.cbhorarioFormCadastroDeMedico.TabIndex = 12;
+            this.cbhorarioFormCadastroDeMedico.TabIndex = 10;
             // 
             // labhorarioFormCadastroDeMedico
             // 
             this.labhorarioFormCadastroDeMedico.AutoSize = true;
-            this.labhorarioFormCadastroDeMedico.Location = new System.Drawing.Point(12, 340);
+            this.labhorarioFormCadastroDeMedico.Location = new System.Drawing.Point(12, 313);
             this.labhorarioFormCadastroDeMedico.Name = "labhorarioFormCadastroDeMedico";
             this.labhorarioFormCadastroDeMedico.Size = new System.Drawing.Size(223, 25);
-            this.labhorarioFormCadastroDeMedico.TabIndex = 11;
+            this.labhorarioFormCadastroDeMedico.TabIndex = 9;
             this.labhorarioFormCadastroDeMedico.Text = "Horário de Atendimento:";
             // 
             // cbDiaAtendimentoFormCadastroDeMedico
@@ -150,18 +146,18 @@
             "Sexta-feira",
             "Sábado",
             "Segunda a Sábado"});
-            this.cbDiaAtendimentoFormCadastroDeMedico.Location = new System.Drawing.Point(239, 238);
+            this.cbDiaAtendimentoFormCadastroDeMedico.Location = new System.Drawing.Point(239, 211);
             this.cbDiaAtendimentoFormCadastroDeMedico.Name = "cbDiaAtendimentoFormCadastroDeMedico";
             this.cbDiaAtendimentoFormCadastroDeMedico.Size = new System.Drawing.Size(260, 33);
-            this.cbDiaAtendimentoFormCadastroDeMedico.TabIndex = 10;
+            this.cbDiaAtendimentoFormCadastroDeMedico.TabIndex = 8;
             // 
             // labDiaAtendimentoIFormCadastroDeMedico
             // 
             this.labDiaAtendimentoIFormCadastroDeMedico.AutoSize = true;
-            this.labDiaAtendimentoIFormCadastroDeMedico.Location = new System.Drawing.Point(12, 241);
+            this.labDiaAtendimentoIFormCadastroDeMedico.Location = new System.Drawing.Point(12, 214);
             this.labDiaAtendimentoIFormCadastroDeMedico.Name = "labDiaAtendimentoIFormCadastroDeMedico";
             this.labDiaAtendimentoIFormCadastroDeMedico.Size = new System.Drawing.Size(189, 25);
-            this.labDiaAtendimentoIFormCadastroDeMedico.TabIndex = 9;
+            this.labDiaAtendimentoIFormCadastroDeMedico.TabIndex = 7;
             this.labDiaAtendimentoIFormCadastroDeMedico.Text = "Dia de Atendimento:";
             // 
             // cbtEspMedicaFormCadastroDeMedico
@@ -183,73 +179,55 @@
             "Psiquiatria",
             "Reumatologia",
             "Urologia"});
-            this.cbtEspMedicaFormCadastroDeMedico.Location = new System.Drawing.Point(505, 161);
+            this.cbtEspMedicaFormCadastroDeMedico.Location = new System.Drawing.Point(483, 140);
             this.cbtEspMedicaFormCadastroDeMedico.Name = "cbtEspMedicaFormCadastroDeMedico";
-            this.cbtEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(361, 33);
-            this.cbtEspMedicaFormCadastroDeMedico.TabIndex = 8;
+            this.cbtEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(293, 33);
+            this.cbtEspMedicaFormCadastroDeMedico.TabIndex = 6;
             // 
             // labEspMedicaFormCadastroDeMedico
             // 
             this.labEspMedicaFormCadastroDeMedico.AutoSize = true;
-            this.labEspMedicaFormCadastroDeMedico.Location = new System.Drawing.Point(359, 170);
+            this.labEspMedicaFormCadastroDeMedico.Location = new System.Drawing.Point(337, 143);
             this.labEspMedicaFormCadastroDeMedico.Name = "labEspMedicaFormCadastroDeMedico";
             this.labEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(140, 25);
-            this.labEspMedicaFormCadastroDeMedico.TabIndex = 7;
+            this.labEspMedicaFormCadastroDeMedico.TabIndex = 5;
             this.labEspMedicaFormCadastroDeMedico.Text = "Especialidade:";
             // 
             // txtNCrmFormCadastroDeMedico
             // 
             this.txtNCrmFormCadastroDeMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNCrmFormCadastroDeMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNCrmFormCadastroDeMedico.Location = new System.Drawing.Point(190, 169);
+            this.txtNCrmFormCadastroDeMedico.Location = new System.Drawing.Point(190, 142);
             this.txtNCrmFormCadastroDeMedico.Name = "txtNCrmFormCadastroDeMedico";
             this.txtNCrmFormCadastroDeMedico.Size = new System.Drawing.Size(129, 28);
-            this.txtNCrmFormCadastroDeMedico.TabIndex = 6;
+            this.txtNCrmFormCadastroDeMedico.TabIndex = 4;
             // 
             // labNCrmFormCadastroDeMedico
             // 
             this.labNCrmFormCadastroDeMedico.AutoSize = true;
-            this.labNCrmFormCadastroDeMedico.Location = new System.Drawing.Point(12, 169);
+            this.labNCrmFormCadastroDeMedico.Location = new System.Drawing.Point(12, 142);
             this.labNCrmFormCadastroDeMedico.Name = "labNCrmFormCadastroDeMedico";
             this.labNCrmFormCadastroDeMedico.Size = new System.Drawing.Size(116, 25);
-            this.labNCrmFormCadastroDeMedico.TabIndex = 5;
+            this.labNCrmFormCadastroDeMedico.TabIndex = 3;
             this.labNCrmFormCadastroDeMedico.Text = "Nº do CRM:";
             // 
             // txtNomeFormCadastroDeMedico
             // 
             this.txtNomeFormCadastroDeMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNomeFormCadastroDeMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFormCadastroDeMedico.Location = new System.Drawing.Point(190, 106);
+            this.txtNomeFormCadastroDeMedico.Location = new System.Drawing.Point(190, 76);
             this.txtNomeFormCadastroDeMedico.Name = "txtNomeFormCadastroDeMedico";
-            this.txtNomeFormCadastroDeMedico.Size = new System.Drawing.Size(676, 28);
-            this.txtNomeFormCadastroDeMedico.TabIndex = 4;
+            this.txtNomeFormCadastroDeMedico.Size = new System.Drawing.Size(586, 28);
+            this.txtNomeFormCadastroDeMedico.TabIndex = 2;
             // 
             // labNomeFormCadastroDeMedico
             // 
             this.labNomeFormCadastroDeMedico.AutoSize = true;
-            this.labNomeFormCadastroDeMedico.Location = new System.Drawing.Point(12, 106);
+            this.labNomeFormCadastroDeMedico.Location = new System.Drawing.Point(12, 79);
             this.labNomeFormCadastroDeMedico.Name = "labNomeFormCadastroDeMedico";
             this.labNomeFormCadastroDeMedico.Size = new System.Drawing.Size(166, 25);
-            this.labNomeFormCadastroDeMedico.TabIndex = 3;
+            this.labNomeFormCadastroDeMedico.TabIndex = 1;
             this.labNomeFormCadastroDeMedico.Text = "Nome do Médico:";
-            // 
-            // txtCodFormCadastroDeMedico
-            // 
-            this.txtCodFormCadastroDeMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCodFormCadastroDeMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodFormCadastroDeMedico.Location = new System.Drawing.Point(190, 43);
-            this.txtCodFormCadastroDeMedico.Name = "txtCodFormCadastroDeMedico";
-            this.txtCodFormCadastroDeMedico.Size = new System.Drawing.Size(129, 28);
-            this.txtCodFormCadastroDeMedico.TabIndex = 2;
-            // 
-            // labCodFormCadastroDeMedico
-            // 
-            this.labCodFormCadastroDeMedico.AutoSize = true;
-            this.labCodFormCadastroDeMedico.Location = new System.Drawing.Point(12, 43);
-            this.labCodFormCadastroDeMedico.Name = "labCodFormCadastroDeMedico";
-            this.labCodFormCadastroDeMedico.Size = new System.Drawing.Size(150, 25);
-            this.labCodFormCadastroDeMedico.TabIndex = 1;
-            this.labCodFormCadastroDeMedico.Text = "Código Médico:";
             // 
             // LabIdFormCadastroDeMedico
             // 
@@ -288,8 +266,6 @@
         private System.Windows.Forms.Panel panelFormCadastroDeMedico;
         private System.Windows.Forms.Label LabIdFormCadastroDeMedico;
         private System.Windows.Forms.Label labNomeFormCadastroDeMedico;
-        private System.Windows.Forms.TextBox txtCodFormCadastroDeMedico;
-        private System.Windows.Forms.Label labCodFormCadastroDeMedico;
         private System.Windows.Forms.TextBox txtNomeFormCadastroDeMedico;
         private System.Windows.Forms.TextBox txtNCrmFormCadastroDeMedico;
         private System.Windows.Forms.Label labNCrmFormCadastroDeMedico;
