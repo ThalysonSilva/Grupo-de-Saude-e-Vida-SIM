@@ -70,7 +70,7 @@
             this.labConsultaPorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labConsultaPorTipo.Location = new System.Drawing.Point(207, 11);
             this.labConsultaPorTipo.Name = "labConsultaPorTipo";
-            this.labConsultaPorTipo.Size = new System.Drawing.Size(619, 32);
+            this.labConsultaPorTipo.Size = new System.Drawing.Size(413, 24);
             this.labConsultaPorTipo.TabIndex = 3;
             this.labConsultaPorTipo.Text = "Formulário Consultar Por Tipo de Especialidade";
             this.labConsultaPorTipo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -91,7 +91,7 @@
             this.txtConsultaFormConsultarPorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsultaFormConsultarPorTipo.Location = new System.Drawing.Point(202, 72);
             this.txtConsultaFormConsultarPorTipo.Name = "txtConsultaFormConsultarPorTipo";
-            this.txtConsultaFormConsultarPorTipo.Size = new System.Drawing.Size(585, 28);
+            this.txtConsultaFormConsultarPorTipo.Size = new System.Drawing.Size(585, 19);
             this.txtConsultaFormConsultarPorTipo.TabIndex = 1;
             // 
             // labConsultaTipoFormConsultarPorTipo
@@ -100,16 +100,16 @@
             this.labConsultaTipoFormConsultarPorTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labConsultaTipoFormConsultarPorTipo.Location = new System.Drawing.Point(3, 72);
             this.labConsultaTipoFormConsultarPorTipo.Name = "labConsultaTipoFormConsultarPorTipo";
-            this.labConsultaTipoFormConsultarPorTipo.Size = new System.Drawing.Size(181, 26);
+            this.labConsultaTipoFormConsultarPorTipo.Size = new System.Drawing.Size(124, 18);
             this.labConsultaTipoFormConsultarPorTipo.TabIndex = 0;
             this.labConsultaTipoFormConsultarPorTipo.Text = "Tipo de Consulta:";
             // 
             // FormConsultarPorTipo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(873, 544);
+            this.ClientSize = new System.Drawing.Size(873, 561);
             this.Controls.Add(this.PainelConsultarPorTipo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

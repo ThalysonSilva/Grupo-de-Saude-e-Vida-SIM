@@ -75,7 +75,7 @@
             this.painelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.painelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.painelSideMenu.Name = "painelSideMenu";
-            this.painelSideMenu.Size = new System.Drawing.Size(250, 694);
+            this.painelSideMenu.Size = new System.Drawing.Size(250, 711);
             this.painelSideMenu.TabIndex = 0;
             // 
             // btnSair
@@ -123,7 +123,6 @@
             this.btnMenuUsuario.FlatAppearance.BorderSize = 0;
             this.btnMenuUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuUsuario.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnMenuUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuUsuario.Image")));
             this.btnMenuUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMenuUsuario.Location = new System.Drawing.Point(0, 544);
             this.btnMenuUsuario.Name = "btnMenuUsuario";
@@ -396,11 +395,11 @@
             // 
             // FormTelaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(928, 694);
+            this.ClientSize = new System.Drawing.Size(934, 711);
             this.Controls.Add(this.painelSideMenu);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
