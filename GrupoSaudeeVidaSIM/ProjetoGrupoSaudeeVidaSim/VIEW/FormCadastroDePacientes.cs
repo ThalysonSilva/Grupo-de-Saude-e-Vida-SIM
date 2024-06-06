@@ -195,5 +195,46 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
 
         }
+
+        private void btnConsultarFormCadPaciente_Click(object sender, EventArgs e)
+        {
+   
+            try
+            {
+                PacienteDAO pacienteDAO = new PacienteDAO();
+                string nome = txtNomeFormCadPaciente.Text.Trim();
+
+                Paciente paciente = pacienteDAO.BuscarPaciente(nome);
+
+                if (paciente != null)
+                {
+                    txtNomeFormCadPaciente.Text = paciente.Nome;
+                    maskedTextBoxCPFFormCadPaciente.Text = paciente.Cpf;
+                    maskedTextBoxContatoFormCadPaciente.Text = paciente.Contato;
+                    maskedTextBoxDataNascFormCadPaciente.Text = paciente.DataNascimento.ToString("dd/MM/yyyy");
+                    maskedTextBoxCepFormCadPaciente.Text = paciente.Cep;
+                    txtLogradouroFormCadPaciente.Text = paciente.Endereco;
+                    txtNumFormCadPaciente.Text = paciente.NumCasa.ToString();
+                    txtBairroFormCadPaciente.Text = paciente.Bairro;
+                    txtCidadeFormCadPaciente.Text = paciente.Cidade;
+                    txtUFFormCadPaciente.Text = paciente.UF;
+                }
+                else
+                {
+                    MessageBox.Show("Paciente não encontrado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro ocorreu Sintase Mysql " + ex.Message,
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro ao procurar o paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            
+        }
     }
 }

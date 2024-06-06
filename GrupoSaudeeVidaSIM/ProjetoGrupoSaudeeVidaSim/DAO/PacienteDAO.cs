@@ -36,5 +36,38 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
         }
 
+        public Paciente BuscarPaciente(string nome)
+        {
+            string buscar = "SELECT * FROM paciente WHERE nome LIKE @nome";
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(buscar, conexao);
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Paciente
+                        {
+                            Id = reader.GetInt32("id"),
+                            Nome = reader.GetString("nome"),
+                            Cpf = reader.GetString("cpf"),
+                            Contato = reader.GetString("contato"),
+                            DataNascimento = reader.GetDateTime("dataNasc"),
+                            Cep = reader.GetString("cep"),
+                            Endereco = reader.GetString("endereco"),
+                            NumCasa = reader.GetInt32("numCasa"),
+                            Bairro = reader.GetString("bairro"),
+                            Cidade = reader.GetString("cidade"),
+                            UF = reader.GetString("uf")
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+
     }
 }
