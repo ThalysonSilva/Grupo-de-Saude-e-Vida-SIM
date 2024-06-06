@@ -9,9 +9,8 @@ namespace ProjetoGrupoSaudeeVidaSim
     public partial class FormCadastroDePacientes : Form
     {
         private MySqlConnection Conexao;
-        private string data_source = "datasource=localhost;username=root;password=;database=clinica";
-        private ConexaoDB conexao;
-        //private int? idContatoSelecionado = null;
+        private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
+        private PacienteDAO conexaoPacienteDAO;
         
 
         public FormCadastroDePacientes()
@@ -87,10 +86,10 @@ namespace ProjetoGrupoSaudeeVidaSim
 
 
             Paciente paciente = new Paciente(0, nome, cpf, contato, dataNasc, cep, endereco, numCasa, bairro, cidade, uf);
-            conexao = new ConexaoDB();
+            conexaoPacienteDAO = new PacienteDAO();
             try
             {
-                conexao.SalvarPaciente(paciente); //chama a classe ConexaoDB. VAI EXECUTAR O METODO
+                conexaoPacienteDAO.SalvarPaciente(paciente); //chama a classe ConexaoDB. VAI EXECUTAR O METODO
                 MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
                                , MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -182,7 +181,8 @@ namespace ProjetoGrupoSaudeeVidaSim
         
         private void IniciarConexao()
         {
-            Conexao = new MySqlConnection(data_source);
+
+            Conexao = new MySqlConnection(linkDB);
 
             Conexao.Open();
 
