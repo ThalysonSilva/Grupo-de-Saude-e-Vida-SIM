@@ -68,7 +68,7 @@
             this.panelFormCadastroDeMedico.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFormCadastroDeMedico.Location = new System.Drawing.Point(0, 0);
             this.panelFormCadastroDeMedico.Name = "panelFormCadastroDeMedico";
-            this.panelFormCadastroDeMedico.Size = new System.Drawing.Size(878, 546);
+            this.panelFormCadastroDeMedico.Size = new System.Drawing.Size(882, 546);
             this.panelFormCadastroDeMedico.TabIndex = 0;
             // 
             // btnExcluirFormCadastroDeMedico
@@ -100,6 +100,7 @@
             this.btnCadastrarFormCadastroDeMedico.TabIndex = 12;
             this.btnCadastrarFormCadastroDeMedico.Text = "Salvar ";
             this.btnCadastrarFormCadastroDeMedico.UseVisualStyleBackColor = false;
+            this.btnCadastrarFormCadastroDeMedico.Click += new System.EventHandler(this.btnCadastrarFormCadastroDeMedico_Click);
             // 
             // btnNovoFormCadastroDeMedico
             // 
@@ -123,7 +124,7 @@
             "14:00h - 18:00h "});
             this.cbhorarioFormCadastroDeMedico.Location = new System.Drawing.Point(239, 310);
             this.cbhorarioFormCadastroDeMedico.Name = "cbhorarioFormCadastroDeMedico";
-            this.cbhorarioFormCadastroDeMedico.Size = new System.Drawing.Size(260, 33);
+            this.cbhorarioFormCadastroDeMedico.Size = new System.Drawing.Size(260, 28);
             this.cbhorarioFormCadastroDeMedico.TabIndex = 10;
             // 
             // labhorarioFormCadastroDeMedico
@@ -131,7 +132,7 @@
             this.labhorarioFormCadastroDeMedico.AutoSize = true;
             this.labhorarioFormCadastroDeMedico.Location = new System.Drawing.Point(12, 313);
             this.labhorarioFormCadastroDeMedico.Name = "labhorarioFormCadastroDeMedico";
-            this.labhorarioFormCadastroDeMedico.Size = new System.Drawing.Size(223, 25);
+            this.labhorarioFormCadastroDeMedico.Size = new System.Drawing.Size(191, 20);
             this.labhorarioFormCadastroDeMedico.TabIndex = 9;
             this.labhorarioFormCadastroDeMedico.Text = "Horário de Atendimento:";
             // 
@@ -148,7 +149,7 @@
             "Segunda a Sábado"});
             this.cbDiaAtendimentoFormCadastroDeMedico.Location = new System.Drawing.Point(239, 211);
             this.cbDiaAtendimentoFormCadastroDeMedico.Name = "cbDiaAtendimentoFormCadastroDeMedico";
-            this.cbDiaAtendimentoFormCadastroDeMedico.Size = new System.Drawing.Size(260, 33);
+            this.cbDiaAtendimentoFormCadastroDeMedico.Size = new System.Drawing.Size(260, 28);
             this.cbDiaAtendimentoFormCadastroDeMedico.TabIndex = 8;
             // 
             // labDiaAtendimentoIFormCadastroDeMedico
@@ -156,7 +157,7 @@
             this.labDiaAtendimentoIFormCadastroDeMedico.AutoSize = true;
             this.labDiaAtendimentoIFormCadastroDeMedico.Location = new System.Drawing.Point(12, 214);
             this.labDiaAtendimentoIFormCadastroDeMedico.Name = "labDiaAtendimentoIFormCadastroDeMedico";
-            this.labDiaAtendimentoIFormCadastroDeMedico.Size = new System.Drawing.Size(189, 25);
+            this.labDiaAtendimentoIFormCadastroDeMedico.Size = new System.Drawing.Size(161, 20);
             this.labDiaAtendimentoIFormCadastroDeMedico.TabIndex = 7;
             this.labDiaAtendimentoIFormCadastroDeMedico.Text = "Dia de Atendimento:";
             // 
@@ -181,7 +182,7 @@
             "Urologia"});
             this.cbtEspMedicaFormCadastroDeMedico.Location = new System.Drawing.Point(483, 140);
             this.cbtEspMedicaFormCadastroDeMedico.Name = "cbtEspMedicaFormCadastroDeMedico";
-            this.cbtEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(293, 33);
+            this.cbtEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(293, 28);
             this.cbtEspMedicaFormCadastroDeMedico.TabIndex = 6;
             // 
             // labEspMedicaFormCadastroDeMedico
@@ -189,7 +190,7 @@
             this.labEspMedicaFormCadastroDeMedico.AutoSize = true;
             this.labEspMedicaFormCadastroDeMedico.Location = new System.Drawing.Point(337, 143);
             this.labEspMedicaFormCadastroDeMedico.Name = "labEspMedicaFormCadastroDeMedico";
-            this.labEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(140, 25);
+            this.labEspMedicaFormCadastroDeMedico.Size = new System.Drawing.Size(118, 20);
             this.labEspMedicaFormCadastroDeMedico.TabIndex = 5;
             this.labEspMedicaFormCadastroDeMedico.Text = "Especialidade:";
             // 
@@ -199,7 +200,7 @@
             this.txtNCrmFormCadastroDeMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNCrmFormCadastroDeMedico.Location = new System.Drawing.Point(190, 142);
             this.txtNCrmFormCadastroDeMedico.Name = "txtNCrmFormCadastroDeMedico";
-            this.txtNCrmFormCadastroDeMedico.Size = new System.Drawing.Size(129, 28);
+            this.txtNCrmFormCadastroDeMedico.Size = new System.Drawing.Size(129, 23);
             this.txtNCrmFormCadastroDeMedico.TabIndex = 4;
             // 
             // labNCrmFormCadastroDeMedico
@@ -207,7 +208,7 @@
             this.labNCrmFormCadastroDeMedico.AutoSize = true;
             this.labNCrmFormCadastroDeMedico.Location = new System.Drawing.Point(12, 142);
             this.labNCrmFormCadastroDeMedico.Name = "labNCrmFormCadastroDeMedico";
-            this.labNCrmFormCadastroDeMedico.Size = new System.Drawing.Size(116, 25);
+            this.labNCrmFormCadastroDeMedico.Size = new System.Drawing.Size(98, 20);
             this.labNCrmFormCadastroDeMedico.TabIndex = 3;
             this.labNCrmFormCadastroDeMedico.Text = "Nº do CRM:";
             // 
@@ -217,7 +218,7 @@
             this.txtNomeFormCadastroDeMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFormCadastroDeMedico.Location = new System.Drawing.Point(190, 76);
             this.txtNomeFormCadastroDeMedico.Name = "txtNomeFormCadastroDeMedico";
-            this.txtNomeFormCadastroDeMedico.Size = new System.Drawing.Size(586, 28);
+            this.txtNomeFormCadastroDeMedico.Size = new System.Drawing.Size(586, 23);
             this.txtNomeFormCadastroDeMedico.TabIndex = 2;
             // 
             // labNomeFormCadastroDeMedico
@@ -225,7 +226,7 @@
             this.labNomeFormCadastroDeMedico.AutoSize = true;
             this.labNomeFormCadastroDeMedico.Location = new System.Drawing.Point(12, 79);
             this.labNomeFormCadastroDeMedico.Name = "labNomeFormCadastroDeMedico";
-            this.labNomeFormCadastroDeMedico.Size = new System.Drawing.Size(166, 25);
+            this.labNomeFormCadastroDeMedico.Size = new System.Drawing.Size(140, 20);
             this.labNomeFormCadastroDeMedico.TabIndex = 1;
             this.labNomeFormCadastroDeMedico.Text = "Nome do Médico:";
             // 
@@ -235,16 +236,16 @@
             this.LabIdFormCadastroDeMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabIdFormCadastroDeMedico.Location = new System.Drawing.Point(336, 9);
             this.LabIdFormCadastroDeMedico.Name = "LabIdFormCadastroDeMedico";
-            this.LabIdFormCadastroDeMedico.Size = new System.Drawing.Size(234, 32);
+            this.LabIdFormCadastroDeMedico.Size = new System.Drawing.Size(203, 29);
             this.LabIdFormCadastroDeMedico.TabIndex = 0;
             this.LabIdFormCadastroDeMedico.Text = "Dados do Médico";
             // 
             // FormCadastroDeMedicos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.ClientSize = new System.Drawing.Size(882, 553);
             this.Controls.Add(this.panelFormCadastroDeMedico);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

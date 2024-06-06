@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Cms;
+using System;
 
 namespace ProjetoGrupoSaudeeVidaSim.DTO
 {
@@ -6,10 +7,10 @@ namespace ProjetoGrupoSaudeeVidaSim.DTO
     {
         public int Crm { get; set; }
         public string Especialidade { get; set; }
-        public DateTime DataAtendimento { get; set; }
-        public DateTime HorarioAtendimento { get; set; }
+        public string DataAtendimento { get; set; }
+        public string HorarioAtendimento { get; set; }
 
-        public Medico(int id, string nome, int crm, string especialidade, DateTime dataAtendimento, DateTime horarioAtendimento)
+        public Medico(int id, string nome, int crm, string especialidade, string dataAtendimento, string horarioAtendimento)
             : base(id, nome)
         {
             Crm = crm;

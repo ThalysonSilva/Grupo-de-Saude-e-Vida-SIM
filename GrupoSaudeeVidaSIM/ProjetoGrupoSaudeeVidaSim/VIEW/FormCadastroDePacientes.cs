@@ -190,5 +190,10 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             cmd.Connection = Conexao;
         }
+
+        private void FormCadastroDePacientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
