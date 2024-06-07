@@ -123,6 +123,7 @@
             this.btnMenuUsuario.FlatAppearance.BorderSize = 0;
             this.btnMenuUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuUsuario.ForeColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnMenuUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuUsuario.Image")));
             this.btnMenuUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMenuUsuario.Location = new System.Drawing.Point(0, 544);
             this.btnMenuUsuario.Name = "btnMenuUsuario";
@@ -395,7 +396,7 @@
             // 
             // FormTelaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

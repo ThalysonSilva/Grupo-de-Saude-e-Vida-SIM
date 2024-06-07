@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|d:\\grupo-de-saude-e-vida-sim\\gruposaudeevidasim\\projetogruposaudeevidasim\\view\\formcadastrodepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\view\\formcadastrodepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|d:\\grupo-de-saude-e-vida-sim\\gruposaudeevidasim\\projetogruposaudeevidasim\\dao\\pacientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\dao\\pacientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|d:\\grupo-de-saude-e-vida-sim\\gruposaudeevidasim\\projetogruposaudeevidasim\\view\\formcadastrodepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DC620A09-1AD7-42D0-84DF-91227DE9C769}|ProjetoGrupoSaudeeVidaSim\\ProjetoGrupoSaudeeVidaSim.csproj|solutionrelative:projetogruposaudeevidasim\\view\\formcadastrodepacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\dayvi\\OneDrive\\Documentos\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,48 +38,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PacienteDAO.cs",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO\\PacienteDAO.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\DAO\\PacienteDAO.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\DAO\\PacienteDAO.cs",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\DAO\\PacienteDAO.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAuwCYAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T19:53:24.09Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormCadastroDePacientes.cs",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs",
-              "ViewState": "AQIAAMMAAAAAAAAAAAAuwOcAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T19:49:37.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormCadastroDePacientes.cs [Design]",
-              "DocumentMoniker": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs",
-              "RelativeDocumentMoniker": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs",
-              "ToolTip": "D:\\Grupo-de-Saude-e-Vida-SIM\\GrupoSaudeeVidaSIM\\ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs [Design]",
-              "RelativeToolTip": "ProjetoGrupoSaudeeVidaSim\\VIEW\\FormCadastroDePacientes.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-06T19:49:32.946Z",
-              "EditorCaption": " [Design]"
             }
           ]
         },
@@ -103,6 +48,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         },

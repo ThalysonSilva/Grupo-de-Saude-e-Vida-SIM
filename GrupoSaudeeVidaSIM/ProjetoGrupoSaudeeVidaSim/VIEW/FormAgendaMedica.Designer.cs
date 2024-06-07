@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAgendaMedica));
             this.PainelFormAgendaMedica = new System.Windows.Forms.Panel();
-            this.btnCancelaFormAgendaMedica = new System.Windows.Forms.Button();
-            this.btnEditarFormAgendaMedica = new System.Windows.Forms.Button();
+            this.btnRetornarFormAgendaMedica = new System.Windows.Forms.Button();
             this.btnConsultarFormAgendaMedica = new System.Windows.Forms.Button();
             this.AgendaMedica = new System.Windows.Forms.Label();
             this.listViewFormAgendaMedica = new System.Windows.Forms.ListView();
@@ -39,7 +38,6 @@
             this.labEspecialidadeFormAgendaMedica = new System.Windows.Forms.Label();
             this.txtNomeMedFormAgendaMedica = new System.Windows.Forms.TextBox();
             this.labNomeMedFormAgendaMedica = new System.Windows.Forms.Label();
-            this.btnRetornarFormAgendaMedica = new System.Windows.Forms.Button();
             this.PainelFormAgendaMedica.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,8 +45,6 @@
             // 
             this.PainelFormAgendaMedica.BackColor = System.Drawing.Color.LightSteelBlue;
             this.PainelFormAgendaMedica.Controls.Add(this.btnRetornarFormAgendaMedica);
-            this.PainelFormAgendaMedica.Controls.Add(this.btnCancelaFormAgendaMedica);
-            this.PainelFormAgendaMedica.Controls.Add(this.btnEditarFormAgendaMedica);
             this.PainelFormAgendaMedica.Controls.Add(this.btnConsultarFormAgendaMedica);
             this.PainelFormAgendaMedica.Controls.Add(this.AgendaMedica);
             this.PainelFormAgendaMedica.Controls.Add(this.listViewFormAgendaMedica);
@@ -59,33 +55,24 @@
             this.PainelFormAgendaMedica.Location = new System.Drawing.Point(5, 2);
             this.PainelFormAgendaMedica.Margin = new System.Windows.Forms.Padding(4);
             this.PainelFormAgendaMedica.Name = "PainelFormAgendaMedica";
-            this.PainelFormAgendaMedica.Size = new System.Drawing.Size(822, 563);
+            this.PainelFormAgendaMedica.Size = new System.Drawing.Size(822, 587);
             this.PainelFormAgendaMedica.TabIndex = 0;
             this.PainelFormAgendaMedica.Paint += new System.Windows.Forms.PaintEventHandler(this.pndAgenda_Paint);
             // 
-            // btnCancelaFormAgendaMedica
+            // btnRetornarFormAgendaMedica
             // 
-            this.btnCancelaFormAgendaMedica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCancelaFormAgendaMedica.Location = new System.Drawing.Point(569, 476);
-            this.btnCancelaFormAgendaMedica.Name = "btnCancelaFormAgendaMedica";
-            this.btnCancelaFormAgendaMedica.Size = new System.Drawing.Size(196, 52);
-            this.btnCancelaFormAgendaMedica.TabIndex = 8;
-            this.btnCancelaFormAgendaMedica.Text = "Cancelar Consulta";
-            this.btnCancelaFormAgendaMedica.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarFormAgendaMedica
-            // 
-            this.btnEditarFormAgendaMedica.Location = new System.Drawing.Point(296, 476);
-            this.btnEditarFormAgendaMedica.Name = "btnEditarFormAgendaMedica";
-            this.btnEditarFormAgendaMedica.Size = new System.Drawing.Size(196, 52);
-            this.btnEditarFormAgendaMedica.TabIndex = 7;
-            this.btnEditarFormAgendaMedica.Text = "Editar Consulta";
-            this.btnEditarFormAgendaMedica.UseVisualStyleBackColor = true;
+            this.btnRetornarFormAgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetornarFormAgendaMedica.Location = new System.Drawing.Point(652, 67);
+            this.btnRetornarFormAgendaMedica.Name = "btnRetornarFormAgendaMedica";
+            this.btnRetornarFormAgendaMedica.Size = new System.Drawing.Size(127, 33);
+            this.btnRetornarFormAgendaMedica.TabIndex = 9;
+            this.btnRetornarFormAgendaMedica.Text = "Consultar";
+            this.btnRetornarFormAgendaMedica.UseVisualStyleBackColor = true;
             // 
             // btnConsultarFormAgendaMedica
             // 
             this.btnConsultarFormAgendaMedica.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnConsultarFormAgendaMedica.Location = new System.Drawing.Point(26, 476);
+            this.btnConsultarFormAgendaMedica.Location = new System.Drawing.Point(583, 505);
             this.btnConsultarFormAgendaMedica.Name = "btnConsultarFormAgendaMedica";
             this.btnConsultarFormAgendaMedica.Size = new System.Drawing.Size(196, 52);
             this.btnConsultarFormAgendaMedica.TabIndex = 6;
@@ -98,21 +85,22 @@
             this.AgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgendaMedica.Location = new System.Drawing.Point(303, 7);
             this.AgendaMedica.Name = "AgendaMedica";
-            this.AgendaMedica.Size = new System.Drawing.Size(277, 24);
+            this.AgendaMedica.Size = new System.Drawing.Size(409, 32);
             this.AgendaMedica.TabIndex = 0;
             this.AgendaMedica.Text = "Formulário de Checar - Agenda";
             // 
             // listViewFormAgendaMedica
             // 
             this.listViewFormAgendaMedica.HideSelection = false;
-            this.listViewFormAgendaMedica.Location = new System.Drawing.Point(26, 171);
+            this.listViewFormAgendaMedica.Location = new System.Drawing.Point(199, 201);
             this.listViewFormAgendaMedica.Name = "listViewFormAgendaMedica";
-            this.listViewFormAgendaMedica.Size = new System.Drawing.Size(740, 273);
+            this.listViewFormAgendaMedica.Size = new System.Drawing.Size(580, 273);
             this.listViewFormAgendaMedica.TabIndex = 5;
             this.listViewFormAgendaMedica.UseCompatibleStateImageBehavior = false;
             // 
             // cbEspecialidadeFormAgendaMedica
             // 
+            this.cbEspecialidadeFormAgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEspecialidadeFormAgendaMedica.FormattingEnabled = true;
             this.cbEspecialidadeFormAgendaMedica.Items.AddRange(new object[] {
             "Cardiologia",
@@ -130,55 +118,45 @@
             "Psiquiatria",
             "Reumatologia",
             "Urologia"});
-            this.cbEspecialidadeFormAgendaMedica.Location = new System.Drawing.Point(199, 121);
+            this.cbEspecialidadeFormAgendaMedica.Location = new System.Drawing.Point(199, 137);
             this.cbEspecialidadeFormAgendaMedica.Name = "cbEspecialidadeFormAgendaMedica";
-            this.cbEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(566, 24);
+            this.cbEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(580, 34);
             this.cbEspecialidadeFormAgendaMedica.TabIndex = 4;
             this.cbEspecialidadeFormAgendaMedica.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidadeFormAgenda_SelectedIndexChanged);
             // 
             // labEspecialidadeFormAgendaMedica
             // 
             this.labEspecialidadeFormAgendaMedica.AutoSize = true;
-            this.labEspecialidadeFormAgendaMedica.Location = new System.Drawing.Point(21, 121);
+            this.labEspecialidadeFormAgendaMedica.Location = new System.Drawing.Point(21, 146);
             this.labEspecialidadeFormAgendaMedica.Name = "labEspecialidadeFormAgendaMedica";
-            this.labEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(100, 17);
+            this.labEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(140, 25);
             this.labEspecialidadeFormAgendaMedica.TabIndex = 3;
             this.labEspecialidadeFormAgendaMedica.Text = "Especialidade:";
             // 
             // txtNomeMedFormAgendaMedica
             // 
             this.txtNomeMedFormAgendaMedica.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomeMedFormAgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeMedFormAgendaMedica.Location = new System.Drawing.Point(199, 68);
+            this.txtNomeMedFormAgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeMedFormAgendaMedica.Location = new System.Drawing.Point(199, 71);
             this.txtNomeMedFormAgendaMedica.Name = "txtNomeMedFormAgendaMedica";
-            this.txtNomeMedFormAgendaMedica.Size = new System.Drawing.Size(438, 19);
+            this.txtNomeMedFormAgendaMedica.Size = new System.Drawing.Size(432, 32);
             this.txtNomeMedFormAgendaMedica.TabIndex = 2;
             // 
             // labNomeMedFormAgendaMedica
             // 
             this.labNomeMedFormAgendaMedica.AutoSize = true;
-            this.labNomeMedFormAgendaMedica.Location = new System.Drawing.Point(21, 68);
+            this.labNomeMedFormAgendaMedica.Location = new System.Drawing.Point(21, 75);
             this.labNomeMedFormAgendaMedica.Name = "labNomeMedFormAgendaMedica";
-            this.labNomeMedFormAgendaMedica.Size = new System.Drawing.Size(118, 17);
+            this.labNomeMedFormAgendaMedica.Size = new System.Drawing.Size(166, 25);
             this.labNomeMedFormAgendaMedica.TabIndex = 1;
             this.labNomeMedFormAgendaMedica.Text = "Nome do Médico:";
             // 
-            // btnRetornarFormAgendaMedica
-            // 
-            this.btnRetornarFormAgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetornarFormAgendaMedica.Location = new System.Drawing.Point(679, 68);
-            this.btnRetornarFormAgendaMedica.Name = "btnRetornarFormAgendaMedica";
-            this.btnRetornarFormAgendaMedica.Size = new System.Drawing.Size(86, 23);
-            this.btnRetornarFormAgendaMedica.TabIndex = 9;
-            this.btnRetornarFormAgendaMedica.Text = "Consultar";
-            this.btnRetornarFormAgendaMedica.UseVisualStyleBackColor = true;
-            // 
             // FormAgendaMedica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(834, 567);
+            this.ClientSize = new System.Drawing.Size(834, 590);
             this.Controls.Add(this.PainelFormAgendaMedica);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -205,8 +183,6 @@
         private System.Windows.Forms.ListView listViewFormAgendaMedica;
         private System.Windows.Forms.Label AgendaMedica;
         private System.Windows.Forms.Button btnConsultarFormAgendaMedica;
-        private System.Windows.Forms.Button btnCancelaFormAgendaMedica;
-        private System.Windows.Forms.Button btnEditarFormAgendaMedica;
         private System.Windows.Forms.Button btnRetornarFormAgendaMedica;
     }
 }

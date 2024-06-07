@@ -24,6 +24,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DTO
             Senha = senha;
             ConfSenha = confsenha;
         }
+        public Autenticacao() { }
 
 
     }

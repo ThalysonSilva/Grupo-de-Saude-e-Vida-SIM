@@ -22,13 +22,13 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
             
  
-}
+        }
 
-private void btnNovoFormTelaLogin_Click(object sender, EventArgs e)
+        private void btnNovoFormTelaLogin_Click(object sender, EventArgs e)
         {
             
 
             
-            }
+        }
     }
 }

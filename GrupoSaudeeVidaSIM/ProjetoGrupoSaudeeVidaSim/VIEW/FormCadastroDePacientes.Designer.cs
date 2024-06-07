@@ -33,6 +33,8 @@
             this.btnConsultaCepFormCadPaciente = new System.Windows.Forms.Button();
             this.btnConsultarFormCadPaciente = new System.Windows.Forms.Button();
             this.maskedTextBoxDataNascFormCadPaciente = new System.Windows.Forms.MaskedTextBox();
+            this.btnExcluirFormCadPaciente = new System.Windows.Forms.Button();
+            this.btnEditarFormCadPaciente = new System.Windows.Forms.Button();
             this.btnCadastrarFormCadPaciente = new System.Windows.Forms.Button();
             this.btnNovoFormCadPaciente = new System.Windows.Forms.Button();
             this.txtUFFormCadPaciente = new System.Windows.Forms.TextBox();
@@ -64,6 +66,8 @@
             this.painelFormCadPaciente.Controls.Add(this.btnConsultaCepFormCadPaciente);
             this.painelFormCadPaciente.Controls.Add(this.btnConsultarFormCadPaciente);
             this.painelFormCadPaciente.Controls.Add(this.maskedTextBoxDataNascFormCadPaciente);
+            this.painelFormCadPaciente.Controls.Add(this.btnExcluirFormCadPaciente);
+            this.painelFormCadPaciente.Controls.Add(this.btnEditarFormCadPaciente);
             this.painelFormCadPaciente.Controls.Add(this.btnCadastrarFormCadPaciente);
             this.painelFormCadPaciente.Controls.Add(this.btnNovoFormCadPaciente);
             this.painelFormCadPaciente.Controls.Add(this.txtUFFormCadPaciente);
@@ -92,25 +96,27 @@
             this.painelFormCadPaciente.Location = new System.Drawing.Point(0, 0);
             this.painelFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.painelFormCadPaciente.Name = "painelFormCadPaciente";
-            this.painelFormCadPaciente.Size = new System.Drawing.Size(1043, 661);
+            this.painelFormCadPaciente.Size = new System.Drawing.Size(1173, 725);
             this.painelFormCadPaciente.TabIndex = 0;
             // 
             // btnConsultaCepFormCadPaciente
             // 
-            this.btnConsultaCepFormCadPaciente.Location = new System.Drawing.Point(77, 319);
-            this.btnConsultaCepFormCadPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultaCepFormCadPaciente.BackColor = System.Drawing.Color.Honeydew;
+            this.btnConsultaCepFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultaCepFormCadPaciente.Location = new System.Drawing.Point(304, 342);
+            this.btnConsultaCepFormCadPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultaCepFormCadPaciente.Name = "btnConsultaCepFormCadPaciente";
-            this.btnConsultaCepFormCadPaciente.Size = new System.Drawing.Size(141, 36);
-            this.btnConsultaCepFormCadPaciente.TabIndex = 17;
+            this.btnConsultaCepFormCadPaciente.Size = new System.Drawing.Size(137, 38);
+            this.btnConsultaCepFormCadPaciente.TabIndex = 13;
             this.btnConsultaCepFormCadPaciente.Text = "Consultar Cep";
-            this.btnConsultaCepFormCadPaciente.UseVisualStyleBackColor = true;
+            this.btnConsultaCepFormCadPaciente.UseVisualStyleBackColor = false;
             // 
             // btnConsultarFormCadPaciente
             // 
-            this.btnConsultarFormCadPaciente.Location = new System.Drawing.Point(879, 70);
-            this.btnConsultarFormCadPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultarFormCadPaciente.Location = new System.Drawing.Point(989, 88);
+            this.btnConsultarFormCadPaciente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnConsultarFormCadPaciente.Name = "btnConsultarFormCadPaciente";
-            this.btnConsultarFormCadPaciente.Size = new System.Drawing.Size(121, 28);
+            this.btnConsultarFormCadPaciente.Size = new System.Drawing.Size(136, 35);
             this.btnConsultarFormCadPaciente.TabIndex = 3;
             this.btnConsultarFormCadPaciente.Text = "Consultar";
             this.btnConsultarFormCadPaciente.UseVisualStyleBackColor = true;
@@ -119,21 +125,45 @@
             // maskedTextBoxDataNascFormCadPaciente
             // 
             this.maskedTextBoxDataNascFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxDataNascFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxDataNascFormCadPaciente.Location = new System.Drawing.Point(611, 143);
+            this.maskedTextBoxDataNascFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxDataNascFormCadPaciente.Location = new System.Drawing.Point(687, 179);
             this.maskedTextBoxDataNascFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBoxDataNascFormCadPaciente.Mask = "00/00/0000";
             this.maskedTextBoxDataNascFormCadPaciente.Name = "maskedTextBoxDataNascFormCadPaciente";
-            this.maskedTextBoxDataNascFormCadPaciente.Size = new System.Drawing.Size(109, 21);
+            this.maskedTextBoxDataNascFormCadPaciente.Size = new System.Drawing.Size(123, 28);
             this.maskedTextBoxDataNascFormCadPaciente.TabIndex = 9;
+            // 
+            // btnExcluirFormCadPaciente
+            // 
+            this.btnExcluirFormCadPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnExcluirFormCadPaciente.Location = new System.Drawing.Point(965, 611);
+            this.btnExcluirFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExcluirFormCadPaciente.Name = "btnExcluirFormCadPaciente";
+            this.btnExcluirFormCadPaciente.Size = new System.Drawing.Size(185, 60);
+            this.btnExcluirFormCadPaciente.TabIndex = 27;
+            this.btnExcluirFormCadPaciente.Text = "Excluir Paciente";
+            this.btnExcluirFormCadPaciente.UseVisualStyleBackColor = false;
+            this.btnExcluirFormCadPaciente.Click += new System.EventHandler(this.btnCadastrarFormCadPaciente_Click);
+            // 
+            // btnEditarFormCadPaciente
+            // 
+            this.btnEditarFormCadPaciente.BackColor = System.Drawing.Color.White;
+            this.btnEditarFormCadPaciente.Location = new System.Drawing.Point(650, 611);
+            this.btnEditarFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditarFormCadPaciente.Name = "btnEditarFormCadPaciente";
+            this.btnEditarFormCadPaciente.Size = new System.Drawing.Size(185, 60);
+            this.btnEditarFormCadPaciente.TabIndex = 26;
+            this.btnEditarFormCadPaciente.Text = "Editar Paciente";
+            this.btnEditarFormCadPaciente.UseVisualStyleBackColor = false;
+            this.btnEditarFormCadPaciente.Click += new System.EventHandler(this.btnCadastrarFormCadPaciente_Click);
             // 
             // btnCadastrarFormCadPaciente
             // 
             this.btnCadastrarFormCadPaciente.BackColor = System.Drawing.Color.White;
-            this.btnCadastrarFormCadPaciente.Location = new System.Drawing.Point(425, 559);
+            this.btnCadastrarFormCadPaciente.Location = new System.Drawing.Point(343, 611);
             this.btnCadastrarFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCadastrarFormCadPaciente.Name = "btnCadastrarFormCadPaciente";
-            this.btnCadastrarFormCadPaciente.Size = new System.Drawing.Size(228, 46);
+            this.btnCadastrarFormCadPaciente.Size = new System.Drawing.Size(185, 60);
             this.btnCadastrarFormCadPaciente.TabIndex = 25;
             this.btnCadastrarFormCadPaciente.Text = "Salvar Paciente";
             this.btnCadastrarFormCadPaciente.UseVisualStyleBackColor = false;
@@ -142,10 +172,10 @@
             // btnNovoFormCadPaciente
             // 
             this.btnNovoFormCadPaciente.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNovoFormCadPaciente.Location = new System.Drawing.Point(425, 474);
+            this.btnNovoFormCadPaciente.Location = new System.Drawing.Point(23, 611);
             this.btnNovoFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNovoFormCadPaciente.Name = "btnNovoFormCadPaciente";
-            this.btnNovoFormCadPaciente.Size = new System.Drawing.Size(228, 46);
+            this.btnNovoFormCadPaciente.Size = new System.Drawing.Size(185, 60);
             this.btnNovoFormCadPaciente.TabIndex = 24;
             this.btnNovoFormCadPaciente.Text = "Novo Paciente";
             this.btnNovoFormCadPaciente.UseVisualStyleBackColor = false;
@@ -153,118 +183,118 @@
             // txtUFFormCadPaciente
             // 
             this.txtUFFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUFFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUFFormCadPaciente.Location = new System.Drawing.Point(932, 399);
+            this.txtUFFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUFFormCadPaciente.Location = new System.Drawing.Point(1048, 499);
             this.txtUFFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUFFormCadPaciente.Name = "txtUFFormCadPaciente";
-            this.txtUFFormCadPaciente.Size = new System.Drawing.Size(91, 21);
+            this.txtUFFormCadPaciente.Size = new System.Drawing.Size(102, 28);
             this.txtUFFormCadPaciente.TabIndex = 23;
             // 
             // LabUFFormCadPaciente
             // 
             this.LabUFFormCadPaciente.AutoSize = true;
             this.LabUFFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabUFFormCadPaciente.Location = new System.Drawing.Point(887, 399);
+            this.LabUFFormCadPaciente.Location = new System.Drawing.Point(998, 499);
             this.LabUFFormCadPaciente.Name = "LabUFFormCadPaciente";
-            this.LabUFFormCadPaciente.Size = new System.Drawing.Size(40, 24);
+            this.LabUFFormCadPaciente.Size = new System.Drawing.Size(47, 26);
             this.LabUFFormCadPaciente.TabIndex = 22;
             this.LabUFFormCadPaciente.Text = "UF:";
             // 
             // txtCidadeFormCadPaciente
             // 
             this.txtCidadeFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCidadeFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidadeFormCadPaciente.Location = new System.Drawing.Point(500, 399);
+            this.txtCidadeFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidadeFormCadPaciente.Location = new System.Drawing.Point(562, 499);
             this.txtCidadeFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCidadeFormCadPaciente.Name = "txtCidadeFormCadPaciente";
-            this.txtCidadeFormCadPaciente.Size = new System.Drawing.Size(372, 21);
+            this.txtCidadeFormCadPaciente.Size = new System.Drawing.Size(418, 28);
             this.txtCidadeFormCadPaciente.TabIndex = 21;
             // 
             // LabCidadeFormCadPaciente
             // 
             this.LabCidadeFormCadPaciente.AutoSize = true;
-            this.LabCidadeFormCadPaciente.Location = new System.Drawing.Point(421, 401);
+            this.LabCidadeFormCadPaciente.Location = new System.Drawing.Point(474, 501);
             this.LabCidadeFormCadPaciente.Name = "LabCidadeFormCadPaciente";
-            this.LabCidadeFormCadPaciente.Size = new System.Drawing.Size(66, 20);
+            this.LabCidadeFormCadPaciente.Size = new System.Drawing.Size(81, 25);
             this.LabCidadeFormCadPaciente.TabIndex = 20;
             this.LabCidadeFormCadPaciente.Text = "Cidade:";
             // 
             // txtBairroFormCadPaciente
             // 
             this.txtBairroFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBairroFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBairroFormCadPaciente.Location = new System.Drawing.Point(93, 399);
+            this.txtBairroFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBairroFormCadPaciente.Location = new System.Drawing.Point(138, 499);
             this.txtBairroFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBairroFormCadPaciente.Name = "txtBairroFormCadPaciente";
-            this.txtBairroFormCadPaciente.Size = new System.Drawing.Size(323, 21);
+            this.txtBairroFormCadPaciente.Size = new System.Drawing.Size(330, 28);
             this.txtBairroFormCadPaciente.TabIndex = 19;
             // 
             // LabBairroFormCadPaciente
             // 
             this.LabBairroFormCadPaciente.AutoSize = true;
-            this.LabBairroFormCadPaciente.Location = new System.Drawing.Point(13, 399);
+            this.LabBairroFormCadPaciente.Location = new System.Drawing.Point(18, 499);
             this.LabBairroFormCadPaciente.Name = "LabBairroFormCadPaciente";
-            this.LabBairroFormCadPaciente.Size = new System.Drawing.Size(60, 20);
+            this.LabBairroFormCadPaciente.Size = new System.Drawing.Size(69, 25);
             this.LabBairroFormCadPaciente.TabIndex = 18;
             this.LabBairroFormCadPaciente.Text = "Bairro:";
             // 
             // txtNumFormCadPaciente
             // 
             this.txtNumFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumFormCadPaciente.Location = new System.Drawing.Point(932, 278);
+            this.txtNumFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumFormCadPaciente.Location = new System.Drawing.Point(844, 421);
             this.txtNumFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumFormCadPaciente.Name = "txtNumFormCadPaciente";
-            this.txtNumFormCadPaciente.Size = new System.Drawing.Size(91, 21);
-            this.txtNumFormCadPaciente.TabIndex = 16;
+            this.txtNumFormCadPaciente.Size = new System.Drawing.Size(102, 28);
+            this.txtNumFormCadPaciente.TabIndex = 17;
             this.txtNumFormCadPaciente.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // LabNumFormCadPaciente
             // 
             this.LabNumFormCadPaciente.AutoSize = true;
-            this.LabNumFormCadPaciente.Location = new System.Drawing.Point(887, 279);
+            this.LabNumFormCadPaciente.Location = new System.Drawing.Point(796, 421);
             this.LabNumFormCadPaciente.Name = "LabNumFormCadPaciente";
-            this.LabNumFormCadPaciente.Size = new System.Drawing.Size(32, 20);
-            this.LabNumFormCadPaciente.TabIndex = 15;
+            this.LabNumFormCadPaciente.Size = new System.Drawing.Size(39, 25);
+            this.LabNumFormCadPaciente.TabIndex = 16;
             this.LabNumFormCadPaciente.Text = "Nº:";
             // 
             // txtLogradouroFormCadPaciente
             // 
             this.txtLogradouroFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogradouroFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogradouroFormCadPaciente.Location = new System.Drawing.Point(333, 278);
+            this.txtLogradouroFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLogradouroFormCadPaciente.Location = new System.Drawing.Point(138, 421);
             this.txtLogradouroFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLogradouroFormCadPaciente.Name = "txtLogradouroFormCadPaciente";
-            this.txtLogradouroFormCadPaciente.Size = new System.Drawing.Size(539, 21);
-            this.txtLogradouroFormCadPaciente.TabIndex = 14;
+            this.txtLogradouroFormCadPaciente.Size = new System.Drawing.Size(606, 28);
+            this.txtLogradouroFormCadPaciente.TabIndex = 15;
             this.txtLogradouroFormCadPaciente.TextChanged += new System.EventHandler(this.txtLogradouroFormCadPaciente_TextChanged);
             // 
             // labLogradouroFormCadPaciente
             // 
             this.labLogradouroFormCadPaciente.AutoSize = true;
-            this.labLogradouroFormCadPaciente.Location = new System.Drawing.Point(227, 279);
+            this.labLogradouroFormCadPaciente.Location = new System.Drawing.Point(18, 422);
             this.labLogradouroFormCadPaciente.Name = "labLogradouroFormCadPaciente";
-            this.labLogradouroFormCadPaciente.Size = new System.Drawing.Size(85, 20);
-            this.labLogradouroFormCadPaciente.TabIndex = 13;
+            this.labLogradouroFormCadPaciente.Size = new System.Drawing.Size(102, 25);
+            this.labLogradouroFormCadPaciente.TabIndex = 14;
             this.labLogradouroFormCadPaciente.Text = "Endereço:";
             // 
             // maskedTextBoxCepFormCadPaciente
             // 
             this.maskedTextBoxCepFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxCepFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxCepFormCadPaciente.Location = new System.Drawing.Point(77, 278);
+            this.maskedTextBoxCepFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxCepFormCadPaciente.Location = new System.Drawing.Point(138, 345);
             this.maskedTextBoxCepFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBoxCepFormCadPaciente.Mask = "00000-000";
             this.maskedTextBoxCepFormCadPaciente.Name = "maskedTextBoxCepFormCadPaciente";
-            this.maskedTextBoxCepFormCadPaciente.Size = new System.Drawing.Size(141, 21);
+            this.maskedTextBoxCepFormCadPaciente.Size = new System.Drawing.Size(159, 28);
             this.maskedTextBoxCepFormCadPaciente.TabIndex = 12;
             // 
             // labCepFormCadPaciente
             // 
             this.labCepFormCadPaciente.AutoSize = true;
-            this.labCepFormCadPaciente.Location = new System.Drawing.Point(13, 278);
+            this.labCepFormCadPaciente.Location = new System.Drawing.Point(18, 348);
             this.labCepFormCadPaciente.Name = "labCepFormCadPaciente";
-            this.labCepFormCadPaciente.Size = new System.Drawing.Size(49, 20);
+            this.labCepFormCadPaciente.Size = new System.Drawing.Size(60, 25);
             this.labCepFormCadPaciente.TabIndex = 11;
             this.labCepFormCadPaciente.Text = "Cep: ";
             // 
@@ -272,58 +302,58 @@
             // 
             this.labIdFormCadEndPaciente.AutoSize = true;
             this.labIdFormCadEndPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labIdFormCadEndPaciente.Location = new System.Drawing.Point(12, 210);
+            this.labIdFormCadEndPaciente.Location = new System.Drawing.Point(17, 262);
             this.labIdFormCadEndPaciente.Name = "labIdFormCadEndPaciente";
-            this.labIdFormCadEndPaciente.Size = new System.Drawing.Size(228, 29);
+            this.labIdFormCadEndPaciente.Size = new System.Drawing.Size(264, 32);
             this.labIdFormCadEndPaciente.TabIndex = 10;
             this.labIdFormCadEndPaciente.Text = "Dados do Endereço";
             // 
             // labDataNascFormCadPaciente
             // 
             this.labDataNascFormCadPaciente.AutoSize = true;
-            this.labDataNascFormCadPaciente.Location = new System.Drawing.Point(500, 145);
+            this.labDataNascFormCadPaciente.Location = new System.Drawing.Point(562, 181);
             this.labDataNascFormCadPaciente.Name = "labDataNascFormCadPaciente";
-            this.labDataNascFormCadPaciente.Size = new System.Drawing.Size(98, 20);
+            this.labDataNascFormCadPaciente.Size = new System.Drawing.Size(114, 25);
             this.labDataNascFormCadPaciente.TabIndex = 8;
             this.labDataNascFormCadPaciente.Text = "Data Nasc:.";
             // 
             // maskedTextBoxContatoFormCadPaciente
             // 
             this.maskedTextBoxContatoFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxContatoFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxContatoFormCadPaciente.Location = new System.Drawing.Point(337, 144);
+            this.maskedTextBoxContatoFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxContatoFormCadPaciente.Location = new System.Drawing.Point(379, 180);
             this.maskedTextBoxContatoFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBoxContatoFormCadPaciente.Mask = "(00) 00000-0000";
             this.maskedTextBoxContatoFormCadPaciente.Name = "maskedTextBoxContatoFormCadPaciente";
-            this.maskedTextBoxContatoFormCadPaciente.Size = new System.Drawing.Size(151, 21);
+            this.maskedTextBoxContatoFormCadPaciente.Size = new System.Drawing.Size(170, 28);
             this.maskedTextBoxContatoFormCadPaciente.TabIndex = 7;
             // 
             // LabContatoFormCadPaciente
             // 
             this.LabContatoFormCadPaciente.AutoSize = true;
-            this.LabContatoFormCadPaciente.Location = new System.Drawing.Point(256, 144);
+            this.LabContatoFormCadPaciente.Location = new System.Drawing.Point(288, 180);
             this.LabContatoFormCadPaciente.Name = "LabContatoFormCadPaciente";
-            this.LabContatoFormCadPaciente.Size = new System.Drawing.Size(72, 20);
+            this.LabContatoFormCadPaciente.Size = new System.Drawing.Size(87, 25);
             this.LabContatoFormCadPaciente.TabIndex = 6;
             this.LabContatoFormCadPaciente.Text = "Contato:";
             // 
             // maskedTextBoxCPFFormCadPaciente
             // 
             this.maskedTextBoxCPFFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxCPFFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxCPFFormCadPaciente.Location = new System.Drawing.Point(83, 144);
+            this.maskedTextBoxCPFFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxCPFFormCadPaciente.Location = new System.Drawing.Point(93, 180);
             this.maskedTextBoxCPFFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBoxCPFFormCadPaciente.Mask = "000,000,000-00";
             this.maskedTextBoxCPFFormCadPaciente.Name = "maskedTextBoxCPFFormCadPaciente";
-            this.maskedTextBoxCPFFormCadPaciente.Size = new System.Drawing.Size(157, 21);
+            this.maskedTextBoxCPFFormCadPaciente.Size = new System.Drawing.Size(177, 28);
             this.maskedTextBoxCPFFormCadPaciente.TabIndex = 5;
             // 
             // labCPFFormCadPaciente
             // 
             this.labCPFFormCadPaciente.AutoSize = true;
-            this.labCPFFormCadPaciente.Location = new System.Drawing.Point(13, 146);
+            this.labCPFFormCadPaciente.Location = new System.Drawing.Point(18, 181);
             this.labCPFFormCadPaciente.Name = "labCPFFormCadPaciente";
-            this.labCPFFormCadPaciente.Size = new System.Drawing.Size(47, 20);
+            this.labCPFFormCadPaciente.Size = new System.Drawing.Size(58, 25);
             this.labCPFFormCadPaciente.TabIndex = 4;
             this.labCPFFormCadPaciente.Text = "CPF:";
             this.labCPFFormCadPaciente.Click += new System.EventHandler(this.labCPFFormCadPaciente_Click);
@@ -331,19 +361,19 @@
             // txtNomeFormCadPaciente
             // 
             this.txtNomeFormCadPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNomeFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFormCadPaciente.Location = new System.Drawing.Point(197, 74);
+            this.txtNomeFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeFormCadPaciente.Location = new System.Drawing.Point(222, 92);
             this.txtNomeFormCadPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeFormCadPaciente.Name = "txtNomeFormCadPaciente";
-            this.txtNomeFormCadPaciente.Size = new System.Drawing.Size(675, 21);
+            this.txtNomeFormCadPaciente.Size = new System.Drawing.Size(759, 28);
             this.txtNomeFormCadPaciente.TabIndex = 2;
             // 
             // labNomeFormCadPaciente
             // 
             this.labNomeFormCadPaciente.AutoSize = true;
-            this.labNomeFormCadPaciente.Location = new System.Drawing.Point(13, 74);
+            this.labNomeFormCadPaciente.Location = new System.Drawing.Point(18, 92);
             this.labNomeFormCadPaciente.Name = "labNomeFormCadPaciente";
-            this.labNomeFormCadPaciente.Size = new System.Drawing.Size(151, 20);
+            this.labNomeFormCadPaciente.Size = new System.Drawing.Size(178, 25);
             this.labNomeFormCadPaciente.TabIndex = 1;
             this.labNomeFormCadPaciente.Text = "Nome do Paciente:";
             // 
@@ -351,18 +381,18 @@
             // 
             this.labIdFormCadPaciente.AutoSize = true;
             this.labIdFormCadPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labIdFormCadPaciente.Location = new System.Drawing.Point(15, 11);
+            this.labIdFormCadPaciente.Location = new System.Drawing.Point(17, 9);
             this.labIdFormCadPaciente.Name = "labIdFormCadPaciente";
-            this.labIdFormCadPaciente.Size = new System.Drawing.Size(217, 29);
+            this.labIdFormCadPaciente.Size = new System.Drawing.Size(254, 32);
             this.labIdFormCadPaciente.TabIndex = 0;
             this.labIdFormCadPaciente.Text = "Dados do Paciente";
             // 
             // FormCadastroDePacientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1043, 658);
+            this.ClientSize = new System.Drawing.Size(1173, 724);
             this.Controls.Add(this.painelFormCadPaciente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -407,5 +437,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDataNascFormCadPaciente;
         private System.Windows.Forms.Button btnConsultarFormCadPaciente;
         private System.Windows.Forms.Button btnConsultaCepFormCadPaciente;
+        private System.Windows.Forms.Button btnExcluirFormCadPaciente;
+        private System.Windows.Forms.Button btnEditarFormCadPaciente;
     }
 }
