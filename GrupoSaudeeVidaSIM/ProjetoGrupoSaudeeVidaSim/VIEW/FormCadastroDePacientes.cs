@@ -1,13 +1,20 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
+using ProjetoGrupoSaudeeVidaSim.Models;
 using System;
+using System.Net;
+using System.Net.Http;
 using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim
 {
     public partial class FormCadastroDePacientes : Form
     {
+
+        private const string viaCepUrl = "https://viacep.com.br/ws/{0}/json";
+
         private MySqlConnection Conexao;
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
         private PacienteDAO conexaoPacienteDAO;
@@ -235,6 +242,48 @@ namespace ProjetoGrupoSaudeeVidaSim
                 }
 
             
+        }
+
+        private async void btnConsultaCepFormCadPaciente_Click(object sender, EventArgs e)
+        {
+            string cep = maskedTextBoxCepFormCadPaciente.Text.Trim();
+            cep = cep.Replace("-", "");
+            if (!string.IsNullOrEmpty(cep))
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    try
+                    {
+                        string url = string.Format(viaCepUrl, cep);
+
+                        HttpResponseMessage httpResponse = await httpClient.GetAsync(url);
+                        httpResponse.EnsureSuccessStatusCode();
+
+                        if (httpResponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            string responseBody = await httpResponse.Content.ReadAsStringAsync();
+
+                            var endereco = JsonConvert.DeserializeObject<Endereco>(responseBody);
+
+                            txtLogradouroFormCadPaciente.AppendText(endereco.Logradouro);
+                            txtBairroFormCadPaciente.AppendText(endereco.Bairro);
+                            txtCidadeFormCadPaciente.AppendText(endereco.Localidade);
+                            txtUFFormCadPaciente.AppendText(endereco.UF);
+
+                        }
+                    }
+                    catch (HttpRequestException ex)
+                    {
+                        MessageBox.Show($"Erro na requisição HTTP: {ex.Message}", "Erro.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("O campo CEP está vazio.", "Atenção.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
         }
     }
 }
