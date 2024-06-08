@@ -18,11 +18,12 @@ namespace ProjetoGrupoSaudeeVidaSim
         private MySqlConnection Conexao;
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
         private PacienteDAO conexaoPacienteDAO;
-        
+
 
         public FormCadastroDePacientes()
         {
             InitializeComponent();
+            fecharCampos();
         }
 
         private void labCPFFormCadPaciente_Click(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                     // Todos os campos estão preenchidos corretamente, então podemos prosseguir com o salvamento
                     cadastrarPaciente();
                     LimparCampos();
-                    
+
                 }
                 else
                 {
@@ -185,7 +186,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             return true;
         }
-        
+
         private void IniciarConexao()
         {
 
@@ -205,13 +206,15 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         private void btnConsultarFormCadPaciente_Click(object sender, EventArgs e)
         {
-   
+            abrirCampos();
+            btnEditarFormCadPaciente.Enabled = true;
             try
             {
                 PacienteDAO pacienteDAO = new PacienteDAO();
                 string nome = txtNomeFormCadPaciente.Text.Trim();
+                string cpf = maskedTextBoxCPFFormCadPaciente.Text.Trim();
 
-                Paciente paciente = pacienteDAO.BuscarPaciente(nome);
+                Paciente paciente = pacienteDAO.BuscarPacientePorNomeOuCpf(nome, cpf);
 
                 if (paciente != null)
                 {
@@ -230,18 +233,18 @@ namespace ProjetoGrupoSaudeeVidaSim
                 {
                     MessageBox.Show("Paciente não encontrado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Erro ocorreu Sintase Mysql " + ex.Message,
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocorreu um erro ao procurar o paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro ocorreu Sintase Mysql " + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao procurar o paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            
+
         }
 
         private async void btnConsultaCepFormCadPaciente_Click(object sender, EventArgs e)
@@ -283,6 +286,92 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show("O campo CEP está vazio.", "Atenção.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void BtnEditarFormCadPaciente(object sender, EventArgs e)
+        {
+            // Obtenha o CPF do campo de texto correspondente
+            //OBS A VARIAVEL DO CPF TEM ESTÁ COM O TRATAMENTO DO REPLACE, SE NÃO VAI PROCURAR COM O PONTO E HIFEM E NÃO VAI ACHAR
+            string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", "");
+
+            // Verifique se o paciente com o CPF fornecido existe no banco de dados
+            PacienteDAO pacienteDAO = new PacienteDAO();
+            if (pacienteDAO.PacienteExiste(cpf))
+            {
+                // Crie um objeto Paciente com os valores dos campos de texto
+                Paciente paciente = new Paciente
+                {
+                    Nome = txtNomeFormCadPaciente.Text,
+                    Cpf = cpf,
+                    Contato = maskedTextBoxContatoFormCadPaciente.Text,
+                    DataNascimento = DateTime.Parse(maskedTextBoxDataNascFormCadPaciente.Text),
+                    Cep = maskedTextBoxCepFormCadPaciente.Text,
+                    Endereco = txtLogradouroFormCadPaciente.Text,
+                    NumCasa = int.Parse(txtNumFormCadPaciente.Text),
+                    Bairro = txtBairroFormCadPaciente.Text,
+                    Cidade = txtCidadeFormCadPaciente.Text,
+                    UF = txtUFFormCadPaciente.Text
+                };
+
+                try
+                {
+                    // chamando o  método de atualização no DAO
+                    pacienteDAO.AtualizarPaciente(paciente);
+                    MessageBox.Show("Paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao atualizar paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Exibe uma mensagem informando que o paciente não foi encontrado
+                MessageBox.Show("Paciente não encontrado com o CPF fornecido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void fecharCampos()
+        {
+            txtNomeFormCadPaciente.Enabled = true;
+            btnConsultarFormCadPaciente.Enabled = true;
+            maskedTextBoxCPFFormCadPaciente.Enabled = false;
+            maskedTextBoxContatoFormCadPaciente.Enabled = false;
+            maskedTextBoxDataNascFormCadPaciente.Enabled = false;
+            maskedTextBoxCepFormCadPaciente.Enabled = false;
+            txtLogradouroFormCadPaciente.Enabled = false;
+            txtNumFormCadPaciente.Enabled = false;
+            txtBairroFormCadPaciente.Enabled = false;
+            txtCidadeFormCadPaciente.Enabled = false;
+            txtUFFormCadPaciente.Enabled = false;
+
+            btnNovoFormCadPaciente.Enabled = true;
+            btnCadastrarFormCadPaciente.Enabled = false;
+            btnEditarFormCadPaciente.Enabled = false;
+            btnExcluirFormCadPaciente.Enabled = false;
+            btnConsultaCepFormCadPaciente.Enabled = false;
+
+        }
+
+        private void abrirCampos()
+        {
+            txtNomeFormCadPaciente.Enabled = true;
+            btnConsultarFormCadPaciente.Enabled = true;
+            maskedTextBoxCPFFormCadPaciente.Enabled = true;
+            maskedTextBoxContatoFormCadPaciente.Enabled = true;
+            maskedTextBoxDataNascFormCadPaciente.Enabled = true;
+            maskedTextBoxCepFormCadPaciente.Enabled = true;
+            txtLogradouroFormCadPaciente.Enabled = true;
+            txtNumFormCadPaciente.Enabled = true;
+            txtBairroFormCadPaciente.Enabled = true;
+            txtCidadeFormCadPaciente.Enabled = true;
+            txtUFFormCadPaciente.Enabled = true;
+
+            btnNovoFormCadPaciente.Enabled = true;
+            btnCadastrarFormCadPaciente.Enabled = true;
+            btnEditarFormCadPaciente.Enabled = false;
+            btnExcluirFormCadPaciente.Enabled = false;
+            btnConsultaCepFormCadPaciente.Enabled = true;
 
         }
     }

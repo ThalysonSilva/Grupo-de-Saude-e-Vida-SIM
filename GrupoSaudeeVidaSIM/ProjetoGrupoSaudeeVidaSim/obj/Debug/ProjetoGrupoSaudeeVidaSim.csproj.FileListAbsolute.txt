@@ -432,3 +432,5 @@ C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\Projet
 C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.csproj.CopyComplete
 C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.exe
 C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.pdb
+D:\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.dll
+D:\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.xml
