@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/06/2024 às 01:59
+-- Tempo de geração: 08/06/2024 às 21:44
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,17 +32,9 @@ CREATE TABLE `medico` (
   `nome` varchar(80) DEFAULT NULL,
   `crm` int(10) DEFAULT NULL,
   `especialidade` varchar(20) DEFAULT NULL,
-  `diaDeAtendimento` varchar(20) DEFAULT NULL,
-  `horarioAtendimento` varchar(20) DEFAULT NULL
+  `diaDeAtendimento` datetime DEFAULT NULL,
+  `horarioAtendimento` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `medico`
---
-
-INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, `horarioAtendimento`) VALUES
-(1, 'FULANO', 3131231, 'Dermatologia', 'Sexta-feira', '14:00h - 16:00h '),
-(2, 'THALYSON LINDO', 12322323, 'ORTOPEDIA', 'SEGUNDA-FEIRA', '7:00H - 10:00H');
 
 -- --------------------------------------------------------
 
@@ -86,9 +78,31 @@ INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `ende
 (15, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
 (16, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
 (17, 'asdasdasd', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '31231-231', 'asd asdasd', 21, 'ad sda', 'asdasda', 'Rn'),
-(18, 'ddqwdqwqwxwq1', '123.123.123-12', '(12) 31231-2312', '2222-01-12', '12312-312', 'sadasdasd', 12, 'asdasda', 'sdasdasd', 'RN'),
-(19, 'ASDASDAS', '12312312123', '(12) 31231-2311', '2020-02-12', '12312-312', 'ASDASDASD', 12, 'ADSDA', 'ASDASD', 'PB'),
-(20, 'THALYSON', '70100000000', '(12) 15618-9818', '2000-02-12', '12123-123', 'SADASDA', 122, 'ASDASDA', 'DASDAS', 'RN');
+(18, 'Jailton Dayvid', '111,111,111-11', '(84) 95955-9959', '1988-12-09', '11111-111', 'RUA TEST', 14, 'BAIRRO TESTE', 'natal', 'RN');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `confsenha` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `usuario`, `senha`, `confsenha`) VALUES
+(1, 'Administrador', '@dmin123', '@dmin123'),
+(2, 'Jailton.Morais', '123', '123'),
+(3, 'Jailton.Morais', 'Jd123', 'Jd123'),
+(4, 'Teste 01', 'Teste01', 'Teste01'),
+(5, 'Teste 02', '123', '123');
 
 --
 -- Índices para tabelas despejadas
@@ -107,6 +121,12 @@ ALTER TABLE `paciente`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -114,13 +134,19 @@ ALTER TABLE `paciente`
 -- AUTO_INCREMENT de tabela `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

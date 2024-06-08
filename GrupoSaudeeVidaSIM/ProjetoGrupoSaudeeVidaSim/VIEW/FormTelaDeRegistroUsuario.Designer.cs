@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTelaDeRegistroUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSalvarFormTelaRegistroUser = new System.Windows.Forms.Button();
-            this.txtSenhaFormTelaRegistroUser = new System.Windows.Forms.TextBox();
-            this.txtConfSenhaFormTelaRegistroUser = new System.Windows.Forms.TextBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtConfSenha = new System.Windows.Forms.TextBox();
             this.labSenhaFormTelaRegistroUser = new System.Windows.Forms.Label();
             this.labConfSenhaFormTelaRegistroUser = new System.Windows.Forms.Label();
-            this.txtUsuarioFormTelaRegistroUser = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.labUsuarioFormTelaRegistroUser = new System.Windows.Forms.Label();
             this.labIdFormRegistroUsuario = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -44,64 +44,63 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.groupBox1.Controls.Add(this.btnSalvarFormTelaRegistroUser);
-            this.groupBox1.Controls.Add(this.txtSenhaFormTelaRegistroUser);
-            this.groupBox1.Controls.Add(this.txtConfSenhaFormTelaRegistroUser);
+            this.groupBox1.Controls.Add(this.btnSalvar);
+            this.groupBox1.Controls.Add(this.txtSenha);
+            this.groupBox1.Controls.Add(this.txtConfSenha);
             this.groupBox1.Controls.Add(this.labSenhaFormTelaRegistroUser);
             this.groupBox1.Controls.Add(this.labConfSenhaFormTelaRegistroUser);
-            this.groupBox1.Controls.Add(this.txtUsuarioFormTelaRegistroUser);
+            this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.labUsuarioFormTelaRegistroUser);
             this.groupBox1.Controls.Add(this.labIdFormRegistroUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(8, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 21);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.groupBox1.Size = new System.Drawing.Size(583, 333);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.groupBox1.Size = new System.Drawing.Size(874, 512);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // btnSalvarFormTelaRegistroUser
+            // btnSalvar
             // 
-            this.btnSalvarFormTelaRegistroUser.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnSalvarFormTelaRegistroUser.Location = new System.Drawing.Point(200, 224);
-            this.btnSalvarFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnSalvarFormTelaRegistroUser.Name = "btnSalvarFormTelaRegistroUser";
-            this.btnSalvarFormTelaRegistroUser.Size = new System.Drawing.Size(197, 35);
-            this.btnSalvarFormTelaRegistroUser.TabIndex = 5;
-            this.btnSalvarFormTelaRegistroUser.Text = "Salvar";
-            this.btnSalvarFormTelaRegistroUser.UseVisualStyleBackColor = false;
-            this.btnSalvarFormTelaRegistroUser.Click += new System.EventHandler(this.btnSalvar_Click);
+            this.btnSalvar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnSalvar.Location = new System.Drawing.Point(300, 325);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(296, 54);
+            this.btnSalvar.TabIndex = 5;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtSenhaFormTelaRegistroUser
+            // txtSenha
             // 
-            this.txtSenhaFormTelaRegistroUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSenhaFormTelaRegistroUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaFormTelaRegistroUser.Location = new System.Drawing.Point(199, 118);
-            this.txtSenhaFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtSenhaFormTelaRegistroUser.Name = "txtSenhaFormTelaRegistroUser";
-            this.txtSenhaFormTelaRegistroUser.PasswordChar = '*';
-            this.txtSenhaFormTelaRegistroUser.Size = new System.Drawing.Size(199, 22);
-            this.txtSenhaFormTelaRegistroUser.TabIndex = 4;
+            this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Location = new System.Drawing.Point(298, 181);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(298, 32);
+            this.txtSenha.TabIndex = 4;
             // 
-            // txtConfSenhaFormTelaRegistroUser
+            // txtConfSenha
             // 
-            this.txtConfSenhaFormTelaRegistroUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfSenhaFormTelaRegistroUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfSenhaFormTelaRegistroUser.Location = new System.Drawing.Point(199, 162);
-            this.txtConfSenhaFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtConfSenhaFormTelaRegistroUser.Name = "txtConfSenhaFormTelaRegistroUser";
-            this.txtConfSenhaFormTelaRegistroUser.PasswordChar = '*';
-            this.txtConfSenhaFormTelaRegistroUser.Size = new System.Drawing.Size(199, 22);
-            this.txtConfSenhaFormTelaRegistroUser.TabIndex = 4;
+            this.txtConfSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfSenha.Location = new System.Drawing.Point(298, 249);
+            this.txtConfSenha.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.txtConfSenha.Name = "txtConfSenha";
+            this.txtConfSenha.PasswordChar = '*';
+            this.txtConfSenha.Size = new System.Drawing.Size(298, 32);
+            this.txtConfSenha.TabIndex = 4;
             // 
             // labSenhaFormTelaRegistroUser
             // 
             this.labSenhaFormTelaRegistroUser.AutoSize = true;
             this.labSenhaFormTelaRegistroUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labSenhaFormTelaRegistroUser.Location = new System.Drawing.Point(139, 123);
-            this.labSenhaFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labSenhaFormTelaRegistroUser.Location = new System.Drawing.Point(208, 189);
             this.labSenhaFormTelaRegistroUser.Name = "labSenhaFormTelaRegistroUser";
-            this.labSenhaFormTelaRegistroUser.Size = new System.Drawing.Size(53, 17);
+            this.labSenhaFormTelaRegistroUser.Size = new System.Drawing.Size(76, 25);
             this.labSenhaFormTelaRegistroUser.TabIndex = 3;
             this.labSenhaFormTelaRegistroUser.Text = "Senha:";
             // 
@@ -109,57 +108,55 @@
             // 
             this.labConfSenhaFormTelaRegistroUser.AutoSize = true;
             this.labConfSenhaFormTelaRegistroUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labConfSenhaFormTelaRegistroUser.Location = new System.Drawing.Point(74, 167);
-            this.labConfSenhaFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labConfSenhaFormTelaRegistroUser.Location = new System.Drawing.Point(111, 258);
             this.labConfSenhaFormTelaRegistroUser.Name = "labConfSenhaFormTelaRegistroUser";
-            this.labConfSenhaFormTelaRegistroUser.Size = new System.Drawing.Size(118, 17);
+            this.labConfSenhaFormTelaRegistroUser.Size = new System.Drawing.Size(166, 25);
             this.labConfSenhaFormTelaRegistroUser.TabIndex = 3;
             this.labConfSenhaFormTelaRegistroUser.Text = "Confirmar Senha:";
             // 
-            // txtUsuarioFormTelaRegistroUser
+            // txtUsuario
             // 
-            this.txtUsuarioFormTelaRegistroUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsuarioFormTelaRegistroUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioFormTelaRegistroUser.Location = new System.Drawing.Point(200, 77);
-            this.txtUsuarioFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.txtUsuarioFormTelaRegistroUser.Name = "txtUsuarioFormTelaRegistroUser";
-            this.txtUsuarioFormTelaRegistroUser.Size = new System.Drawing.Size(197, 22);
-            this.txtUsuarioFormTelaRegistroUser.TabIndex = 2;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(300, 119);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(296, 32);
+            this.txtUsuario.TabIndex = 2;
+
             // 
             // labUsuarioFormTelaRegistroUser
             // 
             this.labUsuarioFormTelaRegistroUser.AutoSize = true;
             this.labUsuarioFormTelaRegistroUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labUsuarioFormTelaRegistroUser.Location = new System.Drawing.Point(139, 82);
-            this.labUsuarioFormTelaRegistroUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labUsuarioFormTelaRegistroUser.Location = new System.Drawing.Point(198, 126);
             this.labUsuarioFormTelaRegistroUser.Name = "labUsuarioFormTelaRegistroUser";
-            this.labUsuarioFormTelaRegistroUser.Size = new System.Drawing.Size(57, 17);
+            this.labUsuarioFormTelaRegistroUser.Size = new System.Drawing.Size(85, 25);
             this.labUsuarioFormTelaRegistroUser.TabIndex = 1;
-            this.labUsuarioFormTelaRegistroUser.Text = "Usuário";
+            this.labUsuarioFormTelaRegistroUser.Text = "Usuário:";
             // 
             // labIdFormRegistroUsuario
             // 
             this.labIdFormRegistroUsuario.AutoSize = true;
             this.labIdFormRegistroUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labIdFormRegistroUsuario.Location = new System.Drawing.Point(228, 14);
-            this.labIdFormRegistroUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labIdFormRegistroUsuario.Location = new System.Drawing.Point(342, 21);
             this.labIdFormRegistroUsuario.Name = "labIdFormRegistroUsuario";
-            this.labIdFormRegistroUsuario.Size = new System.Drawing.Size(140, 18);
+            this.labIdFormRegistroUsuario.Size = new System.Drawing.Size(204, 26);
             this.labIdFormRegistroUsuario.TabIndex = 0;
             this.labIdFormRegistroUsuario.Text = "Registro de Usuário";
             // 
             // FormTelaDeRegistroUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(603, 365);
+            this.ClientSize = new System.Drawing.Size(904, 561);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(619, 404);
+            this.MinimumSize = new System.Drawing.Size(918, 591);
             this.Name = "FormTelaDeRegistroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Novos Usuário";
@@ -174,11 +171,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labUsuarioFormTelaRegistroUser;
         private System.Windows.Forms.Label labIdFormRegistroUsuario;
-        private System.Windows.Forms.Button btnSalvarFormTelaRegistroUser;
-        private System.Windows.Forms.TextBox txtConfSenhaFormTelaRegistroUser;
+        private System.Windows.Forms.TextBox txtConfSenha;
         private System.Windows.Forms.Label labConfSenhaFormTelaRegistroUser;
-        private System.Windows.Forms.TextBox txtUsuarioFormTelaRegistroUser;
-        private System.Windows.Forms.TextBox txtSenhaFormTelaRegistroUser;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label labSenhaFormTelaRegistroUser;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }
