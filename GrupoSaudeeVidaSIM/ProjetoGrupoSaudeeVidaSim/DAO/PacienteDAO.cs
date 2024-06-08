@@ -11,7 +11,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         {
             return new MySqlConnection(linkDB);
         }
-
+        //salvar
         public void SalvarPaciente(Paciente paciente)
         {
             string inserir = "INSERT INTO paciente" +
@@ -36,14 +36,15 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
         }
 
-        public Paciente BuscarPaciente(string nome)
+        public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
-            string buscar = "SELECT * FROM paciente WHERE nome LIKE @nome";
+            string buscar = "SELECT * FROM paciente WHERE nome LIKE @nome OR cpf = @cpf";
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(buscar, conexao);
                 cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+                cmd.Parameters.AddWithValue("@cpf", cpf);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -69,5 +70,73 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             return null;
         }
 
+        public void AtualizarPaciente(Paciente paciente)
+        {
+            // Declaração da string SQL que será usada para atualizar os dados do paciente no banco de dados
+            string atualizar = "UPDATE paciente SET " +
+                "nome = @nome, " +                 // Atualiza o campo 'nome'
+                "contato = @contato, " +           // Atualiza o campo 'contato'
+                "dataNasc = @dataNasc, " +         // Atualiza o campo 'dataNasc'
+                "cep = @cep, " +                   // Atualiza o campo 'cep'
+                "endereco = @endereco, " +         // Atualiza o campo 'endereco'
+                "numCasa = @numCasa, " +           // Atualiza o campo 'numCasa'
+                "bairro = @bairro, " +             // Atualiza o campo 'bairro'
+                "cidade = @cidade, " +             // Atualiza o campo 'cidade'
+                "uf = @uf " +                      // Atualiza o campo 'uf'
+                "WHERE cpf = @cpf";                // Condição para atualizar o registro correspondente ao CPF fornecido
+
+            // Criação de uma nova conexão com o banco de dados usando a string de conexão
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(atualizar, conexao);
+
+                // Adiciona os valores dos parâmetros ao comando para evitar SQL injection
+                cmd.Parameters.AddWithValue("@nome", paciente.Nome);               // Adiciona o valor do nome
+                cmd.Parameters.AddWithValue("@contato", paciente.Contato);         // Adiciona o valor do contato
+                cmd.Parameters.AddWithValue("@dataNasc", paciente.DataNascimento); // Adiciona o valor da data de nascimento
+                cmd.Parameters.AddWithValue("@cep", paciente.Cep);                 // Adiciona o valor do CEP
+                cmd.Parameters.AddWithValue("@endereco", paciente.Endereco);       // Adiciona o valor do endereço
+                cmd.Parameters.AddWithValue("@numCasa", paciente.NumCasa);         // Adiciona o valor do número da casa
+                cmd.Parameters.AddWithValue("@bairro", paciente.Bairro);           // Adiciona o valor do bairro
+                cmd.Parameters.AddWithValue("@cidade", paciente.Cidade);           // Adiciona o valor da cidade
+                cmd.Parameters.AddWithValue("@uf", paciente.UF);                   // Adiciona o valor da UF (estado)
+                cmd.Parameters.AddWithValue("@cpf", paciente.Cpf.Replace(".", "").Replace("-", ""));                 // Adiciona o valor do CPF (usado na condição WHERE)
+
+                // Executa o comando SQL para atualizar os dados no banco de dados
+                int linhaAtualizada = cmd.ExecuteNonQuery();
+
+                if (linhaAtualizada == 0)
+                {
+                    throw new Exception("Nenhum registro foi atualizado. Verifique se o CPF está correto.");
+                }
+
+            }
+        }
+
+        public bool PacienteExiste(string cpf)
+        {
+            // Define a consulta SQL que conta o número de registros com o CPF fornecido
+            string query = "SELECT COUNT(*) FROM paciente WHERE cpf = @cpf";
+
+            // Usando uma conexão com o banco de dados MySQL
+            using (MySqlConnection conexao = Conexao())
+            {
+                // Abre a conexão com o banco de dados
+                conexao.Open();
+
+                // Cria um comando MySQL com a consulta definida anteriormente
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                // Adiciona o parâmetro CPF ao comando, substituindo o placeholder @cpf
+                cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".", "").Replace("-", ""));
+
+                // Executa a consulta e retorna o resultado como um inteiro
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                // Retorna true se o número de registros for maior que 0, ou seja, o paciente existe
+                return count > 0;
+            }
+        }
     }
 }

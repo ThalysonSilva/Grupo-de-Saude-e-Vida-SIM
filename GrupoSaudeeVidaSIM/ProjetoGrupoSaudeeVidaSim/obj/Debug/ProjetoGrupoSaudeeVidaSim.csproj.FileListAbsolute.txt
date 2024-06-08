@@ -432,5 +432,10 @@ C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\Projet
 C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.csproj.CopyComplete
 C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.exe
 C:\Users\senho\Desktop\A3 A3\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.pdb
+<<<<<<< HEAD
 C:\Users\dayvi\OneDrive\Documentos\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.dll
 C:\Users\dayvi\OneDrive\Documentos\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.xml
+=======
+D:\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.dll
+D:\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.xml
+>>>>>>> a2bb978b7dd6ba5cc2f128717e0423249814c7ac
