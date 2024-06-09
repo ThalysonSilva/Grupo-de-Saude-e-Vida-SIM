@@ -45,7 +45,7 @@
             // 
             this.labIdFormConsultarDados.AutoSize = true;
             this.labIdFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labIdFormConsultarDados.Location = new System.Drawing.Point(255, 11);
+            this.labIdFormConsultarDados.Location = new System.Drawing.Point(227, 9);
             this.labIdFormConsultarDados.Name = "labIdFormConsultarDados";
             this.labIdFormConsultarDados.Size = new System.Drawing.Size(598, 32);
             this.labIdFormConsultarDados.TabIndex = 0;
@@ -63,17 +63,18 @@
             this.PainelFormConsultarDados.Controls.Add(this.labIdFormConsultarDados);
             this.PainelFormConsultarDados.Dock = System.Windows.Forms.DockStyle.Top;
             this.PainelFormConsultarDados.Location = new System.Drawing.Point(0, 0);
+            this.PainelFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PainelFormConsultarDados.Name = "PainelFormConsultarDados";
-            this.PainelFormConsultarDados.Size = new System.Drawing.Size(939, 702);
+            this.PainelFormConsultarDados.Size = new System.Drawing.Size(835, 562);
             this.PainelFormConsultarDados.TabIndex = 0;
             // 
             // btnRetornarDadosFormConsultarDados
             // 
             this.btnRetornarDadosFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetornarDadosFormConsultarDados.Location = new System.Drawing.Point(282, 80);
-            this.btnRetornarDadosFormConsultarDados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRetornarDadosFormConsultarDados.Location = new System.Drawing.Point(251, 64);
+            this.btnRetornarDadosFormConsultarDados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRetornarDadosFormConsultarDados.Name = "btnRetornarDadosFormConsultarDados";
-            this.btnRetornarDadosFormConsultarDados.Size = new System.Drawing.Size(174, 35);
+            this.btnRetornarDadosFormConsultarDados.Size = new System.Drawing.Size(155, 32);
             this.btnRetornarDadosFormConsultarDados.TabIndex = 3;
             this.btnRetornarDadosFormConsultarDados.Text = "Consultar Dados";
             this.btnRetornarDadosFormConsultarDados.UseVisualStyleBackColor = true;
@@ -82,9 +83,10 @@
             // 
             this.btnConsultarFormConsultarDados.BackColor = System.Drawing.Color.Gainsboro;
             this.btnConsultarFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarFormConsultarDados.Location = new System.Drawing.Point(651, 590);
+            this.btnConsultarFormConsultarDados.Location = new System.Drawing.Point(579, 472);
+            this.btnConsultarFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultarFormConsultarDados.Name = "btnConsultarFormConsultarDados";
-            this.btnConsultarFormConsultarDados.Size = new System.Drawing.Size(206, 57);
+            this.btnConsultarFormConsultarDados.Size = new System.Drawing.Size(183, 46);
             this.btnConsultarFormConsultarDados.TabIndex = 7;
             this.btnConsultarFormConsultarDados.Text = "Consultar Dados";
             this.btnConsultarFormConsultarDados.UseVisualStyleBackColor = false;
@@ -92,25 +94,27 @@
             // listViewFormConsultarDados
             // 
             this.listViewFormConsultarDados.HideSelection = false;
-            this.listViewFormConsultarDados.Location = new System.Drawing.Point(96, 226);
+            this.listViewFormConsultarDados.Location = new System.Drawing.Point(85, 181);
+            this.listViewFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewFormConsultarDados.Name = "listViewFormConsultarDados";
-            this.listViewFormConsultarDados.Size = new System.Drawing.Size(761, 333);
+            this.listViewFormConsultarDados.Size = new System.Drawing.Size(677, 267);
             this.listViewFormConsultarDados.TabIndex = 6;
             this.listViewFormConsultarDados.UseCompatibleStateImageBehavior = false;
             // 
             // txtNomeFormConsultarDados
             // 
             this.txtNomeFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFormConsultarDados.Location = new System.Drawing.Point(96, 164);
+            this.txtNomeFormConsultarDados.Location = new System.Drawing.Point(85, 131);
+            this.txtNomeFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeFormConsultarDados.Name = "txtNomeFormConsultarDados";
-            this.txtNomeFormConsultarDados.Size = new System.Drawing.Size(761, 30);
+            this.txtNomeFormConsultarDados.Size = new System.Drawing.Size(677, 30);
             this.txtNomeFormConsultarDados.TabIndex = 5;
             // 
             // labNomeFormConsultarDados
             // 
             this.labNomeFormConsultarDados.AutoSize = true;
             this.labNomeFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNomeFormConsultarDados.Location = new System.Drawing.Point(20, 169);
+            this.labNomeFormConsultarDados.Location = new System.Drawing.Point(18, 135);
             this.labNomeFormConsultarDados.Name = "labNomeFormConsultarDados";
             this.labNomeFormConsultarDados.Size = new System.Drawing.Size(70, 25);
             this.labNomeFormConsultarDados.TabIndex = 4;
@@ -119,17 +123,18 @@
             // maskedTextBoxCpfFormConsultarDados
             // 
             this.maskedTextBoxCpfFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxCpfFormConsultarDados.Location = new System.Drawing.Point(84, 82);
+            this.maskedTextBoxCpfFormConsultarDados.Location = new System.Drawing.Point(75, 66);
+            this.maskedTextBoxCpfFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.maskedTextBoxCpfFormConsultarDados.Mask = "000.000.000-00";
             this.maskedTextBoxCpfFormConsultarDados.Name = "maskedTextBoxCpfFormConsultarDados";
-            this.maskedTextBoxCpfFormConsultarDados.Size = new System.Drawing.Size(170, 30);
+            this.maskedTextBoxCpfFormConsultarDados.Size = new System.Drawing.Size(152, 30);
             this.maskedTextBoxCpfFormConsultarDados.TabIndex = 2;
             // 
             // labCpfFormConsultarDados
             // 
             this.labCpfFormConsultarDados.AutoSize = true;
             this.labCpfFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCpfFormConsultarDados.Location = new System.Drawing.Point(20, 85);
+            this.labCpfFormConsultarDados.Location = new System.Drawing.Point(18, 68);
             this.labCpfFormConsultarDados.Name = "labCpfFormConsultarDados";
             this.labCpfFormConsultarDados.Size = new System.Drawing.Size(58, 25);
             this.labCpfFormConsultarDados.TabIndex = 1;
@@ -137,15 +142,16 @@
             // 
             // FormConsultarDadosPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(939, 702);
+            this.ClientSize = new System.Drawing.Size(835, 562);
             this.Controls.Add(this.PainelFormConsultarDados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(952, 731);
+            this.MinimumSize = new System.Drawing.Size(849, 596);
             this.Name = "FormConsultarDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário Consulta de Dados Pacientes";

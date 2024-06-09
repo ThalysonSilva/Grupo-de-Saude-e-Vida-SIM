@@ -374,5 +374,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnConsultaCepFormCadPaciente.Enabled = true;
 
         }
+
+        private void btnNovoFormCadPaciente_Click(object sender, EventArgs e)
+        {
+            abrirCampos();
+        }
     }
 }
