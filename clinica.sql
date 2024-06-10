@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/06/2024 às 21:44
+-- Tempo de geração: 11/06/2024 às 00:54
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `consulta`
+--
+
+CREATE TABLE `consulta` (
+  `id` int(11) NOT NULL,
+  `valorDaConsulta` double DEFAULT NULL,
+  `dataDaConsulta` date DEFAULT NULL,
+  `nomeDaClinica` varchar(32) DEFAULT NULL,
+  `tipoDaConsulta` varchar(32) DEFAULT NULL,
+  `nome` varchar(32) DEFAULT NULL,
+  `especialidade` varchar(32) NOT NULL,
+  `nomeDoMedico` varchar(32) NOT NULL,
+  `crm` int(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `consulta`
+--
+
+INSERT INTO `consulta` (`id`, `valorDaConsulta`, `dataDaConsulta`, `nomeDaClinica`, `tipoDaConsulta`, `nome`, `especialidade`, `nomeDoMedico`, `crm`) VALUES
+(1, 2545, '2025-12-25', 'Clínica Saúde e Vida', 'Urgência', 'ANGELO BARROS', '', '', 0),
+(2, 2545, '2025-12-25', 'Clínica Saúde e Vida', 'Urgência', 'ANGELO BARROS', 'Hematologia', 'JOSE ALDO', 11111),
+(3, 1500, '2029-07-29', 'Clínica Saúde e Vida', 'Urgência', 'ANGELO BARROS', 'Hematologia', 'JOSE ALDO', 11111),
+(4, 2500, '2025-12-25', 'Clínica Saúde e Vida', 'Consulta Eletiva', 'ANGELO BARROS', 'Hematologia', 'JOSE ALDO', 11111);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `medico`
 --
 
@@ -32,9 +60,16 @@ CREATE TABLE `medico` (
   `nome` varchar(80) DEFAULT NULL,
   `crm` int(10) DEFAULT NULL,
   `especialidade` varchar(20) DEFAULT NULL,
-  `diaDeAtendimento` datetime DEFAULT NULL,
-  `horarioAtendimento` datetime DEFAULT NULL
+  `diaDeAtendimento` varchar(32) DEFAULT NULL,
+  `horarioAtendimento` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `medico`
+--
+
+INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, `horarioAtendimento`) VALUES
+(1, 'JOSE ALDO', 11111, 'HEMATOLOGIA', '0000-00-00 00:00:00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -78,7 +113,8 @@ INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `ende
 (15, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
 (16, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
 (17, 'asdasdasd', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '31231-231', 'asd asdasd', 21, 'ad sda', 'asdasda', 'Rn'),
-(18, 'Jailton Dayvid', '111,111,111-11', '(84) 95955-9959', '1988-12-09', '11111-111', 'RUA TEST', 14, 'BAIRRO TESTE', 'natal', 'RN');
+(18, 'Jailton Dayvid', '111,111,111-11', '(84) 95955-9959', '1988-12-09', '11111-111', 'RUA TEST', 14, 'BAIRRO TESTE', 'natal', 'RN'),
+(19, 'ANGELO BARROS', '11111111111', '(88) 88888-8888', '2000-07-29', '59151-660', 'RUA DAS MANGUEIRAS', 1, 'NOVA PARNAMIRIM', 'PARNAMIRIM', 'RN');
 
 -- --------------------------------------------------------
 
@@ -109,6 +145,12 @@ INSERT INTO `usuario` (`id`, `usuario`, `senha`, `confsenha`) VALUES
 --
 
 --
+-- Índices de tabela `consulta`
+--
+ALTER TABLE `consulta`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `medico`
 --
 ALTER TABLE `medico`
@@ -131,16 +173,22 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de tabela `consulta`
+--
+ALTER TABLE `consulta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de tabela `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`

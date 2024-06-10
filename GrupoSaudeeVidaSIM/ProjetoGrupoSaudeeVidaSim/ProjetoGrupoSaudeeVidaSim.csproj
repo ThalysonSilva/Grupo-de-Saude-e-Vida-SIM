@@ -106,6 +106,7 @@
     <Compile Include="DAO\MedicoDAO.cs" />
     <Compile Include="DAO\PacienteDAO.cs" />
     <Compile Include="DTO\Autenticacao.cs" />
+    <Compile Include="DTO\Consulta.cs" />
     <Compile Include="DTO\Medico.cs" />
     <Compile Include="DTO\Paciente.cs" />
     <Compile Include="DTO\Pessoas.cs" />
