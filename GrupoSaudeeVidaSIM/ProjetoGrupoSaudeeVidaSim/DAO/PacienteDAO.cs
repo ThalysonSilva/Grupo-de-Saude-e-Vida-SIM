@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
+using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
@@ -12,8 +13,14 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             return new MySqlConnection(linkDB);
         }
         //salvar
-        public void SalvarPaciente(Paciente paciente)
+        public bool SalvarPaciente(Paciente paciente)
         {
+            // essa condição é para verificar se já existe paciente cadastrado com o cpf, se tiver, ele retorna falso para n deixar progredir em salvar duplicado
+            if (PacienteExiste(paciente.Cpf))
+            {
+                return false;
+            }
+
             string inserir = "INSERT INTO paciente" +
                 " (nome, cpf, contato, dataNasc, cep, endereco, numCasa, bairro, cidade, uf) " +
                 "VALUES (@nome, @cpf, @contato, @dataNasc, @cep, @endereco, @numCasa, @bairro, @cidade, @uf)";
@@ -34,6 +41,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
 
                 cmd.ExecuteNonQuery();
             }
+            return true;
         }
 
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)

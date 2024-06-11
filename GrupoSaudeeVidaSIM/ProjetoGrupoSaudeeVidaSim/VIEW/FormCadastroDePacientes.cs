@@ -51,6 +51,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 string mensagemErro;
                 if (ValidarCampos(out mensagemErro))
                 {
+                    
                     // Todos os campos estão preenchidos corretamente, então podemos prosseguir com o salvamento
                     cadastrarPaciente();
                     LimparCampos();
@@ -95,16 +96,43 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             Paciente paciente = new Paciente(0, nome, cpf, contato, dataNasc, cep, endereco, numCasa, bairro, cidade, uf);
             conexaoPacienteDAO = new PacienteDAO();
+
+
             try
             {
-                conexaoPacienteDAO.SalvarPaciente(paciente); //chama a classe ConexaoDB. VAI EXECUTAR O METODO
-                MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
-                               , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //criação do bool para verificar se já existe algum paciente com o mesmo cpf, se não existir cai no if, se já existir, retorna o erro e não salva
+                //objetivo dessa condição é ele n armazenar dados duplicados, e não cadastrar paciente com o mesmo cpf
+                bool validarSeUsuarioJaExiste = conexaoPacienteDAO.SalvarPaciente(paciente);
+
+                if (validarSeUsuarioJaExiste)
+                {
+                    MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
+                                                   , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("Já existe paciente com este CPF cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
+            /*
+             * antes o try estava assim:
+             * 
+             * try
+                {
+                    conexaoPacienteDAO.SalvarPaciente(paciente); //chama a classe ConexaoDB. VAI EXECUTAR O METODO
+                    MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
+                                   , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+             * 
+             * */
         }
         private void LimparCampos()
         {
