@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
@@ -21,13 +22,13 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return false;
             }
 
-            string inserir = "INSERT INTO paciente" +
+            string linkInserir = "INSERT INTO paciente" +
                 " (nome, cpf, contato, dataNasc, cep, endereco, numCasa, bairro, cidade, uf) " +
                 "VALUES (@nome, @cpf, @contato, @dataNasc, @cep, @endereco, @numCasa, @bairro, @cidade, @uf)";
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand(inserir, conexao);
+                MySqlCommand cmd = new MySqlCommand(linkInserir, conexao);
                 cmd.Parameters.AddWithValue("@nome", paciente.Nome);
                 cmd.Parameters.AddWithValue("@cpf", paciente.Cpf);
                 cmd.Parameters.AddWithValue("@contato", paciente.Contato);
@@ -44,13 +45,15 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             return true;
         }
 
+
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
-            string buscar = "SELECT * FROM paciente WHERE nome LIKE @nome OR cpf = @cpf";
+            //Método atuando no forms de cadastroPaciente
+            string linkBuscarPaciente = "SELECT * FROM paciente WHERE nome LIKE @nome OR cpf = @cpf";
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand(buscar, conexao);
+                MySqlCommand cmd = new MySqlCommand(linkBuscarPaciente, conexao);
                 cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
                 cmd.Parameters.AddWithValue("@cpf", cpf);
 
@@ -81,7 +84,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         public void AtualizarPaciente(Paciente paciente)
         {
             // Declaração da string SQL que será usada para atualizar os dados do paciente no banco de dados
-            string atualizar = "UPDATE paciente SET " +
+            string linkAtualizarPaciente = "UPDATE paciente SET " +
                 "nome = @nome, " +                 // Atualiza o campo 'nome'
                 "contato = @contato, " +           // Atualiza o campo 'contato'
                 "dataNasc = @dataNasc, " +         // Atualiza o campo 'dataNasc'
@@ -97,7 +100,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand(atualizar, conexao);
+                MySqlCommand cmd = new MySqlCommand(linkAtualizarPaciente, conexao);
 
                 // Adiciona os valores dos parâmetros ao comando para evitar SQL injection
                 cmd.Parameters.AddWithValue("@nome", paciente.Nome);               // Adiciona o valor do nome
@@ -125,7 +128,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         public bool PacienteExiste(string cpf)
         {
             // Define a consulta SQL que conta o número de registros com o CPF fornecido
-            string query = "SELECT COUNT(*) FROM paciente WHERE cpf = @cpf";
+            string linkVerificacao = "SELECT COUNT(*) FROM paciente WHERE cpf = @cpf";
 
             // Usando uma conexão com o banco de dados MySQL
             using (MySqlConnection conexao = Conexao())
@@ -134,7 +137,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 conexao.Open();
 
                 // Cria um comando MySQL com a consulta definida anteriormente
-                MySqlCommand cmd = new MySqlCommand(query, conexao);
+                MySqlCommand cmd = new MySqlCommand(linkVerificacao, conexao);
 
                 // Adiciona o parâmetro CPF ao comando, substituindo o placeholder @cpf
                 cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".", "").Replace("-", ""));
@@ -146,5 +149,51 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
+        public List<Paciente> BuscarPacienteEListar(string cpf, string nome)
+        {
+            List<Paciente> pacientes = new List<Paciente>();
+            string linkListar = "SELECT * FROM paciente WHERE cpf LIKE @cpf OR nome LIKE @nome";
+
+            try
+            {
+                using (MySqlConnection conexao = Conexao())
+                {
+                    conexao.Open();
+                    MySqlCommand cmd = new MySqlCommand(linkListar, conexao);
+                    cmd.Parameters.AddWithValue("@cpf", "%" + cpf + "%");
+                    cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Paciente paciente = new Paciente
+                            {
+                                Id = reader.GetInt32("id"),
+                                Nome = reader.GetString("nome"),
+                                Cpf = reader.GetString("cpf"),
+                                Contato = reader.GetString("contato"),
+                                DataNascimento = reader.GetDateTime("dataNasc"),
+                                Cep = reader.GetString("cep"),
+                                Endereco = reader.GetString("endereco"),
+                                NumCasa = reader.GetInt32("numCasa"),
+                                Bairro = reader.GetString("bairro"),
+                                Cidade = reader.GetString("cidade"),
+                                UF = reader.GetString("uf")
+                            };
+                            pacientes.Add(paciente);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erro ao ler informações do paciente no Banco de dados: " + ex.Message);
+                throw;
+            }
+            return pacientes;
+        }
+        
+
     }
 }
