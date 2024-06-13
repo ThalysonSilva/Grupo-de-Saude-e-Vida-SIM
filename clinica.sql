@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/06/2024 às 00:54
+-- Tempo de geração: 13/06/2024 às 07:36
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -44,10 +44,8 @@ CREATE TABLE `consulta` (
 --
 
 INSERT INTO `consulta` (`id`, `valorDaConsulta`, `dataDaConsulta`, `nomeDaClinica`, `tipoDaConsulta`, `nome`, `especialidade`, `nomeDoMedico`, `crm`) VALUES
-(1, 2545, '2025-12-25', 'Clínica Saúde e Vida', 'Urgência', 'ANGELO BARROS', '', '', 0),
-(2, 2545, '2025-12-25', 'Clínica Saúde e Vida', 'Urgência', 'ANGELO BARROS', 'Hematologia', 'JOSE ALDO', 11111),
-(3, 1500, '2029-07-29', 'Clínica Saúde e Vida', 'Urgência', 'ANGELO BARROS', 'Hematologia', 'JOSE ALDO', 11111),
-(4, 2500, '2025-12-25', 'Clínica Saúde e Vida', 'Consulta Eletiva', 'ANGELO BARROS', 'Hematologia', 'JOSE ALDO', 11111);
+(1, 555, '2025-12-25', 'Clínica Saúde e Vida', 'Consulta Eletiva', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', 121212),
+(2, 5555, '2028-12-25', 'Clínica São José', 'Urgência', 'JIUSEPPE', 'Reumatologia', 'JOÃO SANTOS SILVA', 121212);
 
 -- --------------------------------------------------------
 
@@ -69,7 +67,9 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, `horarioAtendimento`) VALUES
-(1, 'JOSE ALDO', 11111, 'HEMATOLOGIA', '0000-00-00 00:00:00', '0000-00-00');
+(1, 'JOSE ALDO', 11111, 'HEMATOLOGIA', '0000-00-00 00:00:00', '0000-00-00'),
+(2, 'JOSE ALDO', 11111, 'HEMATOLOGIA', 'TERÇA-FEIRA', '14:00H - 18:00H '),
+(3, 'JOÃO SANTOS SILVA', 121212, 'REUMATOLOGIA', 'SEGUNDA A SÁBADO', '14:00H - 16:00H ');
 
 -- --------------------------------------------------------
 
@@ -114,7 +114,8 @@ INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `ende
 (16, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
 (17, 'asdasdasd', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '31231-231', 'asd asdasd', 21, 'ad sda', 'asdasda', 'Rn'),
 (18, 'Jailton Dayvid', '111,111,111-11', '(84) 95955-9959', '1988-12-09', '11111-111', 'RUA TEST', 14, 'BAIRRO TESTE', 'natal', 'RN'),
-(19, 'ANGELO BARROS', '11111111111', '(88) 88888-8888', '2000-07-29', '59151-660', 'RUA DAS MANGUEIRAS', 1, 'NOVA PARNAMIRIM', 'PARNAMIRIM', 'RN');
+(19, 'ANGELO BARROS', '11111111111', '(88) 88888-8888', '2000-07-29', '59151-660', 'RUA DAS MANGUEIRAS', 1, 'NOVA PARNAMIRIM', 'PARNAMIRIM', 'RN'),
+(20, 'JIUSEPPE', '55555555555', '(12) 12121-2121', '2002-07-29', '59151-660', 'RUA DAS MANGUEIRAS', 25, 'NOVA PARNAMIRIM', 'PARNAMIRIM', 'RN');
 
 -- --------------------------------------------------------
 
@@ -176,19 +177,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`

@@ -98,7 +98,7 @@
             // 
             this.btnBuscarMedico.Location = new System.Drawing.Point(568, 313);
             this.btnBuscarMedico.Name = "btnBuscarMedico";
-            this.btnBuscarMedico.Size = new System.Drawing.Size(88, 26);
+            this.btnBuscarMedico.Size = new System.Drawing.Size(98, 24);
             this.btnBuscarMedico.TabIndex = 25;
             this.btnBuscarMedico.Text = "Buscar";
             this.btnBuscarMedico.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(221, 42);
+            this.button1.Location = new System.Drawing.Point(568, 84);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 27);
@@ -184,6 +184,7 @@
             this.btnEditarConsulta.TabIndex = 24;
             this.btnEditarConsulta.Text = "Salvar Consulta";
             this.btnEditarConsulta.UseVisualStyleBackColor = false;
+            this.btnEditarConsulta.Click += new System.EventHandler(this.btnEditarConsulta_Click);
             // 
             // txtValordaConsultaFormMarcarConsultas
             // 

@@ -123,6 +123,21 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnBuscarMedico.Enabled = true;
             btnEditarConsulta.Enabled = true;
         }
+        private void limparCampos()
+        {
+            cbEspecialidadeFormMarcarConsultas.Text = string.Empty;
+            cbNomeClinicasFormMarcarConsultas.Text = string.Empty;
+            cbTipoConsultaFormMarcarConsultas.Text = string.Empty;
+            maskedDataConsultaFormMarcarConsulta.Text = string.Empty;
+            txtNomeMedicoFormMarcarConsultas.Text = string.Empty;
+            txtCrmMedicoFormMarcarConsultas.Text = string.Empty;
+            txtValordaConsultaFormMarcarConsultas.Text = string.Empty;
+            txtNomeFormMarcarConsultas.Text = string.Empty;
+            maskedCPFFormMarcarConsultas.Text = string.Empty;
+            maskedContatoFormMarcarConsultas.Text = string.Empty;
+
+        }
+
 
         private void fecharCamposPaciente()
         {
@@ -130,16 +145,24 @@ namespace ProjetoGrupoSaudeeVidaSim
             txtNomeFormMarcarConsultas.Enabled = false;
             maskedContatoFormMarcarConsultas.Enabled = false;
         }
+        private void abrirCamposPaciente()
+        {
+            maskedCPFFormMarcarConsultas.Enabled = true;
+            txtNomeFormMarcarConsultas.Enabled = true;
+            maskedContatoFormMarcarConsultas.Enabled = true;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //método para buscar paciente
             try
             {
+                //cria um objeto do tipo PacienteDAO
                 PacienteDAO pacienteDAO = new PacienteDAO();
                 string nome = txtNomeFormMarcarConsultas.Text.Trim();
                 string cpf = maskedCPFFormMarcarConsultas.Text.Replace(",", "").Replace("-", "");
                 Paciente paciente = pacienteDAO.BuscarPacientePorNomeOuCpf(nome, cpf);
+                //verifica se o paciente foi encontrado
                 if (paciente != null)
                 {
                     abrirCampos();
@@ -169,7 +192,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
 
         }
-
+        //método para validar campos da consulta
         private bool ValidarCamposConsulta(out string mensagemErro)
         {
             mensagemErro = string.Empty;
@@ -223,6 +246,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
 
+        //método para editar consulta
         private void btnNovoFormMarcarConsultas_Click_1(object sender, EventArgs e)
         {
             IniciarConexao();
@@ -232,6 +256,8 @@ namespace ProjetoGrupoSaudeeVidaSim
                 if (ValidarCamposConsulta(out mensagemErro))
                 {
                     cadastrarConsulta();
+                    limparCampos();
+                    abrirCamposPaciente();
                 }
                 else
                 {
@@ -259,8 +285,10 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
             try
             {
+                //cria um objeto do tipo MedicoDAO
                 MedicoDAO medicoDAO = new MedicoDAO();
                 string nome = txtNomeMedicoFormMarcarConsultas.Text.Trim();
+                //busca o médico pelo nome
 
                 Medico medico = medicoDAO.BuscarMedico(nome);
                 if (medico != null)
@@ -268,6 +296,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                     txtNomeMedicoFormMarcarConsultas.Text = medico.Nome;
                     cbEspecialidadeFormMarcarConsultas.Text = medico.Especialidade;
                     txtCrmMedicoFormMarcarConsultas.Text = medico.Crm.ToString();
+                    
                 }
                 else
                 {
@@ -287,5 +316,45 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
         }
 
+        private void btnEditarConsulta_Click(object sender, EventArgs e)
+        {
+            string nome = txtNomeFormMarcarConsultas.Text;
+            string nomeDaClinica = cbNomeClinicasFormMarcarConsultas.Text;
+            ConsultaDAO consultaDAO = new ConsultaDAO();
+            if (consultaDAO.consultaExiste(nome, nomeDaClinica))
+            {
+                Consulta consulta = new Consulta()
+                {
+                    Nome = txtNomeFormMarcarConsultas.Text,
+                    NomeDaClinica = cbNomeClinicasFormMarcarConsultas.Text,
+                    ValorDaConsulta = float.Parse(txtValordaConsultaFormMarcarConsultas.Text),
+                    DataDaConsulta = DateTime.Parse(maskedDataConsultaFormMarcarConsulta.Text),
+                    TipoDaConsulta = cbTipoConsultaFormMarcarConsultas.Text,
+                    Especialidade = cbEspecialidadeFormMarcarConsultas.Text,
+                    NomeDoMedico = txtNomeMedicoFormMarcarConsultas.Text,
+                    Crm = int.Parse(txtCrmMedicoFormMarcarConsultas.Text)
+
+                };
+                try
+                {
+                    consultaDAO.EditarConsulta(consulta);
+                    MessageBox.Show("Consulta editada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro ocorreu de Sintaxe Mysql " + ex.Message,
+                                                                              "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao editar consulta: " + ex.Message,
+                                                                  "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+
+            }
+        }
     }
 }
