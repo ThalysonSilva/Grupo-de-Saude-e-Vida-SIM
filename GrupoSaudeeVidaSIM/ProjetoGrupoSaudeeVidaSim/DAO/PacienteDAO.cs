@@ -193,7 +193,23 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return pacientes;
         }
-        
 
+        //Método para excluir o paciente
+        public Paciente ExcluirPaciente(string cpf)
+        {
+            string deletar = "DELETE FROM paciente WHERE cpf LIKE @cpf";
+
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(deletar, conexao);
+                cmd.Parameters.AddWithValue("@cpf", "%" + cpf + "%");
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                conexao.Close();
+            }
+            return null;
+        }
     }
 }

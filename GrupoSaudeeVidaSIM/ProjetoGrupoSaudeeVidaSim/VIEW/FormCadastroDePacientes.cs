@@ -398,7 +398,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnNovoFormCadPaciente.Enabled = true;
             btnCadastrarFormCadPaciente.Enabled = true;
             btnEditarFormCadPaciente.Enabled = false;
-            btnExcluirFormCadPaciente.Enabled = false;
+            btnExcluirFormCadPaciente.Enabled = true;
             btnConsultaCepFormCadPaciente.Enabled = true;
 
         }
@@ -406,6 +406,40 @@ namespace ProjetoGrupoSaudeeVidaSim
         private void btnNovoFormCadPaciente_Click(object sender, EventArgs e)
         {
             abrirCampos();
+        }
+
+        private void btnExcluirFormCadPaciente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PacienteDAO pacienteDAO = new PacienteDAO();
+                string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", ""); ;
+
+                DialogResult conf = MessageBox.Show($"Tem certeza que deseja excluir o paciente {txtNomeFormCadPaciente.Text} " +
+                                                    $"com CPF {maskedTextBoxCPFFormCadPaciente.Text} do sistema?",
+                                                    "Confirmação de exclusão",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (conf == DialogResult.Yes)
+                {
+                    Paciente paciente = pacienteDAO.ExcluirPaciente(cpf);
+
+                    MessageBox.Show("Paciente excluído do sistema com sucesso.",
+                                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparCampos();
+                    fecharCampos();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Ocorreu um erro de Sintaxe Mysql. " + ex.Message,
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao excluir o Paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
