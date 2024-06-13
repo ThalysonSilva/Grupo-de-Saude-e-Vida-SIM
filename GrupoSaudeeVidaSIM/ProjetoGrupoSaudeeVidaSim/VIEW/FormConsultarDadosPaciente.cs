@@ -58,7 +58,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormConsultarDados.GridLines = true;
 
             // Adiciona as colunas à listView e define o texto do cabeçalho e a largura de cada coluna
-            listViewFormConsultarDados.Columns.Add("ID", 50, HorizontalAlignment.Left);
+            listViewFormConsultarDados.Columns.Add("ID", 30, HorizontalAlignment.Left);
             listViewFormConsultarDados.Columns.Add("Nome", 150, HorizontalAlignment.Left);
             listViewFormConsultarDados.Columns.Add("CPF", 100, HorizontalAlignment.Left);
             listViewFormConsultarDados.Columns.Add("Contato", 100, HorizontalAlignment.Left);
@@ -93,6 +93,16 @@ namespace ProjetoGrupoSaudeeVidaSim
         }
 
         private void btnRetornarDadosFormConsultarDados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormConsultarDadosPaciente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBoxCpfFormConsultarDados_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

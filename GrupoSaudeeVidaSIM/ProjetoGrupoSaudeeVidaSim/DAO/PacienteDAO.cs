@@ -13,7 +13,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         {
             return new MySqlConnection(linkDB);
         }
-        //salvar
+        // Método para inserir/cadastrar paciente
         public bool SalvarPaciente(Paciente paciente)
         {
             // essa condição é para verificar se já existe paciente cadastrado com o cpf, se tiver, ele retorna falso para n deixar progredir em salvar duplicado
@@ -45,7 +45,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             return true;
         }
 
-
+        // Método para buscar informações do paciente atraves do nome ou cpf
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
             //Método atuando no forms de cadastroPaciente
@@ -81,6 +81,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             return null;
         }
 
+        // Método para editar Paciente.
         public void AtualizarPaciente(Paciente paciente)
         {
             // Declaração da string SQL que será usada para atualizar os dados do paciente no banco de dados
@@ -125,6 +126,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
         }
 
+        // Método para verificar se o paciente existe realmente no BD atraves do cpf
         public bool PacienteExiste(string cpf)
         {
             // Define a consulta SQL que conta o número de registros com o CPF fornecido
@@ -149,10 +151,12 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
+
+        // Método para retornar informações do paciente
         public List<Paciente> BuscarPacienteEListar(string cpf, string nome)
         {
             List<Paciente> pacientes = new List<Paciente>();
-            string linkListar = "SELECT * FROM paciente WHERE cpf LIKE @cpf OR nome LIKE @nome";
+            string linkListar = "SELECT * FROM paciente WHERE cpf = @cpf OR nome LIKE @nome";
 
             try
             {
@@ -160,7 +164,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 {
                     conexao.Open();
                     MySqlCommand cmd = new MySqlCommand(linkListar, conexao);
-                    cmd.Parameters.AddWithValue("@cpf", "%" + cpf + "%");
+                    cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".","").Replace("-",""));
                     cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -211,5 +215,47 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+
+        // Método para buscar consultas pelo nome ou CPF
+        public List<Consulta> BuscarConsultasPorNomeOuCpf(string nome, string cpf)
+        {
+            List<Consulta> consultas = new List<Consulta>();
+            string query = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
+                            consulta.nomeDaClinica, consulta.tipoDaConsulta, paciente.nome, 
+                            consulta.especialidade, consulta.nomeDoMedico, consulta.crm 
+                            FROM consulta 
+                            JOIN paciente ON consulta.nome = paciente.nome 
+                            WHERE paciente.nome LIKE @nome OR paciente.cpf = @cpf";
+
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Consulta consulta = new Consulta
+                        {
+                            Id = reader.GetInt32("id"),
+                            ValorDaConsulta = reader.GetFloat("valorDaConsulta"),
+                            DataDaConsulta = reader.GetDateTime("dataDaConsulta"),
+                            NomeDaClinica = reader.GetString("nomeDaClinica"),
+                            TipoDaConsulta = reader.GetString("tipoDaConsulta"),
+                            Nome = reader.GetString("nome"),
+                            Especialidade = reader.GetString("especialidade"),
+                            NomeDoMedico = reader.GetString("nomeDoMedico"),
+                            Crm = reader.GetInt32("crm")
+                        };
+                        consultas.Add(consulta);
+                    }
+                }
+            }
+            return consultas;
+        }
+
     }
 }

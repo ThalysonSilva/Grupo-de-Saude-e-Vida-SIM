@@ -52,7 +52,7 @@
             this.PanelConsultasMarcadas.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelConsultasMarcadas.Location = new System.Drawing.Point(0, 0);
             this.PanelConsultasMarcadas.Name = "PanelConsultasMarcadas";
-            this.PanelConsultasMarcadas.Size = new System.Drawing.Size(828, 545);
+            this.PanelConsultasMarcadas.Size = new System.Drawing.Size(832, 545);
             this.PanelConsultasMarcadas.TabIndex = 0;
             // 
             // btnConsultarFormConsultasMarcadasPac
@@ -64,6 +64,7 @@
             this.btnConsultarFormConsultasMarcadasPac.TabIndex = 6;
             this.btnConsultarFormConsultasMarcadasPac.Text = "Consultar";
             this.btnConsultarFormConsultasMarcadasPac.UseVisualStyleBackColor = false;
+            this.btnConsultarFormConsultasMarcadasPac.Click += new System.EventHandler(this.btnConsultarFormConsultasMarcadasPac_Click);
             // 
             // listViewFormConsultasMarcadasPac
             // 
@@ -78,7 +79,7 @@
             // 
             this.txtNomePacFormConsultasMarcadas.Location = new System.Drawing.Point(201, 136);
             this.txtNomePacFormConsultasMarcadas.Name = "txtNomePacFormConsultasMarcadas";
-            this.txtNomePacFormConsultasMarcadas.Size = new System.Drawing.Size(610, 30);
+            this.txtNomePacFormConsultasMarcadas.Size = new System.Drawing.Size(610, 26);
             this.txtNomePacFormConsultasMarcadas.TabIndex = 4;
             // 
             // labNomePacFormConsultasMarcadas
@@ -86,7 +87,7 @@
             this.labNomePacFormConsultasMarcadas.AutoSize = true;
             this.labNomePacFormConsultasMarcadas.Location = new System.Drawing.Point(12, 136);
             this.labNomePacFormConsultasMarcadas.Name = "labNomePacFormConsultasMarcadas";
-            this.labNomePacFormConsultasMarcadas.Size = new System.Drawing.Size(178, 25);
+            this.labNomePacFormConsultasMarcadas.Size = new System.Drawing.Size(151, 20);
             this.labNomePacFormConsultasMarcadas.TabIndex = 3;
             this.labNomePacFormConsultasMarcadas.Text = "Nome do Paciente:";
             // 
@@ -95,7 +96,7 @@
             this.maskedTextBoxCpfPacFormConsultasMarcadas.Location = new System.Drawing.Point(201, 84);
             this.maskedTextBoxCpfPacFormConsultasMarcadas.Mask = "000.000.000-00";
             this.maskedTextBoxCpfPacFormConsultasMarcadas.Name = "maskedTextBoxCpfPacFormConsultasMarcadas";
-            this.maskedTextBoxCpfPacFormConsultasMarcadas.Size = new System.Drawing.Size(152, 30);
+            this.maskedTextBoxCpfPacFormConsultasMarcadas.Size = new System.Drawing.Size(152, 26);
             this.maskedTextBoxCpfPacFormConsultasMarcadas.TabIndex = 2;
             // 
             // labCpfPacFormConsultasMarcadas
@@ -103,7 +104,7 @@
             this.labCpfPacFormConsultasMarcadas.AutoSize = true;
             this.labCpfPacFormConsultasMarcadas.Location = new System.Drawing.Point(12, 87);
             this.labCpfPacFormConsultasMarcadas.Name = "labCpfPacFormConsultasMarcadas";
-            this.labCpfPacFormConsultasMarcadas.Size = new System.Drawing.Size(166, 25);
+            this.labCpfPacFormConsultasMarcadas.Size = new System.Drawing.Size(140, 20);
             this.labCpfPacFormConsultasMarcadas.TabIndex = 1;
             this.labCpfPacFormConsultasMarcadas.Text = "CPF do Paciente:";
             // 
@@ -113,16 +114,16 @@
             this.labidFormConsultasMarcadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labidFormConsultasMarcadas.Location = new System.Drawing.Point(218, 9);
             this.labidFormConsultasMarcadas.Name = "labidFormConsultasMarcadas";
-            this.labidFormConsultasMarcadas.Size = new System.Drawing.Size(610, 32);
+            this.labidFormConsultasMarcadas.Size = new System.Drawing.Size(518, 29);
             this.labidFormConsultasMarcadas.TabIndex = 0;
             this.labidFormConsultasMarcadas.Text = "Formulário de Consultas Agendadas - Paciente";
             // 
             // FormConsultasMarcadas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(828, 544);
+            this.ClientSize = new System.Drawing.Size(832, 553);
             this.Controls.Add(this.PanelConsultasMarcadas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

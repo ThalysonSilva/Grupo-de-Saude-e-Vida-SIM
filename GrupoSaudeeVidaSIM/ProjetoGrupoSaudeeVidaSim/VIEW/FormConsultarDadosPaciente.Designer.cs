@@ -131,6 +131,7 @@
             this.maskedTextBoxCpfFormConsultarDados.Name = "maskedTextBoxCpfFormConsultarDados";
             this.maskedTextBoxCpfFormConsultarDados.Size = new System.Drawing.Size(152, 26);
             this.maskedTextBoxCpfFormConsultarDados.TabIndex = 2;
+            this.maskedTextBoxCpfFormConsultarDados.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxCpfFormConsultarDados_MaskInputRejected);
             // 
             // labCpfFormConsultarDados
             // 
@@ -157,6 +158,7 @@
             this.Name = "FormConsultarDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário Consulta de Dados Pacientes";
+            this.Load += new System.EventHandler(this.FormConsultarDadosPaciente_Load);
             this.PainelFormConsultarDados.ResumeLayout(false);
             this.PainelFormConsultarDados.PerformLayout();
             this.ResumeLayout(false);
