@@ -288,15 +288,24 @@ namespace ProjetoGrupoSaudeeVidaSim
                 //cria um objeto do tipo MedicoDAO
                 MedicoDAO medicoDAO = new MedicoDAO();
                 string nome = txtNomeMedicoFormMarcarConsultas.Text.Trim();
+                string crm = txtCrmMedicoFormMarcarConsultas.Text;
                 //busca o médico pelo nome
 
-                Medico medico = medicoDAO.BuscarMedico(nome);
+                Medico medico = medicoDAO.BuscarMedicoCrm(crm);
+                Medico medicon = medicoDAO.BuscarMedicoNome(nome);
+
                 if (medico != null)
                 {
                     txtNomeMedicoFormMarcarConsultas.Text = medico.Nome;
                     cbEspecialidadeFormMarcarConsultas.Text = medico.Especialidade;
                     txtCrmMedicoFormMarcarConsultas.Text = medico.Crm.ToString();
-                    
+
+                }
+                else if (medicon != null)
+                {
+                    txtNomeMedicoFormMarcarConsultas.Text = medicon.Nome;
+                    cbEspecialidadeFormMarcarConsultas.Text = medicon.Especialidade;
+                    txtCrmMedicoFormMarcarConsultas.Text = medicon.Crm.ToString();
                 }
                 else
                 {

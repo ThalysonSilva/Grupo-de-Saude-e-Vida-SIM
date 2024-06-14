@@ -16,6 +16,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         public FormCadastroDeMedicos()
         {
             InitializeComponent();
+            FecharCampos();
         }
 
         //Botão Salvar
@@ -28,10 +29,16 @@ namespace ProjetoGrupoSaudeeVidaSim
                 string mensagemErro;
                 if (ValidarCampos(out mensagemErro))
                 {
-                    // Todos os campos estão preenchidos corretamente, então podemos prosseguir com o salvamento
-                    cadastrarMedico();
-                    LimparCampos();
-
+                    DialogResult conf = MessageBox.Show($"Deseja salvar o médico {txtNomeFormCadastroDeMedico.Text} com o CRM {txtNCrmFormCadastroDeMedico.Text}?", 
+                                    "Confirmação de Cadastramento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (conf == DialogResult.Yes)
+                    {
+                        // Todos os campos estão preenchidos corretamente, então podemos prosseguir com o salvamento
+                        cadastrarMedico();
+                        LimparCampos();
+                        FecharCampos();
+                    }
+                    
                 }
                 else
                 {
@@ -59,7 +66,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         private void cadastrarMedico()
         {
             string nome = txtNomeFormCadastroDeMedico.Text.ToUpper();
-            int crm = Convert.ToInt32(txtNCrmFormCadastroDeMedico.Text.Trim());
+            int crm = Convert.ToInt32(txtNCrmFormCadastroDeMedico.Text);
             string especialidade = cbtEspMedicaFormCadastroDeMedico.Text.ToUpper();
             string diaAtendimento = cbDiaAtendimentoFormCadastroDeMedico.Text.ToUpper();
             string horaAtendimento = cbhorarioFormCadastroDeMedico.Text.ToUpper();
@@ -67,7 +74,29 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             Medico medico = new Medico(0, nome, crm, especialidade, diaAtendimento, horaAtendimento);
             conexaoMedicoDAO = new MedicoDAO();
+            
             try
+            {
+                //criação do bool para verificar se já existe algum médico com o mesmo crm, se não existir cai no if, se já existir, retorna o erro e não salva
+                //objetivo dessa condição é ele n armazenar dados duplicados, e não cadastrar médico com o mesmo crm
+                bool validarSeUsuarioJaExiste = conexaoMedicoDAO.SalvarMedico(medico); 
+
+                if (validarSeUsuarioJaExiste)
+                {
+                    MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
+                                                   , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Já existe médico com este CRM cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch ( Exception ex )
+            {
+                MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            /*try
             {
                 conexaoMedicoDAO.SalvarMedico(medico); //chama a classe ConexaoDB. VAI EXECUTAR O METODO
                 MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
@@ -76,21 +105,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error) ;
-            }
+            }*/
         }
 
-        //método limpar campos
-        private void LimparCampos()
-        {
-            
-            txtNomeFormCadastroDeMedico.Text = String.Empty;
-            txtNCrmFormCadastroDeMedico.Text = String.Empty;
-            cbtEspMedicaFormCadastroDeMedico.Text = String.Empty;
-            cbDiaAtendimentoFormCadastroDeMedico.Text = String.Empty;
-            cbhorarioFormCadastroDeMedico.Text = String.Empty;
-        }
-
-        //Método validar campos
+        //Método para validar campos para que estejam todos preenchidos corretamente
         private bool ValidarCampos(out string mensagemErro)
         {
             mensagemErro = string.Empty;
@@ -100,13 +118,21 @@ namespace ProjetoGrupoSaudeeVidaSim
                 mensagemErro = "O nome é obrigatório.";
                 return false;
             }
-
+            
             if (string.IsNullOrWhiteSpace(txtNCrmFormCadastroDeMedico.Text))
             {
                 mensagemErro = "O CRM é obrigatório e deve estar completo.";
                 return false;
+                                                
             }
 
+            if (txtNCrmFormCadastroDeMedico.Text.Length != 4)
+            {
+                mensagemErro = "O CRM é composto por 4 números.";
+                return false;
+            }
+
+            
             if (string.IsNullOrWhiteSpace(cbtEspMedicaFormCadastroDeMedico.Text))
             {
                 mensagemErro = "A especialidade é obrigatória.";
@@ -128,7 +154,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             return true;
         }
 
-        //método iniciar conexão
+        //método para iniciar conexão com o MySQL
         private void IniciarConexao()
         {
             Conexao = new MySqlConnection(linkdb);
@@ -140,15 +166,17 @@ namespace ProjetoGrupoSaudeeVidaSim
             cmd.Connection = Conexao;
         }
 
-        //Botão Consultar
+        //Botão Consultar médico
         private void btnConsultarFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
             try
             {
                 MedicoDAO medicoDAO = new MedicoDAO();
                 string nome = txtNomeFormCadastroDeMedico.Text.Trim();
+                string crm = txtNCrmFormCadastroDeMedico.Text;
 
-                Medico medico = medicoDAO.BuscarMedico(nome);
+                Medico medicon = medicoDAO.BuscarMedicoNome(nome);
+                Medico medico = medicoDAO.BuscarMedicoCrm(crm);
 
                 if (medico != null)
                 {
@@ -156,8 +184,19 @@ namespace ProjetoGrupoSaudeeVidaSim
                     txtNCrmFormCadastroDeMedico.Text = medico.Crm.ToString();
                     cbtEspMedicaFormCadastroDeMedico.Text = medico.Especialidade; 
                     cbDiaAtendimentoFormCadastroDeMedico.Text = medico.DataAtendimento; 
-                    cbhorarioFormCadastroDeMedico.Text = medico.HorarioAtendimento; 
+                    cbhorarioFormCadastroDeMedico.Text = medico.HorarioAtendimento;
 
+                    AbrirCampos();
+                }
+                else if (medicon != null)
+                {
+                    txtNomeFormCadastroDeMedico.Text = medicon.Nome;
+                    txtNCrmFormCadastroDeMedico.Text = medicon.Crm.ToString();
+                    cbtEspMedicaFormCadastroDeMedico.Text = medicon.Especialidade;
+                    cbDiaAtendimentoFormCadastroDeMedico.Text = medicon.DataAtendimento;
+                    cbhorarioFormCadastroDeMedico.Text = medicon.HorarioAtendimento;
+
+                    AbrirCampos();
                 }
                 else
                 {
@@ -175,7 +214,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
         }
 
-        //Botão Editar
+        //Botão Editar médico
         private void btnEditarFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
             int crm = Convert.ToInt32(txtNCrmFormCadastroDeMedico.Text);
@@ -197,6 +236,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                     medicoDAO.EditarMedico(medico);
                     MessageBox.Show("Médico atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimparCampos();
+                    FecharCampos();
                 }
                 catch (MySqlException ex)
                 {
@@ -214,7 +254,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
         }
 
-        //Botão Excluir
+        //Botão Excluir médico
         private void btnExcluirFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
             try
@@ -226,7 +266,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                                                     $"com CRM {txtNCrmFormCadastroDeMedico.Text} do sistema?",
                                                     "Confirmação de exclusão",
                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
+
                 if (conf == DialogResult.Yes)
                 {
                     Medico medico = medicoDAO.ExcluirMedico(crm);
@@ -234,6 +274,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                     MessageBox.Show("Médico excluído do sistema com sucesso.",
                                     "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimparCampos();
+                    FecharCampos();
                 }
 
             }
@@ -248,10 +289,67 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
         }
 
+        //Botão Novo Médico
         private void btnNovoFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
+            
             LimparCampos();
+            AbrirCampos();
             txtNomeFormCadastroDeMedico.Focus();
         }
+
+        //método para abrir todos os campos 
+        private void AbrirCampos()
+        {
+            txtNomeFormCadastroDeMedico.Enabled = true;
+            txtNCrmFormCadastroDeMedico.Enabled= true;
+            cbtEspMedicaFormCadastroDeMedico.Enabled = true;
+            cbDiaAtendimentoFormCadastroDeMedico.Enabled = true;
+            cbhorarioFormCadastroDeMedico.Enabled = true;
+
+            btnConsultarFormCadastroDeMedico.Enabled = true;
+            btnNovoFormCadastroDeMedico.Enabled = true;
+            btnSalvarFormCadastroDeMedico.Enabled = true;
+            btnEditarFormCadastroDeMedico.Enabled = true;
+            btnExcluirFormCadastroDeMedico.Enabled = true;
+        }
+
+        //método para fechar alguns campos 
+        private void FecharCampos()
+        {
+            txtNomeFormCadastroDeMedico.Enabled = true;
+            txtNCrmFormCadastroDeMedico.Enabled = true;
+            cbtEspMedicaFormCadastroDeMedico.Enabled = false;
+            cbDiaAtendimentoFormCadastroDeMedico.Enabled = false;
+            cbhorarioFormCadastroDeMedico.Enabled = false;
+
+            btnConsultarFormCadastroDeMedico.Enabled = true;
+            btnNovoFormCadastroDeMedico.Enabled = true;
+            btnSalvarFormCadastroDeMedico.Enabled = false;
+            btnEditarFormCadastroDeMedico.Enabled = false;
+            btnExcluirFormCadastroDeMedico.Enabled = false;
+        }
+
+        //método limpar todo o conteúdo dos campos
+        private void LimparCampos()
+        {
+
+            txtNomeFormCadastroDeMedico.Text = String.Empty;
+            txtNCrmFormCadastroDeMedico.Text = String.Empty;
+            cbtEspMedicaFormCadastroDeMedico.Text = String.Empty;
+            cbDiaAtendimentoFormCadastroDeMedico.Text = String.Empty;
+            cbhorarioFormCadastroDeMedico.Text = String.Empty;
+        }
+
+        //Para que o campo do CRM aceite apenas as teclas de números e backspace
+        private void txtNCrmFormCadastroDeMedico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número ou backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+            }
+        }
     }
-    }
+}

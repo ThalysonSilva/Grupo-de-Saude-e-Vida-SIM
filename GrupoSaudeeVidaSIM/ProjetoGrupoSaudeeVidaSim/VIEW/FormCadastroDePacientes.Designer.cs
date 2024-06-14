@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroDePacientes));
             this.painelFormCadPaciente = new System.Windows.Forms.Panel();
+            this.btnExcluirFormCadPaciente = new System.Windows.Forms.Button();
             this.btnConsultaCepFormCadPaciente = new System.Windows.Forms.Button();
             this.btnConsultarFormCadPaciente = new System.Windows.Forms.Button();
             this.maskedTextBoxDataNascFormCadPaciente = new System.Windows.Forms.MaskedTextBox();
@@ -57,7 +58,6 @@
             this.txtNomeFormCadPaciente = new System.Windows.Forms.TextBox();
             this.labNomeFormCadPaciente = new System.Windows.Forms.Label();
             this.labIdFormCadPaciente = new System.Windows.Forms.Label();
-            this.btnExcluirFormCadPaciente = new System.Windows.Forms.Button();
             this.painelFormCadPaciente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,17 @@
             this.painelFormCadPaciente.Size = new System.Drawing.Size(782, 471);
             this.painelFormCadPaciente.TabIndex = 0;
             // 
+            // btnExcluirFormCadPaciente
+            // 
+            this.btnExcluirFormCadPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnExcluirFormCadPaciente.Location = new System.Drawing.Point(644, 397);
+            this.btnExcluirFormCadPaciente.Name = "btnExcluirFormCadPaciente";
+            this.btnExcluirFormCadPaciente.Size = new System.Drawing.Size(123, 39);
+            this.btnExcluirFormCadPaciente.TabIndex = 28;
+            this.btnExcluirFormCadPaciente.Text = "Excluir Paciente";
+            this.btnExcluirFormCadPaciente.UseVisualStyleBackColor = false;
+            this.btnExcluirFormCadPaciente.Click += new System.EventHandler(this.btnExcluirFormCadPaciente_Click);
+            // 
             // btnConsultaCepFormCadPaciente
             // 
             this.btnConsultaCepFormCadPaciente.BackColor = System.Drawing.Color.White;
@@ -113,12 +124,13 @@
             // 
             // btnConsultarFormCadPaciente
             // 
+            this.btnConsultarFormCadPaciente.BackColor = System.Drawing.Color.White;
             this.btnConsultarFormCadPaciente.Location = new System.Drawing.Point(644, 50);
             this.btnConsultarFormCadPaciente.Name = "btnConsultarFormCadPaciente";
             this.btnConsultarFormCadPaciente.Size = new System.Drawing.Size(123, 37);
             this.btnConsultarFormCadPaciente.TabIndex = 3;
             this.btnConsultarFormCadPaciente.Text = "Consultar";
-            this.btnConsultarFormCadPaciente.UseVisualStyleBackColor = true;
+            this.btnConsultarFormCadPaciente.UseVisualStyleBackColor = false;
             this.btnConsultarFormCadPaciente.Click += new System.EventHandler(this.btnConsultarFormCadPaciente_Click);
             // 
             // maskedTextBoxDataNascFormCadPaciente
@@ -386,17 +398,6 @@
             this.labIdFormCadPaciente.Size = new System.Drawing.Size(169, 24);
             this.labIdFormCadPaciente.TabIndex = 0;
             this.labIdFormCadPaciente.Text = "Dados do Paciente";
-            // 
-            // btnExcluirFormCadPaciente
-            // 
-            this.btnExcluirFormCadPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnExcluirFormCadPaciente.Location = new System.Drawing.Point(644, 397);
-            this.btnExcluirFormCadPaciente.Name = "btnExcluirFormCadPaciente";
-            this.btnExcluirFormCadPaciente.Size = new System.Drawing.Size(123, 39);
-            this.btnExcluirFormCadPaciente.TabIndex = 28;
-            this.btnExcluirFormCadPaciente.Text = "Excluir Paciente";
-            this.btnExcluirFormCadPaciente.UseVisualStyleBackColor = false;
-            this.btnExcluirFormCadPaciente.Click += new System.EventHandler(this.btnExcluirFormCadPaciente_Click);
             // 
             // FormCadastroDePacientes
             // 

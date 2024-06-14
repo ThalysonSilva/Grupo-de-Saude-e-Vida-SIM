@@ -18,11 +18,16 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         }
 
         //Método para salvar o médico
-        public void SalvarMedico(Medico medico)
+        public bool SalvarMedico(Medico medico)
         {
+            if (medicoExiste(medico.Crm))
+            {
+                return false;
+            }
+            
             string inserir = "INSERT INTO medico" +
-                " (nome, crm, especialidade, diaDeAtendimento, horarioAtendimento)" +
-                "VALUES (@nome, @crm, @especialidade, @diaDeAtendimento, @horarioAtendimento)";
+                             "(nome, crm, especialidade, diaDeAtendimento, horarioAtendimento)" +
+                             "VALUES (@nome, @crm, @especialidade, @diaDeAtendimento, @horarioAtendimento)";
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
@@ -36,18 +41,20 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.ExecuteNonQuery();
 
                 conexao.Close();
-            }            
+            }
+            return true;
         }
 
-        //Método para buscar o médico
-        public Medico BuscarMedico(string nome)
+        //Método para buscar o médico pelo nome
+        public Medico BuscarMedicoNome(string nome)
         {
-            string buscar = "SELECT * FROM medico WHERE nome LIKE @nome";
+            string buscar = "SELECT * FROM medico WHERE nome LIKE @nome ";
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(buscar, conexao);
                 cmd.Parameters.AddWithValue("@nome", "%" +  nome + "%");
+               
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -60,6 +67,37 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                             Crm = reader.GetInt32("crm"),
                             Especialidade = reader.GetString("especialidade"),
                             DataAtendimento = reader.GetString("diaDeAtendimento"), 
+                            HorarioAtendimento = reader.GetString("horarioAtendimento"),
+                        };
+                    }
+                }
+                conexao.Close();
+            }
+            return null;
+        }
+
+        //Método para buscar o médico pelo CRM
+        public Medico BuscarMedicoCrm(string crm)
+        {
+            string buscar = "SELECT * FROM medico WHERE crm = @crm ";
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(buscar, conexao);
+                
+                cmd.Parameters.AddWithValue("@crm", crm);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Medico
+                        {
+                            Id = reader.GetInt32("id"),
+                            Nome = reader.GetString("nome"),
+                            Crm = reader.GetInt32("crm"),
+                            Especialidade = reader.GetString("especialidade"),
+                            DataAtendimento = reader.GetString("diaDeAtendimento"),
                             HorarioAtendimento = reader.GetString("horarioAtendimento"),
                         };
                     }
