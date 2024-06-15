@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
@@ -182,5 +183,47 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+
+        // Método para retonar uma list no forms de atendimento do médico
+        public List<Consulta> BuscarConsultasPorNomeMedico(string nome)
+        {
+            List<Consulta> consultas = new List<Consulta>();
+            string linkAtendimentoMedico = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
+                             consulta.nomeDaClinica, consulta.tipoDaConsulta, paciente.nome AS nome, 
+                             consulta.especialidade, consulta.nomeDoMedico, consulta.crm 
+                             FROM consulta 
+                             JOIN medico ON consulta.crm = medico.crm 
+                             JOIN paciente ON consulta.nome = paciente.nome 
+                             WHERE medico.nome LIKE @nome";
+
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(linkAtendimentoMedico, conexao);
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Consulta consulta = new Consulta
+                        {
+                            Id = reader.GetInt32("id"),
+                            ValorDaConsulta = reader.GetFloat("valorDaConsulta"),
+                            DataDaConsulta = reader.GetDateTime("dataDaConsulta"),
+                            NomeDaClinica = reader.GetString("nomeDaClinica"),
+                            TipoDaConsulta = reader.GetString("tipoDaConsulta"),
+                            Nome = reader.GetString("nome"),
+                            Especialidade = reader.GetString("especialidade"),
+                            NomeDoMedico = reader.GetString("nome"),
+                            Crm = reader.GetInt32("crm")
+                        };
+                        consultas.Add(consulta);
+                    }
+                }
+            }
+            return consultas;
+        }
+
     }
 }
