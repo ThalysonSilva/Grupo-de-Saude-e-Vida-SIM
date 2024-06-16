@@ -1,9 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
+using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Windows.Forms;
-using static System.Windows.Forms.LinkLabel;
 
 
 namespace ProjetoGrupoSaudeeVidaSim
@@ -64,7 +64,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             try
             {
                 conexaoAutenticacaoDAO.SalvarUsuario(autenticacao); // chama a classe ConexaoDB e executa o método
-                MessageBox.Show("Contato inserido com sucesso!", "Sucesso",
+                MessageBox.Show("Usuário foi inserido com sucesso!", "Sucesso",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -84,8 +84,9 @@ namespace ProjetoGrupoSaudeeVidaSim
         }
 
     }
+
 }
 
 
 
-  
+

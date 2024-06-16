@@ -7,22 +7,20 @@ namespace ProjetoGrupoSaudeeVidaSim
 {
     public partial class FormTelaLogin : Form
     {
-      
+
 
         public FormTelaLogin()
         {
             InitializeComponent();
         }
-        
-       
 
-        private void btnEntrarFormTelaLogin_Click(object sender, EventArgs e)
+        private void btnEfetuarLoginFormTelaLogin_Click(object sender, EventArgs e)
         {
             try
             {
                 if (txtUsuarioFormTelaLogin.Text.Trim() == "" || txtSenhaFormTelaLogin.Text.Trim() == "")
                 {
-                    MessageBox.Show("Por favor, insira usuário e senha.", "Campos Inválidos");
+                    MessageBox.Show("Por favor, insira usuário e senha.", "Campos não preenchidos!");
                     return;
                 }
 
@@ -34,8 +32,10 @@ namespace ProjetoGrupoSaudeeVidaSim
 
                 if (autenticado)
                 {
-                    MessageBox.Show("Login bem-sucedido!", "Sucesso");
+                    MessageBox.Show("Login efetuado com Sucesso!", "Sucesso");
+
                     // Redirecionar para a próxima tela ou funcionalidade do aplicativo
+
                     FormTelaPrincipal formPrincipal = new FormTelaPrincipal();
                     formPrincipal.Show();
                     this.Hide(); // Oculta o formulário de login
@@ -60,10 +60,11 @@ namespace ProjetoGrupoSaudeeVidaSim
 
 
         }
-       
+
         private void BtnSairFormTelaLogin_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

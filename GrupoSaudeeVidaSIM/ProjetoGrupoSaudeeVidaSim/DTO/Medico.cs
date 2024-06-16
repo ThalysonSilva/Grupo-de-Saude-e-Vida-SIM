@@ -1,7 +1,4 @@
-﻿    using Org.BouncyCastle.Asn1.Cms;
-using System;
-
-namespace ProjetoGrupoSaudeeVidaSim.DTO
+﻿namespace ProjetoGrupoSaudeeVidaSim.DTO
 {
     public class Medico : Pessoa
     {

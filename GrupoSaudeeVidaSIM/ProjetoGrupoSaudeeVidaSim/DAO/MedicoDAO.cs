@@ -2,8 +2,6 @@
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
@@ -11,7 +9,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
     {
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
 
-        
+
         //Método para abrir conexão
         public MySqlConnection Conexao()
         {
@@ -25,7 +23,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             {
                 return false;
             }
-            
+
             string inserir = "INSERT INTO medico" +
                              "(nome, crm, especialidade, diaDeAtendimento, horarioAtendimento)" +
                              "VALUES (@nome, @crm, @especialidade, @diaDeAtendimento, @horarioAtendimento)";
@@ -54,8 +52,8 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(buscar, conexao);
-                cmd.Parameters.AddWithValue("@nome", "%" +  nome + "%");
-               
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -67,7 +65,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                             Nome = reader.GetString("nome"),
                             Crm = reader.GetInt32("crm"),
                             Especialidade = reader.GetString("especialidade"),
-                            DataAtendimento = reader.GetString("diaDeAtendimento"), 
+                            DataAtendimento = reader.GetString("diaDeAtendimento"),
                             HorarioAtendimento = reader.GetString("horarioAtendimento"),
                         };
                     }
@@ -85,7 +83,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(buscar, conexao);
-                
+
                 cmd.Parameters.AddWithValue("@crm", crm);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -113,8 +111,8 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         {
             string editar = "UPDATE medico " +
                             "SET nome=@nome, crm=@crm, especialidade=@especialidade, diaDeAtendimento=@diaDeAtendimento, horarioAtendimento=@horarioAtendimento " +
-                            "WHERE crm=@crm"; 
-            
+                            "WHERE crm=@crm";
+
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
@@ -126,7 +124,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.Parameters.AddWithValue("@especialidade", medico.Especialidade);
                 cmd.Parameters.AddWithValue("@diaDeAtendimento", medico.DataAtendimento);
                 cmd.Parameters.AddWithValue("@horarioAtendimento", medico.HorarioAtendimento);
-                
+
                 int linhaAtualizada = cmd.ExecuteNonQuery();
 
                 if (linhaAtualizada == 0)
@@ -178,7 +176,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.Parameters.AddWithValue("@crm", "%" + crm + "%");
 
                 MySqlDataReader reader = cmd.ExecuteReader();
-                
+
                 conexao.Close();
             }
             return null;

@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
-using System.Threading;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {

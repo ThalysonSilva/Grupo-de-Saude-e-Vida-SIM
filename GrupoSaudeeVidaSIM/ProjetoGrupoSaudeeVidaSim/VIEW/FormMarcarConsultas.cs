@@ -1,11 +1,8 @@
-﻿using ProjetoGrupoSaudeeVidaSim.DAO;
+﻿using MySql.Data.MySqlClient;
+using ProjetoGrupoSaudeeVidaSim.DAO;
+using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Windows.Forms;
-using ProjetoGrupoSaudeeVidaSim.DTO;
-using MySql.Data.MySqlClient;
-using Mysqlx;
-using static System.Windows.Forms.LinkLabel;
-using System.Drawing.Text;
 
 namespace ProjetoGrupoSaudeeVidaSim
 {
@@ -348,7 +345,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 {
                     consultaDAO.EditarConsulta(consulta);
                     MessageBox.Show("Consulta editada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
                 }
                 catch (MySqlException ex)
                 {

@@ -1,7 +1,6 @@
-﻿
-using MySql.Data.MySqlClient;
-using ProjetoGrupoSaudeeVidaSim.DAO;
+﻿using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
+using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -20,13 +19,8 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         private void btnConsultarFormControleUser_Click(object sender, EventArgs e)
         {
-            // Dados estáticos para testar o ListView
-            List<Autenticacao> usuarios = new List<Autenticacao>
-            {
-                new Autenticacao(1, "Admin", "", ""),
-                new Autenticacao(2, "Jailton.Morais", "", ""),
-                new Autenticacao(3, "OutroUsuario", "", "")
-            };
+            AutenticacaoDAO dao = new AutenticacaoDAO();
+            List<Autenticacao> usuarios = dao.ConsultarUsuarios(txtUsuario.Text);
 
             AtualizarListView(usuarios);
         }
@@ -39,14 +33,105 @@ namespace ProjetoGrupoSaudeeVidaSim
                 ListViewItem item = new ListViewItem(usuario.Id.ToString());
                 item.SubItems.Add(usuario.Usuario);
 
-                // Debug: Verificar se os itens estão sendo adicionados corretamente
-                Console.WriteLine($"ListViewItem - ID: {usuario.Id}, Usuario: {usuario.Usuario}");
-                MessageBox.Show($"ListViewItem - ID: {usuario.Id}, Usuario: {usuario.Usuario}");
-
                 ListViewFormControleUser.Items.Add(item);
+            }
+        }
+
+
+        private void btnEditarFormControleUser_Click(object sender, EventArgs e)
+        {
+            if (ListViewFormControleUser.SelectedItems.Count > 0)
+            {
+                ListViewItem itemSelecionado = ListViewFormControleUser.SelectedItems[0];
+                int id;
+                if (!int.TryParse(itemSelecionado.Text, out id))
+                {
+                    MessageBox.Show("ID do usuário inválido.");
+                    return;
+                }
+
+                string usuario = itemSelecionado.SubItems[1].Text;
+                string novaSenha = txtNSenha.Text.Trim();
+                string confSenha = txtCSenha.Text.Trim();
+
+                if (string.IsNullOrEmpty(novaSenha) || string.IsNullOrEmpty(confSenha))
+                {
+                    MessageBox.Show("Os campos de senha não podem estar vazios.");
+                    return;
+                }
+
+                if (novaSenha != confSenha)
+                {
+                    MessageBox.Show("As senhas não coincidem.");
+                    return;
+                }
+
+                Autenticacao usuarioAtualizado = new Autenticacao(id, usuario, novaSenha, confSenha);
+                AutenticacaoDAO dao = new AutenticacaoDAO();
+
+                try
+                {
+                    dao.EditarUsuario(usuarioAtualizado);
+
+                    // Atualizar a ListView
+                    List<Autenticacao> usuarios = dao.ConsultarUsuarios(txtUsuario.Text.Trim());
+                    AtualizarListView(usuarios);
+
+                    MessageBox.Show("Usuário atualizado com sucesso.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao atualizar usuário: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um usuário para editar.");
+            }
+
+        }
+
+        private void btnExcluirFormControleUser_Click(object sender, EventArgs e)
+        {
+            if (ListViewFormControleUser.SelectedItems.Count > 0)
+            {
+                ListViewItem itemSelecionado = ListViewFormControleUser.SelectedItems[0];
+                int id;
+
+                if (!int.TryParse(itemSelecionado.Text, out id))
+                {
+                    MessageBox.Show("ID do usuário inválido.");
+                    return;
+                }
+
+                // Confirmar exclusão
+                DialogResult result = MessageBox.Show("Tem certeza de que deseja excluir este usuário?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    AutenticacaoDAO dao = new AutenticacaoDAO();
+
+                    try
+                    {
+                        dao.ExcluirUsuario(id);
+
+                        // Atualizar a ListView
+                        List<Autenticacao> usuarios = dao.ConsultarUsuarios(txtUsuario.Text.Trim());
+                        AtualizarListView(usuarios);
+
+                        MessageBox.Show("Usuário excluído com sucesso.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro ao excluir usuário: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um usuário para excluir.");
             }
         }
     }
 }
 
-    
+

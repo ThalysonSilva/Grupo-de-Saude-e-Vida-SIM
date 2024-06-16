@@ -51,7 +51,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 string mensagemErro;
                 if (ValidarCampos(out mensagemErro))
                 {
-                    
+
                     // Todos os campos estão preenchidos corretamente, então podemos prosseguir com o salvamento
                     cadastrarPaciente();
                     LimparCampos();
@@ -109,7 +109,8 @@ namespace ProjetoGrupoSaudeeVidaSim
                     MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
                                                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else {
+                else
+                {
                     MessageBox.Show("Já existe paciente com este CPF cadastrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

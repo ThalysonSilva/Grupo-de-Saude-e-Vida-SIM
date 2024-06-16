@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Asn1.Cms;
 using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
@@ -29,7 +28,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 string mensagemErro;
                 if (ValidarCampos(out mensagemErro))
                 {
-                    DialogResult conf = MessageBox.Show($"Deseja salvar o médico {txtNomeFormCadastroDeMedico.Text} com o CRM {txtNCrmFormCadastroDeMedico.Text}?", 
+                    DialogResult conf = MessageBox.Show($"Deseja salvar o médico {txtNomeFormCadastroDeMedico.Text} com o CRM {txtNCrmFormCadastroDeMedico.Text}?",
                                     "Confirmação de Cadastramento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (conf == DialogResult.Yes)
                     {
@@ -38,7 +37,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                         LimparCampos();
                         FecharCampos();
                     }
-                    
+
                 }
                 else
                 {
@@ -74,12 +73,12 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             Medico medico = new Medico(0, nome, crm, especialidade, diaAtendimento, horaAtendimento);
             conexaoMedicoDAO = new MedicoDAO();
-            
+
             try
             {
                 //criação do bool para verificar se já existe algum médico com o mesmo crm, se não existir cai no if, se já existir, retorna o erro e não salva
                 //objetivo dessa condição é ele n armazenar dados duplicados, e não cadastrar médico com o mesmo crm
-                bool validarSeUsuarioJaExiste = conexaoMedicoDAO.SalvarMedico(medico); 
+                bool validarSeUsuarioJaExiste = conexaoMedicoDAO.SalvarMedico(medico);
 
                 if (validarSeUsuarioJaExiste)
                 {
@@ -92,7 +91,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 }
 
             }
-            catch ( Exception ex )
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -118,12 +117,12 @@ namespace ProjetoGrupoSaudeeVidaSim
                 mensagemErro = "O nome é obrigatório.";
                 return false;
             }
-            
+
             if (string.IsNullOrWhiteSpace(txtNCrmFormCadastroDeMedico.Text))
             {
                 mensagemErro = "O CRM é obrigatório e deve estar completo.";
                 return false;
-                                                
+
             }
 
             if (txtNCrmFormCadastroDeMedico.Text.Length != 4)
@@ -132,7 +131,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 return false;
             }
 
-            
+
             if (string.IsNullOrWhiteSpace(cbtEspMedicaFormCadastroDeMedico.Text))
             {
                 mensagemErro = "A especialidade é obrigatória.";
@@ -182,8 +181,8 @@ namespace ProjetoGrupoSaudeeVidaSim
                 {
                     txtNomeFormCadastroDeMedico.Text = medico.Nome;
                     txtNCrmFormCadastroDeMedico.Text = medico.Crm.ToString();
-                    cbtEspMedicaFormCadastroDeMedico.Text = medico.Especialidade; 
-                    cbDiaAtendimentoFormCadastroDeMedico.Text = medico.DataAtendimento; 
+                    cbtEspMedicaFormCadastroDeMedico.Text = medico.Especialidade;
+                    cbDiaAtendimentoFormCadastroDeMedico.Text = medico.DataAtendimento;
                     cbhorarioFormCadastroDeMedico.Text = medico.HorarioAtendimento;
 
                     AbrirCampos();
@@ -220,7 +219,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             int crm = Convert.ToInt32(txtNCrmFormCadastroDeMedico.Text);
             MedicoDAO medicoDAO = new MedicoDAO();
 
-            if(medicoDAO.medicoExiste(crm))
+            if (medicoDAO.medicoExiste(crm))
             {
                 Medico medico = new Medico()
                 {
@@ -292,7 +291,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         //Botão Novo Médico
         private void btnNovoFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
-            
+
             LimparCampos();
             AbrirCampos();
             txtNomeFormCadastroDeMedico.Focus();
@@ -302,7 +301,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         private void AbrirCampos()
         {
             txtNomeFormCadastroDeMedico.Enabled = true;
-            txtNCrmFormCadastroDeMedico.Enabled= true;
+            txtNCrmFormCadastroDeMedico.Enabled = true;
             cbtEspMedicaFormCadastroDeMedico.Enabled = true;
             cbDiaAtendimentoFormCadastroDeMedico.Enabled = true;
             cbhorarioFormCadastroDeMedico.Enabled = true;

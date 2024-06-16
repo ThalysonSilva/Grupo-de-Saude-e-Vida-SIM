@@ -1,7 +1,4 @@
-﻿using System;
-
-
-namespace ProjetoGrupoSaudeeVidaSim.DTO
+﻿namespace ProjetoGrupoSaudeeVidaSim.DTO
 {
     public class Pessoa
     {

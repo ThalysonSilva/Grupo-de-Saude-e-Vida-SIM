@@ -2,7 +2,6 @@
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
@@ -164,7 +163,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 {
                     conexao.Open();
                     MySqlCommand cmd = new MySqlCommand(linkListar, conexao);
-                    cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".","").Replace("-",""));
+                    cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".", "").Replace("-", ""));
                     cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
