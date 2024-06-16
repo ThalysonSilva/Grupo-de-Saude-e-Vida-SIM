@@ -56,12 +56,16 @@
             this.labCPFFormMarcarConsultas = new System.Windows.Forms.Label();
             this.txtNomeFormMarcarConsultas = new System.Windows.Forms.TextBox();
             this.labNomeFormMarcarConsultas = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtHorarioAtendimento = new System.Windows.Forms.TextBox();
             this.PainelFormMarcarConsulta.SuspendLayout();
             this.SuspendLayout();
             // 
             // PainelFormMarcarConsulta
             // 
             this.PainelFormMarcarConsulta.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PainelFormMarcarConsulta.Controls.Add(this.txtHorarioAtendimento);
+            this.PainelFormMarcarConsulta.Controls.Add(this.label3);
             this.PainelFormMarcarConsulta.Controls.Add(this.btnBuscarMedico);
             this.PainelFormMarcarConsulta.Controls.Add(this.label2);
             this.PainelFormMarcarConsulta.Controls.Add(this.label1);
@@ -142,7 +146,7 @@
             // 
             this.maskedDataConsultaFormMarcarConsulta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedDataConsultaFormMarcarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedDataConsultaFormMarcarConsulta.Location = new System.Drawing.Point(470, 211);
+            this.maskedDataConsultaFormMarcarConsulta.Location = new System.Drawing.Point(418, 208);
             this.maskedDataConsultaFormMarcarConsulta.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.maskedDataConsultaFormMarcarConsulta.Mask = "00/00/0000";
             this.maskedDataConsultaFormMarcarConsulta.Name = "maskedDataConsultaFormMarcarConsulta";
@@ -157,7 +161,7 @@
             "Consulta Eletiva",
             "Urgência",
             "Exames"});
-            this.cbTipoConsultaFormMarcarConsultas.Location = new System.Drawing.Point(544, 361);
+            this.cbTipoConsultaFormMarcarConsultas.Location = new System.Drawing.Point(545, 393);
             this.cbTipoConsultaFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.cbTipoConsultaFormMarcarConsultas.Name = "cbTipoConsultaFormMarcarConsultas";
             this.cbTipoConsultaFormMarcarConsultas.Size = new System.Drawing.Size(131, 21);
@@ -167,7 +171,7 @@
             // 
             this.labtipoFormMarcarConsultas.AutoSize = true;
             this.labtipoFormMarcarConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labtipoFormMarcarConsultas.Location = new System.Drawing.Point(428, 363);
+            this.labtipoFormMarcarConsultas.Location = new System.Drawing.Point(429, 395);
             this.labtipoFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labtipoFormMarcarConsultas.Name = "labtipoFormMarcarConsultas";
             this.labtipoFormMarcarConsultas.Size = new System.Drawing.Size(119, 17);
@@ -177,7 +181,7 @@
             // btnEditarConsulta
             // 
             this.btnEditarConsulta.BackColor = System.Drawing.Color.White;
-            this.btnEditarConsulta.Location = new System.Drawing.Point(283, 474);
+            this.btnEditarConsulta.Location = new System.Drawing.Point(283, 497);
             this.btnEditarConsulta.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnEditarConsulta.Name = "btnEditarConsulta";
             this.btnEditarConsulta.Size = new System.Drawing.Size(125, 36);
@@ -190,7 +194,7 @@
             // 
             this.txtValordaConsultaFormMarcarConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtValordaConsultaFormMarcarConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValordaConsultaFormMarcarConsultas.Location = new System.Drawing.Point(353, 361);
+            this.txtValordaConsultaFormMarcarConsultas.Location = new System.Drawing.Point(354, 393);
             this.txtValordaConsultaFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtValordaConsultaFormMarcarConsultas.Name = "txtValordaConsultaFormMarcarConsultas";
             this.txtValordaConsultaFormMarcarConsultas.Size = new System.Drawing.Size(72, 19);
@@ -199,7 +203,7 @@
             // btnNovoFormMarcarConsultas
             // 
             this.btnNovoFormMarcarConsultas.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnNovoFormMarcarConsultas.Location = new System.Drawing.Point(283, 417);
+            this.btnNovoFormMarcarConsultas.Location = new System.Drawing.Point(283, 440);
             this.btnNovoFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnNovoFormMarcarConsultas.Name = "btnNovoFormMarcarConsultas";
             this.btnNovoFormMarcarConsultas.Size = new System.Drawing.Size(125, 36);
@@ -212,7 +216,7 @@
             // 
             this.labValordaConsultaFormMarcarConsultas.AutoSize = true;
             this.labValordaConsultaFormMarcarConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labValordaConsultaFormMarcarConsultas.Location = new System.Drawing.Point(217, 363);
+            this.labValordaConsultaFormMarcarConsultas.Location = new System.Drawing.Point(218, 395);
             this.labValordaConsultaFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labValordaConsultaFormMarcarConsultas.Name = "labValordaConsultaFormMarcarConsultas";
             this.labValordaConsultaFormMarcarConsultas.Size = new System.Drawing.Size(124, 17);
@@ -223,7 +227,7 @@
             // 
             this.txtCrmMedicoFormMarcarConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCrmMedicoFormMarcarConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCrmMedicoFormMarcarConsultas.Location = new System.Drawing.Point(141, 361);
+            this.txtCrmMedicoFormMarcarConsultas.Location = new System.Drawing.Point(142, 393);
             this.txtCrmMedicoFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.txtCrmMedicoFormMarcarConsultas.Name = "txtCrmMedicoFormMarcarConsultas";
             this.txtCrmMedicoFormMarcarConsultas.Size = new System.Drawing.Size(73, 19);
@@ -234,7 +238,7 @@
             // 
             this.labCrmMedicoFormMarcarConsultas.AutoSize = true;
             this.labCrmMedicoFormMarcarConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCrmMedicoFormMarcarConsultas.Location = new System.Drawing.Point(16, 363);
+            this.labCrmMedicoFormMarcarConsultas.Location = new System.Drawing.Point(17, 395);
             this.labCrmMedicoFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labCrmMedicoFormMarcarConsultas.Name = "labCrmMedicoFormMarcarConsultas";
             this.labCrmMedicoFormMarcarConsultas.Size = new System.Drawing.Size(111, 17);
@@ -304,7 +308,7 @@
             // 
             this.labDataConsultaFormMarcarConsulta.AutoSize = true;
             this.labDataConsultaFormMarcarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labDataConsultaFormMarcarConsulta.Location = new System.Drawing.Point(339, 213);
+            this.labDataConsultaFormMarcarConsulta.Location = new System.Drawing.Point(287, 210);
             this.labDataConsultaFormMarcarConsulta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labDataConsultaFormMarcarConsulta.Name = "labDataConsultaFormMarcarConsulta";
             this.labDataConsultaFormMarcarConsulta.Size = new System.Drawing.Size(121, 17);
@@ -344,7 +348,7 @@
             this.maskedContatoFormMarcarConsultas.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.maskedContatoFormMarcarConsultas.Mask = "(00) 00000-0000";
             this.maskedContatoFormMarcarConsultas.Name = "maskedContatoFormMarcarConsultas";
-            this.maskedContatoFormMarcarConsultas.Size = new System.Drawing.Size(101, 17);
+            this.maskedContatoFormMarcarConsultas.Size = new System.Drawing.Size(108, 17);
             this.maskedContatoFormMarcarConsultas.TabIndex = 7;
             // 
             // labFormContato
@@ -389,6 +393,7 @@
             this.txtNomeFormMarcarConsultas.Name = "txtNomeFormMarcarConsultas";
             this.txtNomeFormMarcarConsultas.Size = new System.Drawing.Size(398, 17);
             this.txtNomeFormMarcarConsultas.TabIndex = 5;
+            this.txtNomeFormMarcarConsultas.TextChanged += new System.EventHandler(this.txtNomeFormMarcarConsultas_TextChanged);
             // 
             // labNomeFormMarcarConsultas
             // 
@@ -400,6 +405,24 @@
             this.labNomeFormMarcarConsultas.Size = new System.Drawing.Size(128, 17);
             this.labNomeFormMarcarConsultas.TabIndex = 4;
             this.labNomeFormMarcarConsultas.Text = "Nome do Paciente:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(17, 356);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 17);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Horário de Atendimento:";
+            // 
+            // txtHorarioAtendimento
+            // 
+            this.txtHorarioAtendimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtHorarioAtendimento.Location = new System.Drawing.Point(185, 350);
+            this.txtHorarioAtendimento.Name = "txtHorarioAtendimento";
+            this.txtHorarioAtendimento.Size = new System.Drawing.Size(136, 26);
+            this.txtHorarioAtendimento.TabIndex = 17;
             // 
             // FormMarcarConsultas
             // 
@@ -451,5 +474,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarMedico;
+        private System.Windows.Forms.TextBox txtHorarioAtendimento;
+        private System.Windows.Forms.Label label3;
     }
 }

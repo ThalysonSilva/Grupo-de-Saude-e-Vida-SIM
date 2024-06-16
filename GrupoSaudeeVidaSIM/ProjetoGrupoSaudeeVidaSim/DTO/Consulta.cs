@@ -10,10 +10,12 @@ namespace ProjetoGrupoSaudeeVidaSim.DTO
         public string TipoDaConsulta { get; set; }
         public string Especialidade { get; set; }
         public string NomeDoMedico { get; set; }
+        public string HorarioDaConsulta { get; set; }
         public int Crm { get; set; }
+        
 
-        public Consulta(int id, string nome, string nomeDaClinica, float valorDaConsulta, DateTime dataDaConsulta, string tipoDaConsulta, string especialidade, string nomeDoMedico, int crm)
-            : base(id, nome)
+    public Consulta(int id, string nome, string nomeDaClinica, float valorDaConsulta, DateTime dataDaConsulta, string tipoDaConsulta, string especialidade, string nomeDoMedico, string horarioDaConsulta, int crm)
+                : base(id, nome)
         {
             NomeDaClinica = nomeDaClinica;
             ValorDaConsulta = valorDaConsulta;
@@ -21,7 +23,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DTO
             TipoDaConsulta = tipoDaConsulta;
             Especialidade = especialidade;
             NomeDoMedico = nomeDoMedico;
+            HorarioDaConsulta = horarioDaConsulta;
             Crm = crm;
+            
         }
         public Consulta() { }
     }

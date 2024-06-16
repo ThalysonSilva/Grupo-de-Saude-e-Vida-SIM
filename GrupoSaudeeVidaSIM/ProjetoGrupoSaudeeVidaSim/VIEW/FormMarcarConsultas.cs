@@ -70,9 +70,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             string nomeDoPaciente = txtNomeFormMarcarConsultas.Text;
             string especialidade = cbEspecialidadeFormMarcarConsultas.Text;
             string nomeDoMedico = txtNomeMedicoFormMarcarConsultas.Text;
+            string horarioDaConsulta = txtHorarioAtendimento.Text;
             int crm = int.Parse(txtCrmMedicoFormMarcarConsultas.Text);
 
-            Consulta consulta = new Consulta(0, nomeDoPaciente, nomeDaClinica, valorDaConsulta, dataDaConsulta, tipoDaConsulta, especialidade, nomeDoMedico, crm);
+            Consulta consulta = new Consulta(0, nomeDoPaciente, nomeDaClinica, valorDaConsulta, dataDaConsulta, tipoDaConsulta, especialidade, nomeDoMedico, horarioDaConsulta, crm);
 
             try
             {
@@ -105,6 +106,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnNovoFormMarcarConsultas.Enabled = false;
             btnBuscarMedico.Enabled = false;
             btnEditarConsulta.Enabled = false;
+            txtHorarioAtendimento.Enabled = false;
 
         }
         private void abrirCampos()
@@ -119,6 +121,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnNovoFormMarcarConsultas.Enabled = true;
             btnBuscarMedico.Enabled = true;
             btnEditarConsulta.Enabled = true;
+            txtHorarioAtendimento.Enabled = true;
         }
         private void limparCampos()
         {
@@ -132,6 +135,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             txtNomeFormMarcarConsultas.Text = string.Empty;
             maskedCPFFormMarcarConsultas.Text = string.Empty;
             maskedContatoFormMarcarConsultas.Text = string.Empty;
+            txtHorarioAtendimento.Text = string.Empty;
 
         }
 
@@ -219,6 +223,16 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show("CRM do médico é obrigatório", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (cbEspecialidadeFormMarcarConsultas.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Especialidade do médico é obrigatório", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (txtHorarioAtendimento.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Horário de atendimento do médico é obrigatório", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             if (txtValordaConsultaFormMarcarConsultas.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Valor da consulta é obrigatório", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -295,13 +309,16 @@ namespace ProjetoGrupoSaudeeVidaSim
                 {
                     txtNomeMedicoFormMarcarConsultas.Text = medico.Nome;
                     cbEspecialidadeFormMarcarConsultas.Text = medico.Especialidade;
+                    txtHorarioAtendimento.Text = medico.HorarioAtendimento;
                     txtCrmMedicoFormMarcarConsultas.Text = medico.Crm.ToString();
+                    
 
                 }
                 else if (medicon != null)
                 {
                     txtNomeMedicoFormMarcarConsultas.Text = medicon.Nome;
                     cbEspecialidadeFormMarcarConsultas.Text = medicon.Especialidade;
+                    txtHorarioAtendimento.Text = medicon.HorarioAtendimento;
                     txtCrmMedicoFormMarcarConsultas.Text = medicon.Crm.ToString();
                 }
                 else
@@ -361,6 +378,11 @@ namespace ProjetoGrupoSaudeeVidaSim
 
 
             }
+        }
+
+        private void txtNomeFormMarcarConsultas_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
