@@ -17,8 +17,8 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         public void SalvarConsulta(Consulta consulta)
         {
             string inserir = "INSERT INTO consulta" +
-                " (nome, nomeDaClinica, valorDaConsulta, dataDaConsulta, tipoDaConsulta, especialidade, nomeDoMedico, crm)" +
-                "VALUES (@nome, @nomeDaClinica, @valorDaConsulta, @dataDaConsulta, @tipoDaConsulta, @especialidade, @nomeDoMedico, @crm)";
+                " (nome, nomeDaClinica, valorDaConsulta, dataDaConsulta, tipoDaConsulta, especialidade, nomeDoMedico, horarioDaConsulta, crm)" +
+                "VALUES (@nome, @nomeDaClinica, @valorDaConsulta, @dataDaConsulta, @tipoDaConsulta, @especialidade, @nomeDoMedico, @horarioDaConsulta, @crm)";
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
@@ -30,6 +30,8 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.Parameters.AddWithValue("@tipoDaConsulta", consulta.TipoDaConsulta);
                 cmd.Parameters.AddWithValue("@especialidade", consulta.Especialidade);
                 cmd.Parameters.AddWithValue("@nomeDoMedico", consulta.NomeDoMedico);
+                cmd.Parameters.AddWithValue("@horarioDaConsulta", consulta.HorarioDaConsulta);
+
                 cmd.Parameters.AddWithValue("@crm", consulta.Crm);
 
                 cmd.ExecuteNonQuery();

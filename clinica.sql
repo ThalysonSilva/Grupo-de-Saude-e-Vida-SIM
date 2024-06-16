@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/06/2024 às 07:36
+-- Tempo de geração: 16/06/2024 às 20:56
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -34,18 +34,21 @@ CREATE TABLE `consulta` (
   `nomeDaClinica` varchar(32) DEFAULT NULL,
   `tipoDaConsulta` varchar(32) DEFAULT NULL,
   `nome` varchar(32) DEFAULT NULL,
-  `especialidade` varchar(32) NOT NULL,
-  `nomeDoMedico` varchar(32) NOT NULL,
-  `crm` int(12) NOT NULL
+  `especialidade` varchar(32) DEFAULT NULL,
+  `nomeDoMedico` varchar(32) DEFAULT NULL,
+  `horarioDaConsulta` varchar(32) DEFAULT NULL,
+  `crm` int(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `consulta`
 --
 
-INSERT INTO `consulta` (`id`, `valorDaConsulta`, `dataDaConsulta`, `nomeDaClinica`, `tipoDaConsulta`, `nome`, `especialidade`, `nomeDoMedico`, `crm`) VALUES
-(1, 555, '2025-12-25', 'Clínica Saúde e Vida', 'Consulta Eletiva', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', 121212),
-(2, 5555, '2028-12-25', 'Clínica São José', 'Urgência', 'JIUSEPPE', 'Reumatologia', 'JOÃO SANTOS SILVA', 121212);
+INSERT INTO `consulta` (`id`, `valorDaConsulta`, `dataDaConsulta`, `nomeDaClinica`, `tipoDaConsulta`, `nome`, `especialidade`, `nomeDoMedico`, `horarioDaConsulta`, `crm`) VALUES
+(1, 555, '2025-12-25', 'Clínica Saúde e Vida', 'Consulta Eletiva', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', '', 121212),
+(2, 5555, '2028-12-25', 'Clínica São José', 'Urgência', 'JIUSEPPE', 'Reumatologia', 'JOÃO SANTOS SILVA', '', 121212),
+(3, 1500, '2026-07-29', 'Clínica Bem Estar', 'Urgência', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', '14:00H - 16:00H ', 121212),
+(4, 1522, '2027-12-25', 'Clínica São José', 'Consulta Eletiva', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', '14:00H - 16:00H ', 121212);
 
 -- --------------------------------------------------------
 
@@ -177,7 +180,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `medico`
