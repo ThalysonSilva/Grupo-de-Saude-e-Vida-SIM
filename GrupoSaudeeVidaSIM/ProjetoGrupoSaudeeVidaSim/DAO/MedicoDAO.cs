@@ -188,7 +188,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             List<Consulta> consultas = new List<Consulta>();
             string linkAtendimentoMedico = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
                              consulta.nomeDaClinica, consulta.tipoDaConsulta, paciente.nome AS nome, 
-                             consulta.especialidade, consulta.nomeDoMedico, consulta.crm 
+                             consulta.especialidade, consulta.nomeDoMedico, consulta.horarioDaConsulta, consulta.crm 
                              FROM consulta 
                              JOIN medico ON consulta.crm = medico.crm 
                              JOIN paciente ON consulta.nome = paciente.nome 
@@ -213,7 +213,8 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                             TipoDaConsulta = reader.GetString("tipoDaConsulta"),
                             Nome = reader.GetString("nome"),
                             Especialidade = reader.GetString("especialidade"),
-                            NomeDoMedico = reader.GetString("nome"),
+                            NomeDoMedico = reader.GetString("nomeDoMedico"),
+                            HorarioDaConsulta = reader.GetString("horarioDaConsulta"),
                             Crm = reader.GetInt32("crm")
                         };
                         consultas.Add(consulta);

@@ -30,12 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtendimentoMedico));
             this.panelFormAtendMed = new System.Windows.Forms.Panel();
-            this.btnExcluirFormDiasAtendMedico = new System.Windows.Forms.Button();
-            this.btnEditarFormDiasAtendMedico = new System.Windows.Forms.Button();
+            this.btnLimparFormDiasAtendMedico = new System.Windows.Forms.Button();
             this.btnConsultarFormDiasAtendMedico = new System.Windows.Forms.Button();
             this.listViewFormDiasAtendMedico = new System.Windows.Forms.ListView();
-            this.txtNFormDiasAtendMedico = new System.Windows.Forms.TextBox();
-            this.labNCrmFormDiasAtendMedico = new System.Windows.Forms.Label();
             this.txtFormDiasAtendMedico = new System.Windows.Forms.TextBox();
             this.labFormDiasAtendMedico = new System.Windows.Forms.Label();
             this.LabIdFormAtendMed = new System.Windows.Forms.Label();
@@ -44,12 +41,9 @@
             // 
             // panelFormAtendMed
             // 
-            this.panelFormAtendMed.Controls.Add(this.btnExcluirFormDiasAtendMedico);
-            this.panelFormAtendMed.Controls.Add(this.btnEditarFormDiasAtendMedico);
+            this.panelFormAtendMed.Controls.Add(this.btnLimparFormDiasAtendMedico);
             this.panelFormAtendMed.Controls.Add(this.btnConsultarFormDiasAtendMedico);
             this.panelFormAtendMed.Controls.Add(this.listViewFormDiasAtendMedico);
-            this.panelFormAtendMed.Controls.Add(this.txtNFormDiasAtendMedico);
-            this.panelFormAtendMed.Controls.Add(this.labNCrmFormDiasAtendMedico);
             this.panelFormAtendMed.Controls.Add(this.txtFormDiasAtendMedico);
             this.panelFormAtendMed.Controls.Add(this.labFormDiasAtendMedico);
             this.panelFormAtendMed.Controls.Add(this.LabIdFormAtendMed);
@@ -59,25 +53,15 @@
             this.panelFormAtendMed.Size = new System.Drawing.Size(834, 544);
             this.panelFormAtendMed.TabIndex = 0;
             // 
-            // btnExcluirFormDiasAtendMedico
+            // btnLimparFormDiasAtendMedico
             // 
-            this.btnExcluirFormDiasAtendMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnExcluirFormDiasAtendMedico.Location = new System.Drawing.Point(663, 471);
-            this.btnExcluirFormDiasAtendMedico.Name = "btnExcluirFormDiasAtendMedico";
-            this.btnExcluirFormDiasAtendMedico.Size = new System.Drawing.Size(137, 45);
-            this.btnExcluirFormDiasAtendMedico.TabIndex = 8;
-            this.btnExcluirFormDiasAtendMedico.Text = "Excluir";
-            this.btnExcluirFormDiasAtendMedico.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarFormDiasAtendMedico
-            // 
-            this.btnEditarFormDiasAtendMedico.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnEditarFormDiasAtendMedico.Location = new System.Drawing.Point(438, 471);
-            this.btnEditarFormDiasAtendMedico.Name = "btnEditarFormDiasAtendMedico";
-            this.btnEditarFormDiasAtendMedico.Size = new System.Drawing.Size(137, 45);
-            this.btnEditarFormDiasAtendMedico.TabIndex = 8;
-            this.btnEditarFormDiasAtendMedico.Text = "Editar";
-            this.btnEditarFormDiasAtendMedico.UseVisualStyleBackColor = false;
+            this.btnLimparFormDiasAtendMedico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLimparFormDiasAtendMedico.Location = new System.Drawing.Point(458, 471);
+            this.btnLimparFormDiasAtendMedico.Name = "btnLimparFormDiasAtendMedico";
+            this.btnLimparFormDiasAtendMedico.Size = new System.Drawing.Size(137, 45);
+            this.btnLimparFormDiasAtendMedico.TabIndex = 8;
+            this.btnLimparFormDiasAtendMedico.Text = "Limpar";
+            this.btnLimparFormDiasAtendMedico.UseVisualStyleBackColor = false;
             // 
             // btnConsultarFormDiasAtendMedico
             // 
@@ -93,37 +77,19 @@
             // listViewFormDiasAtendMedico
             // 
             this.listViewFormDiasAtendMedico.HideSelection = false;
-            this.listViewFormDiasAtendMedico.Location = new System.Drawing.Point(198, 209);
+            this.listViewFormDiasAtendMedico.Location = new System.Drawing.Point(16, 126);
             this.listViewFormDiasAtendMedico.Name = "listViewFormDiasAtendMedico";
-            this.listViewFormDiasAtendMedico.Size = new System.Drawing.Size(602, 239);
+            this.listViewFormDiasAtendMedico.Size = new System.Drawing.Size(784, 329);
             this.listViewFormDiasAtendMedico.TabIndex = 7;
             this.listViewFormDiasAtendMedico.UseCompatibleStateImageBehavior = false;
-            // 
-            // txtNFormDiasAtendMedico
-            // 
-            this.txtNFormDiasAtendMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNFormDiasAtendMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNFormDiasAtendMedico.Location = new System.Drawing.Point(197, 136);
-            this.txtNFormDiasAtendMedico.Name = "txtNFormDiasAtendMedico";
-            this.txtNFormDiasAtendMedico.Size = new System.Drawing.Size(142, 21);
-            this.txtNFormDiasAtendMedico.TabIndex = 6;
-            // 
-            // labNCrmFormDiasAtendMedico
-            // 
-            this.labNCrmFormDiasAtendMedico.AutoSize = true;
-            this.labNCrmFormDiasAtendMedico.Location = new System.Drawing.Point(12, 136);
-            this.labNCrmFormDiasAtendMedico.Name = "labNCrmFormDiasAtendMedico";
-            this.labNCrmFormDiasAtendMedico.Size = new System.Drawing.Size(98, 20);
-            this.labNCrmFormDiasAtendMedico.TabIndex = 5;
-            this.labNCrmFormDiasAtendMedico.Text = "Nº do CRM:";
             // 
             // txtFormDiasAtendMedico
             // 
             this.txtFormDiasAtendMedico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFormDiasAtendMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFormDiasAtendMedico.Location = new System.Drawing.Point(197, 80);
+            this.txtFormDiasAtendMedico.Location = new System.Drawing.Point(158, 80);
             this.txtFormDiasAtendMedico.Name = "txtFormDiasAtendMedico";
-            this.txtFormDiasAtendMedico.Size = new System.Drawing.Size(602, 21);
+            this.txtFormDiasAtendMedico.Size = new System.Drawing.Size(642, 21);
             this.txtFormDiasAtendMedico.TabIndex = 4;
             // 
             // labFormDiasAtendMedico
@@ -172,11 +138,8 @@
         private System.Windows.Forms.Label LabIdFormAtendMed;
         private System.Windows.Forms.TextBox txtFormDiasAtendMedico;
         private System.Windows.Forms.Label labFormDiasAtendMedico;
-        private System.Windows.Forms.Label labNCrmFormDiasAtendMedico;
-        private System.Windows.Forms.TextBox txtNFormDiasAtendMedico;
         private System.Windows.Forms.ListView listViewFormDiasAtendMedico;
         private System.Windows.Forms.Button btnConsultarFormDiasAtendMedico;
-        private System.Windows.Forms.Button btnExcluirFormDiasAtendMedico;
-        private System.Windows.Forms.Button btnEditarFormDiasAtendMedico;
+        private System.Windows.Forms.Button btnLimparFormDiasAtendMedico;
     }
 }
