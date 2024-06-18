@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
@@ -36,6 +38,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.ExecuteNonQuery();
             }
         }
+
         //Método para buscar paciente no banco de dados por nome
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
@@ -66,7 +69,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 }
             }
             return null;
+            
         }
+        
         //método para buscar consulta por nome e nome da clinica
         public Consulta EditarConsulta(Consulta consulta)
         {
@@ -117,6 +122,44 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 return count > 0;
             }
+        }
+        public List<Consulta> BuscarConsultasPorNomeMedico(string nome, string especialidade)
+        {
+            List<Consulta> consultas = new List<Consulta>();
+            string query = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
+                            consulta.nomeDaClinica, consulta.tipoDaConsulta, paciente.nome, 
+                            consulta.especialidade, consulta.nomeDoMedico, consulta.crm 
+                            FROM consulta 
+                            JOIN paciente ON consulta.nome = paciente.nome 
+                            WHERE consulta.nomeDoMedico LIKE @nome";
+
+            using (MySqlConnection conexao = Conexao())
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Consulta consulta = new Consulta
+                        {
+                            Id = reader.GetInt32("id"),
+                            ValorDaConsulta = reader.GetFloat("valorDaConsulta"),
+                            DataDaConsulta = reader.GetDateTime("dataDaConsulta"),
+                            NomeDaClinica = reader.GetString("nomeDaClinica"),
+                            TipoDaConsulta = reader.GetString("tipoDaConsulta"),
+                            Nome = reader.GetString("nome"),
+                            Especialidade = reader.GetString("especialidade"),
+                            NomeDoMedico = reader.GetString("nomeDoMedico"),
+                            Crm = reader.GetInt32("crm")
+                        };
+                        consultas.Add(consulta);
+                    }
+                }
+            }
+            return consultas;
         }
 
     }

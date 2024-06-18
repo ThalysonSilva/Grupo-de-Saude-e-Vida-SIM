@@ -255,6 +255,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return consultas;
         }
+       
 
     }
 }

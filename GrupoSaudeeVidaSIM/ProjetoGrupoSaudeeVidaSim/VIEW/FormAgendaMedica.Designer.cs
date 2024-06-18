@@ -68,6 +68,7 @@
             this.btnRetornarFormAgendaMedica.TabIndex = 9;
             this.btnRetornarFormAgendaMedica.Text = "Consultar";
             this.btnRetornarFormAgendaMedica.UseVisualStyleBackColor = true;
+            this.btnRetornarFormAgendaMedica.Click += new System.EventHandler(this.btnRetornarFormAgendaMedica_Click);
             // 
             // btnConsultarFormAgendaMedica
             // 
@@ -78,6 +79,7 @@
             this.btnConsultarFormAgendaMedica.TabIndex = 6;
             this.btnConsultarFormAgendaMedica.Text = "Consultar Agenda";
             this.btnConsultarFormAgendaMedica.UseVisualStyleBackColor = false;
+            this.btnConsultarFormAgendaMedica.Click += new System.EventHandler(this.btnConsultarFormAgendaMedica_Click);
             // 
             // AgendaMedica
             // 
@@ -85,7 +87,7 @@
             this.AgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgendaMedica.Location = new System.Drawing.Point(303, 7);
             this.AgendaMedica.Name = "AgendaMedica";
-            this.AgendaMedica.Size = new System.Drawing.Size(409, 32);
+            this.AgendaMedica.Size = new System.Drawing.Size(277, 24);
             this.AgendaMedica.TabIndex = 0;
             this.AgendaMedica.Text = "Formulário de Checar - Agenda";
             // 
@@ -120,7 +122,7 @@
             "Urologia"});
             this.cbEspecialidadeFormAgendaMedica.Location = new System.Drawing.Point(199, 137);
             this.cbEspecialidadeFormAgendaMedica.Name = "cbEspecialidadeFormAgendaMedica";
-            this.cbEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(580, 34);
+            this.cbEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(580, 26);
             this.cbEspecialidadeFormAgendaMedica.TabIndex = 4;
             this.cbEspecialidadeFormAgendaMedica.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidadeFormAgenda_SelectedIndexChanged);
             // 
@@ -129,7 +131,7 @@
             this.labEspecialidadeFormAgendaMedica.AutoSize = true;
             this.labEspecialidadeFormAgendaMedica.Location = new System.Drawing.Point(21, 146);
             this.labEspecialidadeFormAgendaMedica.Name = "labEspecialidadeFormAgendaMedica";
-            this.labEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(140, 25);
+            this.labEspecialidadeFormAgendaMedica.Size = new System.Drawing.Size(100, 17);
             this.labEspecialidadeFormAgendaMedica.TabIndex = 3;
             this.labEspecialidadeFormAgendaMedica.Text = "Especialidade:";
             // 
@@ -139,7 +141,7 @@
             this.txtNomeMedFormAgendaMedica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeMedFormAgendaMedica.Location = new System.Drawing.Point(199, 71);
             this.txtNomeMedFormAgendaMedica.Name = "txtNomeMedFormAgendaMedica";
-            this.txtNomeMedFormAgendaMedica.Size = new System.Drawing.Size(432, 32);
+            this.txtNomeMedFormAgendaMedica.Size = new System.Drawing.Size(432, 22);
             this.txtNomeMedFormAgendaMedica.TabIndex = 2;
             // 
             // labNomeMedFormAgendaMedica
@@ -147,13 +149,13 @@
             this.labNomeMedFormAgendaMedica.AutoSize = true;
             this.labNomeMedFormAgendaMedica.Location = new System.Drawing.Point(21, 75);
             this.labNomeMedFormAgendaMedica.Name = "labNomeMedFormAgendaMedica";
-            this.labNomeMedFormAgendaMedica.Size = new System.Drawing.Size(166, 25);
+            this.labNomeMedFormAgendaMedica.Size = new System.Drawing.Size(118, 17);
             this.labNomeMedFormAgendaMedica.TabIndex = 1;
             this.labNomeMedFormAgendaMedica.Text = "Nome do Médico:";
             // 
             // FormAgendaMedica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(834, 590);
