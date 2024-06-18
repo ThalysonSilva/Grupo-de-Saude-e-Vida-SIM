@@ -9,7 +9,6 @@ namespace ProjetoGrupoSaudeeVidaSim
     public partial class FormAgendaMedica : Form
     {
 
-        private PacienteDAO pacienteDAO;
         public FormAgendaMedica()
         {
             InitializeComponent();
@@ -31,7 +30,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormAgendaMedica.Columns.Add("Nome do Paciente", 150, HorizontalAlignment.Center);
             listViewFormAgendaMedica.Columns.Add("Data da Consulta", 150, HorizontalAlignment.Center);
             listViewFormAgendaMedica.Columns.Add("Tipo da Consulta", 150, HorizontalAlignment.Center);
-            listViewFormAgendaMedica.Columns.Add("Nome da Clínica", 150, HorizontalAlignment.Center);
+            listViewFormAgendaMedica.Columns.Add("Nome do Médico", 150, HorizontalAlignment.Center);
             listViewFormAgendaMedica.Columns.Add("Valor da Consulta", 150, HorizontalAlignment.Center);
         }
 
@@ -52,12 +51,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             {
                 MedicoDAO medicoDAO = new MedicoDAO();
                 string nome = txtNomeMedFormAgendaMedica.Text.Trim();
-                string especialidade = cbEspecialidadeFormAgendaMedica.Text.Trim();
                 Medico medicon = medicoDAO.BuscarMedicoNome(nome);
                 if (medicon != null)
                 {
                     txtNomeMedFormAgendaMedica.Text= medicon.Nome;
-                    cbEspecialidadeFormAgendaMedica.Text = medicon.Especialidade;
                 }
                 else
                 {
@@ -72,11 +69,10 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         private void btnConsultarFormAgendaMedica_Click(object sender, EventArgs e)
         {
-        string nome = txtNomeMedFormAgendaMedica.Text.Trim();
-        string especialidade = cbEspecialidadeFormAgendaMedica.Text.Trim();
+        string nomeDaClinica = txtNomeMedFormAgendaMedica.Text.Trim();
             try
             {
-                List<Consulta> consultas = new ConsultaDAO().BuscarConsultasPorNomeMedico(nome, especialidade);
+                List<Consulta> consultas = new ConsultaDAO().BuscarConsultasPorNomeClinica(nomeDaClinica);
                 ExibirResultados(consultas);
             }
             catch (Exception ex)
@@ -93,8 +89,8 @@ namespace ProjetoGrupoSaudeeVidaSim
                 item.SubItems.Add(consulta.Nome);
                 item.SubItems.Add(consulta.DataDaConsulta.ToString());
                 item.SubItems.Add(consulta.TipoDaConsulta);
-                item.SubItems.Add(consulta.NomeDaClinica);
-                item.SubItems.Add(consulta.ValorDaConsulta.ToString());
+                item.SubItems.Add(consulta.NomeDoMedico);
+                item.SubItems.Add(consulta.ValorDaConsulta.ToString("C"));
                 listViewFormAgendaMedica.Items.Add(item);
             }
         }

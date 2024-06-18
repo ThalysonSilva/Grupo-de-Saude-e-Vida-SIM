@@ -123,7 +123,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
-        public List<Consulta> BuscarConsultasPorNomeMedico(string nome, string especialidade)
+        public List<Consulta> BuscarConsultasPorNomeClinica(string nomeDaClinica)
         {
             List<Consulta> consultas = new List<Consulta>();
             string query = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
@@ -131,13 +131,13 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                             consulta.especialidade, consulta.nomeDoMedico, consulta.crm 
                             FROM consulta 
                             JOIN paciente ON consulta.nome = paciente.nome 
-                            WHERE consulta.nomeDoMedico LIKE @nome";
+                           WHERE consulta.nomeDaClinica LIKE @nomeDaClinica";
 
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
-                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+                cmd.Parameters.AddWithValue("@nomeDaClinica", "%" + nomeDaClinica + "%");
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
