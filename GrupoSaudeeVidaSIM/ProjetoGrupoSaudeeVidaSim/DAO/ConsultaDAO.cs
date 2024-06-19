@@ -32,14 +32,13 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.Parameters.AddWithValue("@especialidade", consulta.Especialidade);
                 cmd.Parameters.AddWithValue("@nomeDoMedico", consulta.NomeDoMedico);
                 cmd.Parameters.AddWithValue("@horarioDaConsulta", consulta.HorarioDaConsulta);
-
                 cmd.Parameters.AddWithValue("@crm", consulta.Crm);
 
                 cmd.ExecuteNonQuery();
             }
         }
 
-        //Método para buscar paciente no banco de dados por nome
+        // Método para buscar paciente no banco de dados por nome
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
             // comando para buscar paciente no banco de dados
@@ -72,7 +71,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             
         }
         
-        //método para buscar consulta por nome e nome da clinica
+        // método para buscar consulta por nome e nome da clinica
         public Consulta EditarConsulta(Consulta consulta)
         {
             string editar = "UPDATE consulta SET nome = @nome, nomeDaClinica = @nomeDaClinica, valorDaConsulta = @valorDaConsulta, dataDaConsulta = @dataDaConsulta, tipoDaConsulta = @tipoDaConsulta, especialidade = @especialidade, nomeDoMedico = @nomeDoMedico, crm = @crm WHERE nome = @nome AND nomeDaClinica = @nomeDaClinica";

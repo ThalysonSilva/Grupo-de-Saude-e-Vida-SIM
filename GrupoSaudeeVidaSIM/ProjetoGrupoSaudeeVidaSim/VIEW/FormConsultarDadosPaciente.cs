@@ -106,5 +106,10 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
 
         }
+
+        private void btnConsultarFormLimparDados_Click(object sender, EventArgs e)
+        {
+            listViewFormConsultarDados.Items.Clear();
+        }
     }
 }

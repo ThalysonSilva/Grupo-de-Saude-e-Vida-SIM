@@ -31,13 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultarDadosPaciente));
             this.labIdFormConsultarDados = new System.Windows.Forms.Label();
             this.PainelFormConsultarDados = new System.Windows.Forms.Panel();
-            this.btnRetornarDadosFormConsultarDados = new System.Windows.Forms.Button();
             this.btnConsultarFormConsultarDados = new System.Windows.Forms.Button();
             this.listViewFormConsultarDados = new System.Windows.Forms.ListView();
             this.txtNomeFormConsultarDados = new System.Windows.Forms.TextBox();
             this.labNomeFormConsultarDados = new System.Windows.Forms.Label();
-            this.maskedTextBoxCpfFormConsultarDados = new System.Windows.Forms.MaskedTextBox();
-            this.labCpfFormConsultarDados = new System.Windows.Forms.Label();
+            this.btnConsultarFormLimparDados = new System.Windows.Forms.Button();
             this.PainelFormConsultarDados.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,13 +51,11 @@
             // 
             // PainelFormConsultarDados
             // 
-            this.PainelFormConsultarDados.Controls.Add(this.btnRetornarDadosFormConsultarDados);
+            this.PainelFormConsultarDados.Controls.Add(this.btnConsultarFormLimparDados);
             this.PainelFormConsultarDados.Controls.Add(this.btnConsultarFormConsultarDados);
             this.PainelFormConsultarDados.Controls.Add(this.listViewFormConsultarDados);
             this.PainelFormConsultarDados.Controls.Add(this.txtNomeFormConsultarDados);
             this.PainelFormConsultarDados.Controls.Add(this.labNomeFormConsultarDados);
-            this.PainelFormConsultarDados.Controls.Add(this.maskedTextBoxCpfFormConsultarDados);
-            this.PainelFormConsultarDados.Controls.Add(this.labCpfFormConsultarDados);
             this.PainelFormConsultarDados.Controls.Add(this.labIdFormConsultarDados);
             this.PainelFormConsultarDados.Dock = System.Windows.Forms.DockStyle.Top;
             this.PainelFormConsultarDados.Location = new System.Drawing.Point(0, 0);
@@ -68,23 +64,11 @@
             this.PainelFormConsultarDados.Size = new System.Drawing.Size(835, 562);
             this.PainelFormConsultarDados.TabIndex = 0;
             // 
-            // btnRetornarDadosFormConsultarDados
-            // 
-            this.btnRetornarDadosFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetornarDadosFormConsultarDados.Location = new System.Drawing.Point(251, 64);
-            this.btnRetornarDadosFormConsultarDados.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRetornarDadosFormConsultarDados.Name = "btnRetornarDadosFormConsultarDados";
-            this.btnRetornarDadosFormConsultarDados.Size = new System.Drawing.Size(155, 32);
-            this.btnRetornarDadosFormConsultarDados.TabIndex = 3;
-            this.btnRetornarDadosFormConsultarDados.Text = "Consultar Dados";
-            this.btnRetornarDadosFormConsultarDados.UseVisualStyleBackColor = true;
-            this.btnRetornarDadosFormConsultarDados.Click += new System.EventHandler(this.btnRetornarDadosFormConsultarDados_Click);
-            // 
             // btnConsultarFormConsultarDados
             // 
             this.btnConsultarFormConsultarDados.BackColor = System.Drawing.Color.Gainsboro;
             this.btnConsultarFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarFormConsultarDados.Location = new System.Drawing.Point(579, 472);
+            this.btnConsultarFormConsultarDados.Location = new System.Drawing.Point(155, 482);
             this.btnConsultarFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultarFormConsultarDados.Name = "btnConsultarFormConsultarDados";
             this.btnConsultarFormConsultarDados.Size = new System.Drawing.Size(183, 46);
@@ -96,52 +80,44 @@
             // listViewFormConsultarDados
             // 
             this.listViewFormConsultarDados.HideSelection = false;
-            this.listViewFormConsultarDados.Location = new System.Drawing.Point(85, 181);
+            this.listViewFormConsultarDados.Location = new System.Drawing.Point(22, 127);
             this.listViewFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewFormConsultarDados.Name = "listViewFormConsultarDados";
-            this.listViewFormConsultarDados.Size = new System.Drawing.Size(677, 267);
+            this.listViewFormConsultarDados.Size = new System.Drawing.Size(781, 341);
             this.listViewFormConsultarDados.TabIndex = 6;
             this.listViewFormConsultarDados.UseCompatibleStateImageBehavior = false;
             // 
             // txtNomeFormConsultarDados
             // 
             this.txtNomeFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFormConsultarDados.Location = new System.Drawing.Point(85, 131);
+            this.txtNomeFormConsultarDados.Location = new System.Drawing.Point(85, 74);
             this.txtNomeFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeFormConsultarDados.Name = "txtNomeFormConsultarDados";
-            this.txtNomeFormConsultarDados.Size = new System.Drawing.Size(677, 26);
+            this.txtNomeFormConsultarDados.Size = new System.Drawing.Size(718, 26);
             this.txtNomeFormConsultarDados.TabIndex = 5;
             // 
             // labNomeFormConsultarDados
             // 
             this.labNomeFormConsultarDados.AutoSize = true;
             this.labNomeFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNomeFormConsultarDados.Location = new System.Drawing.Point(18, 135);
+            this.labNomeFormConsultarDados.Location = new System.Drawing.Point(18, 78);
             this.labNomeFormConsultarDados.Name = "labNomeFormConsultarDados";
             this.labNomeFormConsultarDados.Size = new System.Drawing.Size(58, 20);
             this.labNomeFormConsultarDados.TabIndex = 4;
             this.labNomeFormConsultarDados.Text = "Nome:";
             // 
-            // maskedTextBoxCpfFormConsultarDados
+            // btnConsultarFormLimparDados
             // 
-            this.maskedTextBoxCpfFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxCpfFormConsultarDados.Location = new System.Drawing.Point(75, 66);
-            this.maskedTextBoxCpfFormConsultarDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBoxCpfFormConsultarDados.Mask = "000.000.000-00";
-            this.maskedTextBoxCpfFormConsultarDados.Name = "maskedTextBoxCpfFormConsultarDados";
-            this.maskedTextBoxCpfFormConsultarDados.Size = new System.Drawing.Size(152, 26);
-            this.maskedTextBoxCpfFormConsultarDados.TabIndex = 2;
-            this.maskedTextBoxCpfFormConsultarDados.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxCpfFormConsultarDados_MaskInputRejected);
-            // 
-            // labCpfFormConsultarDados
-            // 
-            this.labCpfFormConsultarDados.AutoSize = true;
-            this.labCpfFormConsultarDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labCpfFormConsultarDados.Location = new System.Drawing.Point(18, 68);
-            this.labCpfFormConsultarDados.Name = "labCpfFormConsultarDados";
-            this.labCpfFormConsultarDados.Size = new System.Drawing.Size(47, 20);
-            this.labCpfFormConsultarDados.TabIndex = 1;
-            this.labCpfFormConsultarDados.Text = "CPF:";
+            this.btnConsultarFormLimparDados.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnConsultarFormLimparDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarFormLimparDados.Location = new System.Drawing.Point(420, 482);
+            this.btnConsultarFormLimparDados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConsultarFormLimparDados.Name = "btnConsultarFormLimparDados";
+            this.btnConsultarFormLimparDados.Size = new System.Drawing.Size(183, 46);
+            this.btnConsultarFormLimparDados.TabIndex = 8;
+            this.btnConsultarFormLimparDados.Text = "Limpar dados";
+            this.btnConsultarFormLimparDados.UseVisualStyleBackColor = false;
+            this.btnConsultarFormLimparDados.Click += new System.EventHandler(this.btnConsultarFormLimparDados_Click);
             // 
             // FormConsultarDadosPaciente
             // 
@@ -169,12 +145,10 @@
 
         private System.Windows.Forms.Label labIdFormConsultarDados;
         private System.Windows.Forms.Panel PainelFormConsultarDados;
-        private System.Windows.Forms.Label labCpfFormConsultarDados;
         private System.Windows.Forms.TextBox txtNomeFormConsultarDados;
         private System.Windows.Forms.Label labNomeFormConsultarDados;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCpfFormConsultarDados;
         private System.Windows.Forms.ListView listViewFormConsultarDados;
         private System.Windows.Forms.Button btnConsultarFormConsultarDados;
-        private System.Windows.Forms.Button btnRetornarDadosFormConsultarDados;
+        private System.Windows.Forms.Button btnConsultarFormLimparDados;
     }
 }

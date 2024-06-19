@@ -106,7 +106,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
                 if (validarSeUsuarioJaExiste)
                 {
-                    MessageBox.Show("Contato inserido com sucesso!", "Sucesso"
+                    MessageBox.Show("Paciente cadastrado com sucesso!", "Sucesso"
                                                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -155,61 +155,61 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             if (string.IsNullOrWhiteSpace(txtNomeFormCadPaciente.Text))
             {
-                mensagemErro = "O nome é obrigatório.";
+                mensagemErro = "Erro ao cadastrar paciente, o nome é obrigatório.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(maskedTextBoxCPFFormCadPaciente.Text) || !maskedTextBoxCPFFormCadPaciente.MaskCompleted)
             {
-                mensagemErro = "O CPF é obrigatório e deve estar completo.";
+                mensagemErro = "Erro ao cadastrar paciente, o CPF é obrigatório e deve estar completo.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(maskedTextBoxContatoFormCadPaciente.Text) || !maskedTextBoxContatoFormCadPaciente.MaskCompleted)
             {
-                mensagemErro = "O contato é obrigatório e deve estar completo.";
+                mensagemErro = "Erro ao cadastrar paciente, o contato é obrigatório e deve estar completo.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(maskedTextBoxDataNascFormCadPaciente.Text) || !maskedTextBoxDataNascFormCadPaciente.MaskCompleted)
             {
-                mensagemErro = "A data de nascimento é obrigatória e deve estar completa.";
+                mensagemErro = "Erro ao cadastrar paciente, a data de nascimento é obrigatória e deve estar completa.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(maskedTextBoxCepFormCadPaciente.Text))
             {
-                mensagemErro = "O CEP é obrigatório.";
+                mensagemErro = "Erro ao cadastrar paciente, o CEP é obrigatório.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtLogradouroFormCadPaciente.Text))
             {
-                mensagemErro = "O endereço é obrigatório.";
+                mensagemErro = "Erro ao cadastrar paciente, o endereço é obrigatório.";
                 return false;
             }
 
             if (!int.TryParse(txtNumFormCadPaciente.Text, out _))
             {
-                mensagemErro = "O número da casa é obrigatório e deve ser um número válido.";
+                mensagemErro = "Erro ao cadastrar paciente, o número da casa é obrigatório e deve ser um número válido.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtBairroFormCadPaciente.Text))
             {
-                mensagemErro = "O bairro é obrigatório.";
+                mensagemErro = "Erro ao cadastrar paciente, o bairro é obrigatório.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtCidadeFormCadPaciente.Text))
             {
-                mensagemErro = "A cidade é obrigatória.";
+                mensagemErro = "Erro ao cadastrar paciente, o cidade é obrigatória.";
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(txtUFFormCadPaciente.Text))
             {
-                mensagemErro = "A UF é obrigatória.";
+                mensagemErro = "Erro ao cadastrar paciente, o UF é obrigatório.";
                 return false;
             }
 
@@ -237,6 +237,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
             abrirCampos();
             btnEditarFormCadPaciente.Enabled = true;
+            btnCadastrarFormCadPaciente.Enabled = false;
             try
             {
                 PacienteDAO pacienteDAO = new PacienteDAO();
@@ -261,6 +262,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 else
                 {
                     MessageBox.Show("Paciente não encontrado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fecharCampos();
                 }
             }
             catch (MySqlException ex)
@@ -320,7 +322,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         private void BtnEditarFormCadPaciente(object sender, EventArgs e)
         {
             // Obtenha o CPF do campo de texto correspondente
-            //OBS A VARIAVEL DO CPF TEM ESTÁ COM O TRATAMENTO DO REPLACE, SE NÃO VAI PROCURAR COM O PONTO E HIFEM E NÃO VAI ACHAR
+            // OBS A VARIAVEL DO CPF TEM ESTÁ COM O TRATAMENTO DO REPLACE, SE NÃO VAI PROCURAR COM O PONTO E HIFEM E NÃO VAI ACHAR
             string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", "");
 
             // Verifique se o paciente com o CPF fornecido existe no banco de dados
@@ -346,11 +348,11 @@ namespace ProjetoGrupoSaudeeVidaSim
                 {
                     // chamando o  método de atualização no DAO
                     pacienteDAO.AtualizarPaciente(paciente);
-                    MessageBox.Show("Paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Dados do paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao atualizar paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao atualizar dados do paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -406,7 +408,9 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         private void btnNovoFormCadPaciente_Click(object sender, EventArgs e)
         {
+            LimparCampos();
             abrirCampos();
+            btnExcluirFormCadPaciente.Enabled = false;
         }
 
         private void btnExcluirFormCadPaciente_Click(object sender, EventArgs e)

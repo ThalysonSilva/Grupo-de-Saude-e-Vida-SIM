@@ -43,12 +43,11 @@ namespace ProjetoGrupoSaudeeVidaSim
         private void btnConsultarFormConsultasMarcadasPac_Click(object sender, EventArgs e)
         {
 
-            string cpf = maskedTextBoxCpfPacFormConsultasMarcadas.Text.Replace(".", "").Replace("-", "");
             string nome = txtNomePacFormConsultasMarcadas.Text.Trim();
 
             try
             {
-                List<Consulta> consultas = pacienteDAO.BuscarConsultasPorNomeOuCpf(nome, cpf);
+                List<Consulta> consultas = pacienteDAO.BuscarConsultasPorNomeOuCpf(nome);
                 ExibirResultados(consultas);
             }
             catch (Exception ex)

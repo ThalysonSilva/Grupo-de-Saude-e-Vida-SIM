@@ -15,7 +15,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         // Método para inserir/cadastrar paciente
         public bool SalvarPaciente(Paciente paciente)
         {
-            // essa condição é para verificar se já existe paciente cadastrado com o cpf, se tiver, ele retorna falso para n deixar progredir em salvar duplicado
+            // essa condição é para verificar se já existe paciente cadastrado com o cpf, se tiver, ele retorna falso para n deixar prosseguir em salvar duplicado
             if (PacienteExiste(paciente.Cpf))
             {
                 return false;
@@ -216,7 +216,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         }
 
         // Método para buscar consultas pelo nome ou CPF
-        public List<Consulta> BuscarConsultasPorNomeOuCpf(string nome, string cpf)
+        public List<Consulta> BuscarConsultasPorNomeOuCpf(string nome)
         {
             List<Consulta> consultas = new List<Consulta>();
             string query = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
@@ -224,14 +224,14 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                             consulta.especialidade, consulta.nomeDoMedico, consulta.crm 
                             FROM consulta 
                             JOIN paciente ON consulta.nome = paciente.nome 
-                            WHERE paciente.nome LIKE @nome OR paciente.cpf = @cpf";
+                            WHERE paciente.nome LIKE @nome";
 
             using (MySqlConnection conexao = Conexao())
             {
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
-                cmd.Parameters.AddWithValue("@cpf", cpf);
+                //cmd.Parameters.AddWithValue("@cpf", cpf);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
