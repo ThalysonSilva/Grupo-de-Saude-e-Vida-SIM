@@ -14,7 +14,6 @@ namespace ProjetoGrupoSaudeeVidaSim
     {
 
         private const string viaCepUrl = "https://viacep.com.br/ws/{0}/json";
-
         private MySqlConnection Conexao;
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
         private PacienteDAO conexaoPacienteDAO;
@@ -41,6 +40,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
 
+        #region btn cadastrar novo paciente
         private void btnCadastrarFormCadPaciente_Click(object sender, EventArgs e)
         {
 
@@ -79,6 +79,138 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
 
         }
+        #endregion
+        #region btn novo Paciente
+        private void btnNovoFormCadPaciente_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            abrirCampos();
+            btnExcluirFormCadPaciente.Enabled = false;
+        }
+        #endregion
+        #region btn editar paciente
+        private void BtnEditarFormCadPaciente(object sender, EventArgs e)
+        {
+            // Obtenha o CPF do campo de texto correspondente
+            // OBS A VARIAVEL DO CPF TEM ESTÁ COM O TRATAMENTO DO REPLACE, SE NÃO VAI PROCURAR COM O PONTO E HIFEM E NÃO VAI ACHAR
+            string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", "");
+
+            // Verifique se o paciente com o CPF fornecido existe no banco de dados
+            PacienteDAO pacienteDAO = new PacienteDAO();
+            if (pacienteDAO.PacienteExiste(cpf))
+            {
+                // Crie um objeto Paciente com os valores dos campos de texto
+                Paciente paciente = new Paciente
+                {
+                    Nome = txtNomeFormCadPaciente.Text,
+                    Cpf = cpf,
+                    Contato = maskedTextBoxContatoFormCadPaciente.Text,
+                    DataNascimento = DateTime.Parse(maskedTextBoxDataNascFormCadPaciente.Text),
+                    Cep = maskedTextBoxCepFormCadPaciente.Text,
+                    Endereco = txtLogradouroFormCadPaciente.Text,
+                    NumCasa = int.Parse(txtNumFormCadPaciente.Text),
+                    Bairro = txtBairroFormCadPaciente.Text,
+                    Cidade = txtCidadeFormCadPaciente.Text,
+                    UF = txtUFFormCadPaciente.Text
+                };
+
+                try
+                {
+                    // chamando o  método de atualização no DAO
+                    pacienteDAO.AtualizarPaciente(paciente);
+                    MessageBox.Show("Dados do paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao atualizar dados do paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Exibe uma mensagem informando que o paciente não foi encontrado
+                MessageBox.Show("Paciente não encontrado com o CPF fornecido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+        #region btn consultar o cep
+        private async void btnConsultaCepFormCadPaciente_Click(object sender, EventArgs e)
+        {
+            string cep = maskedTextBoxCepFormCadPaciente.Text.Trim();
+            cep = cep.Replace("-", "");
+            if (!string.IsNullOrEmpty(cep))
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    try
+                    {
+                        string url = string.Format(viaCepUrl, cep);
+
+                        HttpResponseMessage httpResponse = await httpClient.GetAsync(url);
+                        httpResponse.EnsureSuccessStatusCode();
+
+                        if (httpResponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            string responseBody = await httpResponse.Content.ReadAsStringAsync();
+
+                            var endereco = JsonConvert.DeserializeObject<Endereco>(responseBody);
+
+                            txtLogradouroFormCadPaciente.AppendText(endereco.Logradouro);
+                            txtBairroFormCadPaciente.AppendText(endereco.Bairro);
+                            txtCidadeFormCadPaciente.AppendText(endereco.Localidade);
+                            txtUFFormCadPaciente.AppendText(endereco.UF);
+
+                        }
+                    }
+                    catch (HttpRequestException ex)
+                    {
+                        MessageBox.Show($"Erro na requisição HTTP: {ex.Message}", "Erro.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("O campo CEP está vazio.", "Atenção.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+        #endregion
+        #region btn excluir paciente
+        private void btnExcluirFormCadPaciente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PacienteDAO pacienteDAO = new PacienteDAO();
+                string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", ""); ;
+
+                DialogResult conf = MessageBox.Show($"Tem certeza que deseja excluir o paciente {txtNomeFormCadPaciente.Text} " +
+                                                    $"com CPF {maskedTextBoxCPFFormCadPaciente.Text} do sistema?",
+                                                    "Confirmação de exclusão",
+                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (conf == DialogResult.Yes)
+                {
+                    Paciente paciente = pacienteDAO.ExcluirPaciente(cpf);
+
+                    MessageBox.Show("Paciente excluído do sistema com sucesso.",
+                                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparCampos();
+                    fecharCampos();
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Ocorreu um erro de Sintaxe Mysql. " + ex.Message,
+                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao excluir o Paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Método para cadastrar um novo Paciente
         private void cadastrarPaciente()
         {
             string nome = txtNomeFormCadPaciente.Text.ToUpper();
@@ -135,6 +267,8 @@ namespace ProjetoGrupoSaudeeVidaSim
              * 
              * */
         }
+        #endregion
+        #region Método para limparCampos()
         private void LimparCampos()
         {
             txtNomeFormCadPaciente.Clear();
@@ -148,7 +282,8 @@ namespace ProjetoGrupoSaudeeVidaSim
             txtCidadeFormCadPaciente.Clear();
             txtUFFormCadPaciente.Clear();
         }
-
+        #endregion
+        #region Método para validar o campo se está vázio
         private bool ValidarCampos(out string mensagemErro)
         {
             mensagemErro = string.Empty;
@@ -215,7 +350,8 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             return true;
         }
-
+        #endregion
+        #region Método para iniciar conexão com o BD no forms
         private void IniciarConexao()
         {
 
@@ -227,12 +363,8 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             cmd.Connection = Conexao;
         }
-
-        private void FormCadastroDePacientes_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #endregion
+        #region Método para consultar se existe paciente atraves do nome ou cpf
         private void btnConsultarFormCadPaciente_Click(object sender, EventArgs e)
         {
             abrirCampos();
@@ -274,94 +406,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             {
                 MessageBox.Show("Ocorreu um erro ao procurar o paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
-
-        private async void btnConsultaCepFormCadPaciente_Click(object sender, EventArgs e)
-        {
-            string cep = maskedTextBoxCepFormCadPaciente.Text.Trim();
-            cep = cep.Replace("-", "");
-            if (!string.IsNullOrEmpty(cep))
-            {
-                using (var httpClient = new HttpClient())
-                {
-                    try
-                    {
-                        string url = string.Format(viaCepUrl, cep);
-
-                        HttpResponseMessage httpResponse = await httpClient.GetAsync(url);
-                        httpResponse.EnsureSuccessStatusCode();
-
-                        if (httpResponse.StatusCode == HttpStatusCode.OK)
-                        {
-                            string responseBody = await httpResponse.Content.ReadAsStringAsync();
-
-                            var endereco = JsonConvert.DeserializeObject<Endereco>(responseBody);
-
-                            txtLogradouroFormCadPaciente.AppendText(endereco.Logradouro);
-                            txtBairroFormCadPaciente.AppendText(endereco.Bairro);
-                            txtCidadeFormCadPaciente.AppendText(endereco.Localidade);
-                            txtUFFormCadPaciente.AppendText(endereco.UF);
-
-                        }
-                    }
-                    catch (HttpRequestException ex)
-                    {
-                        MessageBox.Show($"Erro na requisição HTTP: {ex.Message}", "Erro.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("O campo CEP está vazio.", "Atenção.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
-
-        private void BtnEditarFormCadPaciente(object sender, EventArgs e)
-        {
-            // Obtenha o CPF do campo de texto correspondente
-            // OBS A VARIAVEL DO CPF TEM ESTÁ COM O TRATAMENTO DO REPLACE, SE NÃO VAI PROCURAR COM O PONTO E HIFEM E NÃO VAI ACHAR
-            string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", "");
-
-            // Verifique se o paciente com o CPF fornecido existe no banco de dados
-            PacienteDAO pacienteDAO = new PacienteDAO();
-            if (pacienteDAO.PacienteExiste(cpf))
-            {
-                // Crie um objeto Paciente com os valores dos campos de texto
-                Paciente paciente = new Paciente
-                {
-                    Nome = txtNomeFormCadPaciente.Text,
-                    Cpf = cpf,
-                    Contato = maskedTextBoxContatoFormCadPaciente.Text,
-                    DataNascimento = DateTime.Parse(maskedTextBoxDataNascFormCadPaciente.Text),
-                    Cep = maskedTextBoxCepFormCadPaciente.Text,
-                    Endereco = txtLogradouroFormCadPaciente.Text,
-                    NumCasa = int.Parse(txtNumFormCadPaciente.Text),
-                    Bairro = txtBairroFormCadPaciente.Text,
-                    Cidade = txtCidadeFormCadPaciente.Text,
-                    UF = txtUFFormCadPaciente.Text
-                };
-
-                try
-                {
-                    // chamando o  método de atualização no DAO
-                    pacienteDAO.AtualizarPaciente(paciente);
-                    MessageBox.Show("Dados do paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao atualizar dados do paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                // Exibe uma mensagem informando que o paciente não foi encontrado
-                MessageBox.Show("Paciente não encontrado com o CPF fornecido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        #endregion
+        #region Método para fechar campos
         private void fecharCampos()
         {
             txtNomeFormCadPaciente.Enabled = true;
@@ -381,9 +428,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnEditarFormCadPaciente.Enabled = false;
             btnExcluirFormCadPaciente.Enabled = false;
             btnConsultaCepFormCadPaciente.Enabled = false;
-
         }
-
+        #endregion
+        #region Método de abrir campos
         private void abrirCampos()
         {
             txtNomeFormCadPaciente.Enabled = true;
@@ -405,46 +452,12 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnConsultaCepFormCadPaciente.Enabled = true;
 
         }
+        #endregion
+ 
 
-        private void btnNovoFormCadPaciente_Click(object sender, EventArgs e)
+        private void FormCadastroDePacientes_Load(object sender, EventArgs e)
         {
-            LimparCampos();
-            abrirCampos();
-            btnExcluirFormCadPaciente.Enabled = false;
-        }
 
-        private void btnExcluirFormCadPaciente_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PacienteDAO pacienteDAO = new PacienteDAO();
-                string cpf = maskedTextBoxCPFFormCadPaciente.Text.Replace(".", "").Replace("-", ""); ;
-
-                DialogResult conf = MessageBox.Show($"Tem certeza que deseja excluir o paciente {txtNomeFormCadPaciente.Text} " +
-                                                    $"com CPF {maskedTextBoxCPFFormCadPaciente.Text} do sistema?",
-                                                    "Confirmação de exclusão",
-                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (conf == DialogResult.Yes)
-                {
-                    Paciente paciente = pacienteDAO.ExcluirPaciente(cpf);
-
-                    MessageBox.Show("Paciente excluído do sistema com sucesso.",
-                                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimparCampos();
-                    fecharCampos();
-                }
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Ocorreu um erro de Sintaxe Mysql. " + ex.Message,
-                                "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocorreu um erro ao excluir o Paciente: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

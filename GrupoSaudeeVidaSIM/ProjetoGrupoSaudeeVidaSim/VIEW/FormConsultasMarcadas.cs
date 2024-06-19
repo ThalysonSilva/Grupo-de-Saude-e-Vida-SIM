@@ -19,6 +19,25 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
 
+        #region btnConsultar
+        private void btnConsultarFormConsultasMarcadasPac_Click(object sender, EventArgs e)
+        {
+
+            string nome = txtNomePacFormConsultasMarcadas.Text.Trim();
+
+            try
+            {
+                List<Consulta> consultas = pacienteDAO.BuscarConsultasPorNomeOuCpf(nome);
+                ExibirResultados(consultas);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        #endregion
+        #region Método para organizar a list view
         private void organizarLST()
         {
             // Estrutura de visualização no campo listViewConsultas
@@ -39,23 +58,8 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormConsultasMarcadasPac.Columns.Add("Nome da Clínica", 150, HorizontalAlignment.Center);
             listViewFormConsultasMarcadasPac.Columns.Add("Valor da Consulta", 150, HorizontalAlignment.Center);
         }
-
-        private void btnConsultarFormConsultasMarcadasPac_Click(object sender, EventArgs e)
-        {
-
-            string nome = txtNomePacFormConsultasMarcadas.Text.Trim();
-
-            try
-            {
-                List<Consulta> consultas = pacienteDAO.BuscarConsultasPorNomeOuCpf(nome);
-                ExibirResultados(consultas);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao consultar dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
+        #endregion
+        #region Método para exibir as informações
         private void ExibirResultados(List<Consulta> consultas)
         {
             listViewFormConsultasMarcadasPac.Items.Clear();
@@ -75,5 +79,6 @@ namespace ProjetoGrupoSaudeeVidaSim
                 listViewFormConsultasMarcadasPac.Items.Add(item);
             }
         }
+        #endregion
     }
 }

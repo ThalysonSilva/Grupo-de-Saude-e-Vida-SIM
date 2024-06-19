@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/06/2024 às 20:56
+-- Tempo de geração: 19/06/2024 às 22:22
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -29,26 +29,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `consulta` (
   `id` int(11) NOT NULL,
-  `valorDaConsulta` double DEFAULT NULL,
-  `dataDaConsulta` date DEFAULT NULL,
-  `nomeDaClinica` varchar(32) DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
+  `nomeDaClinica` varchar(50) NOT NULL,
+  `nomeDoMedico` varchar(50) NOT NULL,
+  `crm` int(12) NOT NULL,
+  `especialidade` varchar(32) NOT NULL,
   `tipoDaConsulta` varchar(32) DEFAULT NULL,
-  `nome` varchar(32) DEFAULT NULL,
-  `especialidade` varchar(32) DEFAULT NULL,
-  `nomeDoMedico` varchar(32) DEFAULT NULL,
-  `horarioDaConsulta` varchar(32) DEFAULT NULL,
-  `crm` int(12) DEFAULT NULL
+  `dataDaConsulta` date NOT NULL,
+  `horarioDaConsulta` varchar(32) NOT NULL,
+  `valorDaConsulta` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `consulta`
 --
 
-INSERT INTO `consulta` (`id`, `valorDaConsulta`, `dataDaConsulta`, `nomeDaClinica`, `tipoDaConsulta`, `nome`, `especialidade`, `nomeDoMedico`, `horarioDaConsulta`, `crm`) VALUES
-(1, 555, '2025-12-25', 'Clínica Saúde e Vida', 'Consulta Eletiva', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', '', 121212),
-(2, 5555, '2028-12-25', 'Clínica São José', 'Urgência', 'JIUSEPPE', 'Reumatologia', 'JOÃO SANTOS SILVA', '', 121212),
-(3, 1500, '2026-07-29', 'Clínica Bem Estar', 'Urgência', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', '14:00H - 16:00H ', 121212),
-(4, 1522, '2027-12-25', 'Clínica São José', 'Consulta Eletiva', 'ANGELO BARROS', 'Reumatologia', 'JOÃO SANTOS SILVA', '14:00H - 16:00H ', 121212);
+INSERT INTO `consulta` (`id`, `nome`, `nomeDaClinica`, `nomeDoMedico`, `crm`, `especialidade`, `tipoDaConsulta`, `dataDaConsulta`, `horarioDaConsulta`, `valorDaConsulta`) VALUES
+(1, 'THALYSON SILVA', 'Clínica Saúde e Vida', 'DR ANTONIO MENDES ', 1524, 'Cardiologia', 'Consulta Eletiva', '2024-06-20', '7:00H - 11:00H', 150),
+(2, 'THALYSON SILVA', 'Clínica São José', 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'Cardiologia', 'Consulta Eletiva', '2024-06-20', '7:00H - 12:00H', 124),
+(3, 'JAILTON DEIVID MORAIS', 'Clínica Saúde e Vida', 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'Gastroenterologia', 'Urgência', '2024-06-20', '14:00H - 17:00H ', 452);
 
 -- --------------------------------------------------------
 
@@ -58,9 +57,9 @@ INSERT INTO `consulta` (`id`, `valorDaConsulta`, `dataDaConsulta`, `nomeDaClinic
 
 CREATE TABLE `medico` (
   `id` int(11) NOT NULL,
-  `nome` varchar(80) DEFAULT NULL,
-  `crm` int(10) DEFAULT NULL,
-  `especialidade` varchar(20) DEFAULT NULL,
+  `nome` varchar(50) NOT NULL,
+  `crm` int(10) NOT NULL,
+  `especialidade` varchar(32) DEFAULT NULL,
   `diaDeAtendimento` varchar(32) DEFAULT NULL,
   `horarioAtendimento` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -70,9 +69,9 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, `horarioAtendimento`) VALUES
-(1, 'JOSE ALDO', 11111, 'HEMATOLOGIA', '0000-00-00 00:00:00', '0000-00-00'),
-(2, 'JOSE ALDO', 11111, 'HEMATOLOGIA', 'TERÇA-FEIRA', '14:00H - 18:00H '),
-(3, 'JOÃO SANTOS SILVA', 121212, 'REUMATOLOGIA', 'SEGUNDA A SÁBADO', '14:00H - 16:00H ');
+(1, 'DR ANTONIO MENDES ', 1524, 'CARDIOLOGIA', 'SEGUNDA-FEIRA', '7:00H - 11:00H'),
+(2, 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'CARDIOLOGIA', 'TERÇA-FEIRA', '7:00H - 12:00H'),
+(3, 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'GASTROENTEROLOGIA', 'TERÇA-FEIRA', '14:00H - 17:00H ');
 
 -- --------------------------------------------------------
 
@@ -99,26 +98,9 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `endereco`, `numCasa`, `bairro`, `cidade`, `uf`) VALUES
-(1, 'qweqweqwe', '123,123,123', '(31) 23123-1', '1753-01-01', '12312-312', 'asdasdasdasd', 12, 'asdasdas', 'dasdasda', 'RN'),
-(2, 'thalyson teste', '123,123,123', '(12) 31231-2', '1753-01-01', '12312-312', 'rua nova', 23, 'Mãe luiza', 'Natal', 'RN'),
-(3, 'jailton test', '123,123,121', '(12) 31231-2', '1956-06-28', '12312-312', 'qsadqwdqwdq', 12, 'asdasd', 'sdasdasd', 'RN'),
-(4, 'qweeqweqw', '123,123,123', '(12) 31231-2', '1996-09-28', '12312-312', 'asdasdasda', 12, 'asduhaius as', 'asdjahsdu', 'RN'),
-(5, 'daqwdqwdqwddqwdqwdqwd21', '123,123,123', '(12) 31231-2', '3123-12-23', '12312-312', 'addawdaw', 22, 'asdasda', 'wdqdqwdqwd', 'RN'),
-(6, 'teste', '134,342,352', '(23) 52352-3', '2000-12-12', '23523-523', 'fsdfsdfsd', 23, 'ml', 'natal', 'RN'),
-(7, 'addasd', '123,123,123-12', '(12) 31231-2', '2000-02-02', '12312-312', 'sdasdasdasda', 12, 'asdasdas', 'dasdasdasd', 'RN'),
-(8, 'dasdasdasd', '123,123,123-12', '(12) 31231-2', '2000-02-11', '12312-312', 'dasda sda', 12, 'asdasda ', 'asdasdasda', 'RN'),
-(9, 'fwefwefwe', '123,123,123-12', '(12) 31231-2', '2000-02-12', '32312-312', 'dasda wd', 32, 'adasdasd', 'sdasdasdas', 'RN'),
-(10, 'wfwefwefw', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdas', 123, 'asdasd', 'asdasdas', 'rd'),
-(11, 'cscsdcsdcsdcs', '123,123,123-12', '(12) 31231-2312', '1996-11-12', '12312-312', 'asdasdasd', 12, 'asdaf', 'fadfasd', 'rn'),
-(12, 'asdasfasfa', '123,123,123-12', '(12) 31231-2312', '2000-02-02', '12312-312', 'sadasfa', 12, 'asdkjalbs', 'dajsdnaiusb', 'RN'),
-(13, 'fwwefwe', '123,123,123-12', '(12) 31231-2312', '2000-02-11', '12312-312', 'wdqwdqwdqwd', 45, 'asdafaf', 'afsasfas', 'rn'),
-(14, 'adsdasdasdas', '151,616,515-61', '(12) 31231-2312', '2000-02-12', '11111-111', 'dasdasda', 12, 'sdasdasda', 'asdasdas', 'RN'),
-(15, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
-(16, 'asdasda', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '12312-312', 'asdasdiasbdi', 32, 'sdasdasd', 'asdasdas', 'RN'),
-(17, 'asdasdasd', '123,123,123-12', '(12) 31231-2312', '2000-02-12', '31231-231', 'asd asdasd', 21, 'ad sda', 'asdasda', 'Rn'),
-(18, 'Jailton Dayvid', '111,111,111-11', '(84) 95955-9959', '1988-12-09', '11111-111', 'RUA TEST', 14, 'BAIRRO TESTE', 'natal', 'RN'),
-(19, 'ANGELO BARROS', '11111111111', '(88) 88888-8888', '2000-07-29', '59151-660', 'RUA DAS MANGUEIRAS', 1, 'NOVA PARNAMIRIM', 'PARNAMIRIM', 'RN'),
-(20, 'JIUSEPPE', '55555555555', '(12) 12121-2121', '2002-07-29', '59151-660', 'RUA DAS MANGUEIRAS', 25, 'NOVA PARNAMIRIM', 'PARNAMIRIM', 'RN');
+(1, 'THALYSON SILVA', '23425367889', '(84) 98876-5398', '1996-09-28', '59014-210', 'RUA ANTÔNIO FÉLIX', 354, 'MÃE LUIZA', 'FORTALEZA', 'CE'),
+(2, 'JAILTON DEIVID MORAIS', '45687525998', '(84) 91546-1681', '1980-02-02', '59114-460', 'RUA MORRO DA PEDRA', 24, 'NOSSA SENHORA DA APR', 'NATAL', 'RN'),
+(3, 'ANGELO LEONOR MARINHO', '45615161861', '(84) 92426-5482', '1990-10-02', '59056-180', 'RUA DOUTOR POTY NÓBREGA', 20, 'LAGOA NOVA', 'NATAL', 'RN');
 
 -- --------------------------------------------------------
 
@@ -129,20 +111,9 @@ INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `ende
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `usuario` varchar(50) NOT NULL,
-  `senha` varchar(50) NOT NULL,
-  `confsenha` varchar(50) NOT NULL
+  `senha` varchar(20) NOT NULL,
+  `confsenha` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `usuario`, `senha`, `confsenha`) VALUES
-(1, 'Administrador', '@dmin123', '@dmin123'),
-(2, 'Jailton.Morais', '123', '123'),
-(3, 'Jailton.Morais', 'Jd123', 'Jd123'),
-(4, 'Teste 01', 'Teste01', 'Teste01'),
-(5, 'Teste 02', '123', '123');
 
 --
 -- Índices para tabelas despejadas
@@ -158,7 +129,8 @@ ALTER TABLE `consulta`
 -- Índices de tabela `medico`
 --
 ALTER TABLE `medico`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `crm` (`crm`);
 
 --
 -- Índices de tabela `paciente`
@@ -180,7 +152,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `medico`
@@ -192,13 +164,13 @@ ALTER TABLE `medico`
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

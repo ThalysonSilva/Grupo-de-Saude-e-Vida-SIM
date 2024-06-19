@@ -17,9 +17,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             organizarLST();
         }
 
+        #region btn consultar paciente
         private void btnConsultarFormConsultarDados_Click(object sender, EventArgs e)
         {
-            //string cpf = maskedTextBoxCpfFormConsultarDados.Text.Replace(".", "").Replace("-", "");
+            
             string nome = txtNomeFormConsultarDados.Text.Trim();
 
             try
@@ -38,7 +39,9 @@ namespace ProjetoGrupoSaudeeVidaSim
                 }
             }
         }
+        #endregion
 
+        #region Método para organizar a list view
         private void organizarLST()
         {
             // Estrutura de visualização no campo listViewFormConsultarDados
@@ -70,7 +73,8 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormConsultarDados.Columns.Add("Cidade", 100, HorizontalAlignment.Left);
             listViewFormConsultarDados.Columns.Add("UF", 50, HorizontalAlignment.Left);
         }
-
+        #endregion
+        #region Método exibir informações na liss view
         private void ExibirResultados(List<Paciente> pacientes)
         {
             listViewFormConsultarDados.Items.Clear();
@@ -91,6 +95,13 @@ namespace ProjetoGrupoSaudeeVidaSim
                 listViewFormConsultarDados.Items.Add(item);
             }
         }
+        #endregion
+        #region Método para limpar as informações na list view
+        private void btnConsultarFormLimparDados_Click(object sender, EventArgs e)
+        {
+            listViewFormConsultarDados.Items.Clear();
+        }
+        #endregion
 
         private void btnRetornarDadosFormConsultarDados_Click(object sender, EventArgs e)
         {
@@ -107,9 +118,6 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
 
-        private void btnConsultarFormLimparDados_Click(object sender, EventArgs e)
-        {
-            listViewFormConsultarDados.Items.Clear();
-        }
+        
     }
 }
