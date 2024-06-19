@@ -152,10 +152,10 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         }
 
         // Método para retornar informações do paciente
-        public List<Paciente> BuscarPacienteEListar(string cpf, string nome)
+        public List<Paciente> BuscarPacienteEListar(string nome)
         {
             List<Paciente> pacientes = new List<Paciente>();
-            string linkListar = "SELECT * FROM paciente WHERE cpf = @cpf OR nome LIKE @nome";
+            string linkListar = "SELECT * FROM paciente WHERE nome LIKE @nome";
 
             try
             {
@@ -163,7 +163,7 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 {
                     conexao.Open();
                     MySqlCommand cmd = new MySqlCommand(linkListar, conexao);
-                    cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".", "").Replace("-", ""));
+                    //cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".", "").Replace("-", ""));
                     cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())

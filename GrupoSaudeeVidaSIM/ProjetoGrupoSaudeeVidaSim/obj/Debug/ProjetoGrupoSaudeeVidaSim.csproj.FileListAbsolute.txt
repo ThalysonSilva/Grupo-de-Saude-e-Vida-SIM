@@ -607,3 +607,5 @@ C:\Users\senho\Desktop\Backup do Backup\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVid
 C:\Users\senho\Desktop\Backup do Backup\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.csproj.CopyComplete
 C:\Users\senho\Desktop\Backup do Backup\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.exe
 C:\Users\senho\Desktop\Backup do Backup\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\obj\Debug\ProjetoGrupoSaudeeVidaSim.pdb
+D:\Users\jailton.morais\OneDrive - Norteng Engenharia Ltda\Documentos\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.dll
+D:\Users\jailton.morais\OneDrive - Norteng Engenharia Ltda\Documentos\Grupo-de-Saude-e-Vida-SIM\GrupoSaudeeVidaSIM\ProjetoGrupoSaudeeVidaSim\bin\Debug\Newtonsoft.Json.xml

@@ -19,12 +19,12 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         private void btnConsultarFormConsultarDados_Click(object sender, EventArgs e)
         {
-            string cpf = maskedTextBoxCpfFormConsultarDados.Text.Replace(".", "").Replace("-", "");
+            //string cpf = maskedTextBoxCpfFormConsultarDados.Text.Replace(".", "").Replace("-", "");
             string nome = txtNomeFormConsultarDados.Text.Trim();
 
             try
             {
-                List<Paciente> pacientes = pacienteDAO.BuscarPacienteEListar(cpf, nome);
+                List<Paciente> pacientes = pacienteDAO.BuscarPacienteEListar(nome);
                 ExibirResultados(pacientes);
             }
             catch (Exception ex)
