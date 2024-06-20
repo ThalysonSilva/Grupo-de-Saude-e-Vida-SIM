@@ -14,6 +14,7 @@ Funcionalidades
 
     Cadastro de Consultas;
     Cadastro de pacientes; 
+	Cadastro de médico;
     Consultas Agendadas;
     Dias de Atendimentos Médicos;
     Atualização e remoção de registros de pacientes, consultas e médicos;
@@ -22,8 +23,8 @@ Funcionalidades
 Tecnologias Utilizadas
 
     Linguagem de Programação: C#
-    Framework: .NET
-    Interface Gráfica: Windows Forms (Visual Studio)
+    Framework: .NET versão 4.7.2
+    Interface Gráfica: Windows Forms (Visual Studio 2022)
     Banco de Dados: MySQL
     Servidor Local: XAMPP
 
@@ -34,6 +35,7 @@ Para executar este projeto, você precisará ter o seguinte instalado em seu amb
     .NET Framework
     Visual Studio (ou outro IDE de sua preferência)
     XAMPP (para o servidor MySQL)
+	MySQL.Data (pacote instalado no NuGet) 
 
 Instalação
 
@@ -52,15 +54,10 @@ Configuração do Projeto
     Abra o Visual Studio e carregue o projeto clonado.
     No arquivo App.config, atualize a string de conexão com as credenciais do seu banco de dados MySQL:
 
-   
-
-    <connectionStrings>
-        <add linkDB = "datasource=localhost;username=root;password=;database=clinica";
-       
 
 Executar a Aplicação
 
-    Compile e execute o projeto no Visual Studio.
+	Compile e execute o projeto no Visual Studio.
     A interface principal do sistema será carregada, permitindo que você comece a registrar pacientes, médico e consultas.
     Login: Administrador - Senha: 123
 
@@ -90,9 +87,5 @@ Contribuição
     Faça um push para a branch: git push origin minha-feature.
     Envie um Pull Request.
 
-Licença
 
-Este projeto está licenciado sob a MIT License.
-Contato
-
-Para dúvidas ou sugestões, entre em contato através do email: mpthalyson@gmail.com - jailtondayvidsilva.com - pollyana.eidelwein@gmail.com - agsouzab@gmail.com
+Para dúvidas ou sugestões, entre em contato através do email: mpthalyson@gmail.com - jailtondayvidsilva@gmail.com - pollyana.eidelwein@gmail.com - agsouzab@gmail.com

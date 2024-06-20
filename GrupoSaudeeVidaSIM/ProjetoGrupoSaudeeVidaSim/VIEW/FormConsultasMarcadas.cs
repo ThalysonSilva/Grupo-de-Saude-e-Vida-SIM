@@ -27,7 +27,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             try
             {
-                List<Consulta> consultas = pacienteDAO.BuscarConsultasPorNomeOuCpf(nome);
+                List<Consulta> consultas = pacienteDAO.BuscarConsultasPorNome(nome);
                 ExibirResultados(consultas);
             }
             catch (Exception ex)

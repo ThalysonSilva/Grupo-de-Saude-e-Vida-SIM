@@ -2,17 +2,23 @@
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
     public class PacienteDAO
     {
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
+
+        #region Método para abrir a conexão com o BD
         public MySqlConnection Conexao()
         {
             return new MySqlConnection(linkDB);
         }
-        // Método para inserir/cadastrar paciente
+        #endregion
+
+
+        #region Método para inserir/cadastrar paciente
         public bool SalvarPaciente(Paciente paciente)
         {
             // essa condição é para verificar se já existe paciente cadastrado com o cpf, se tiver, ele retorna falso para n deixar prosseguir em salvar duplicado
@@ -43,8 +49,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return true;
         }
+        #endregion
 
-        // Método para buscar informações do paciente atraves do nome ou cpf
+        #region Método para buscar informações do paciente atraves do nome ou cpf
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
             //Método atuando no forms de cadastroPaciente
@@ -79,22 +86,23 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        // Método para editar Paciente.
+        #region Método para editar Paciente.
         public void AtualizarPaciente(Paciente paciente)
         {
             // Declaração da string SQL que será usada para atualizar os dados do paciente no banco de dados
             string linkAtualizarPaciente = "UPDATE paciente SET " +
-                "nome = @nome, " +                 // Atualiza o campo 'nome'
-                "contato = @contato, " +           // Atualiza o campo 'contato'
-                "dataNasc = @dataNasc, " +         // Atualiza o campo 'dataNasc'
-                "cep = @cep, " +                   // Atualiza o campo 'cep'
-                "endereco = @endereco, " +         // Atualiza o campo 'endereco'
-                "numCasa = @numCasa, " +           // Atualiza o campo 'numCasa'
-                "bairro = @bairro, " +             // Atualiza o campo 'bairro'
-                "cidade = @cidade, " +             // Atualiza o campo 'cidade'
-                "uf = @uf " +                      // Atualiza o campo 'uf'
-                "WHERE cpf = @cpf";                // Condição para atualizar o registro correspondente ao CPF fornecido
+                "nome = @nome, " +                 
+                "contato = @contato, " +           
+                "dataNasc = @dataNasc, " +         
+                "cep = @cep, " +                   
+                "endereco = @endereco, " +         
+                "numCasa = @numCasa, " +           
+                "bairro = @bairro, " +             
+                "cidade = @cidade, " +             
+                "uf = @uf " +                      
+                "WHERE cpf = @cpf";                
 
             // Criação de uma nova conexão com o banco de dados usando a string de conexão
             using (MySqlConnection conexao = Conexao())
@@ -103,41 +111,38 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 MySqlCommand cmd = new MySqlCommand(linkAtualizarPaciente, conexao);
 
                 // Adiciona os valores dos parâmetros ao comando para evitar SQL injection
-                cmd.Parameters.AddWithValue("@nome", paciente.Nome);               // Adiciona o valor do nome
-                cmd.Parameters.AddWithValue("@contato", paciente.Contato);         // Adiciona o valor do contato
-                cmd.Parameters.AddWithValue("@dataNasc", paciente.DataNascimento); // Adiciona o valor da data de nascimento
-                cmd.Parameters.AddWithValue("@cep", paciente.Cep);                 // Adiciona o valor do CEP
-                cmd.Parameters.AddWithValue("@endereco", paciente.Endereco);       // Adiciona o valor do endereço
-                cmd.Parameters.AddWithValue("@numCasa", paciente.NumCasa);         // Adiciona o valor do número da casa
-                cmd.Parameters.AddWithValue("@bairro", paciente.Bairro);           // Adiciona o valor do bairro
-                cmd.Parameters.AddWithValue("@cidade", paciente.Cidade);           // Adiciona o valor da cidade
-                cmd.Parameters.AddWithValue("@uf", paciente.UF);                   // Adiciona o valor da UF (estado)
-                cmd.Parameters.AddWithValue("@cpf", paciente.Cpf.Replace(".", "").Replace("-", ""));                 // Adiciona o valor do CPF (usado na condição WHERE)
+                cmd.Parameters.AddWithValue("@nome", paciente.Nome);               
+                cmd.Parameters.AddWithValue("@contato", paciente.Contato);         
+                cmd.Parameters.AddWithValue("@dataNasc", paciente.DataNascimento); 
+                cmd.Parameters.AddWithValue("@cep", paciente.Cep);                 
+                cmd.Parameters.AddWithValue("@endereco", paciente.Endereco);       
+                cmd.Parameters.AddWithValue("@numCasa", paciente.NumCasa);         
+                cmd.Parameters.AddWithValue("@bairro", paciente.Bairro);           
+                cmd.Parameters.AddWithValue("@cidade", paciente.Cidade);           
+                cmd.Parameters.AddWithValue("@uf", paciente.UF);                   
+                cmd.Parameters.AddWithValue("@cpf", paciente.Cpf.Replace(".", "").Replace("-", ""));
 
                 // Executa o comando SQL para atualizar os dados no banco de dados
                 int linhaAtualizada = cmd.ExecuteNonQuery();
 
                 if (linhaAtualizada == 0)
                 {
-                    throw new Exception("Nenhum registro foi atualizado. Verifique se o CPF está correto.");
+                    MessageBox.Show("Nenhum registro foi atualizado. Verifique se o CPF está correto.");
                 }
 
             }
         }
+        #endregion
 
-        // Método para verificar se o paciente existe realmente no BD atraves do cpf
+        #region Método para verificar se o paciente existe realmente no BD atraves do cpf
         public bool PacienteExiste(string cpf)
         {
             // Define a consulta SQL que conta o número de registros com o CPF fornecido
             string linkVerificacao = "SELECT COUNT(*) FROM paciente WHERE cpf = @cpf";
-
-            // Usando uma conexão com o banco de dados MySQL
             using (MySqlConnection conexao = Conexao())
             {
-                // Abre a conexão com o banco de dados
                 conexao.Open();
-
-                // Cria um comando MySQL com a consulta definida anteriormente
+                
                 MySqlCommand cmd = new MySqlCommand(linkVerificacao, conexao);
 
                 // Adiciona o parâmetro CPF ao comando, substituindo o placeholder @cpf
@@ -150,8 +155,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
+        #endregion
 
-        // Método para retornar informações do paciente
+        #region Método para retornar informações do paciente
         public List<Paciente> BuscarPacienteEListar(string nome)
         {
             List<Paciente> pacientes = new List<Paciente>();
@@ -163,7 +169,6 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 {
                     conexao.Open();
                     MySqlCommand cmd = new MySqlCommand(linkListar, conexao);
-                    //cmd.Parameters.AddWithValue("@cpf", cpf.Replace(".", "").Replace("-", ""));
                     cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -191,13 +196,14 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Erro ao ler informações do paciente no Banco de dados: " + ex.Message);
-                throw;
+                MessageBox.Show("Erro ao ler informações do paciente no Banco de dados: " + ex.Message, "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return pacientes;
         }
+        #endregion
 
-        //Método para excluir o paciente
+        #region Método para excluir o paciente
         public Paciente ExcluirPaciente(string cpf)
         {
             string deletar = "DELETE FROM paciente WHERE cpf LIKE @cpf";
@@ -214,9 +220,10 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        // Método para buscar consultas pelo nome ou CPF
-        public List<Consulta> BuscarConsultasPorNomeOuCpf(string nome)
+        #region Método para buscar consultas pelo nome
+        public List<Consulta> BuscarConsultasPorNome(string nome)
         {
             List<Consulta> consultas = new List<Consulta>();
             string query = @"SELECT consulta.id, consulta.valorDaConsulta, consulta.dataDaConsulta, 
@@ -231,7 +238,6 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
                 cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
-                //cmd.Parameters.AddWithValue("@cpf", cpf);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -255,7 +261,6 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return consultas;
         }
-       
-
+        #endregion
     }
 }

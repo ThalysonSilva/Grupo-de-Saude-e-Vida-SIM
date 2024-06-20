@@ -93,7 +93,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         private void IniciarConexao()
         {
             // Cria e abre uma conexão com o banco de dados MySQL
-            Conexao = new MySqlConnection("datasource=localhost;username=root;password=;database=clinica");
+            Conexao = new MySqlConnection(linkDB);
 
             Conexao.Open();
 

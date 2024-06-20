@@ -9,14 +9,14 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
     {
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
 
-
-        //Método para abrir conexão
+        #region Método para abrir a conexão com o BD
         public MySqlConnection Conexao()
         {
             return new MySqlConnection(linkDB);
         }
+        #endregion
 
-        //Método para salvar o médico
+        #region Método para salvar um novo médico
         public bool SalvarMedico(Medico medico)
         {
             if (medicoExiste(medico.Crm))
@@ -43,8 +43,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return true;
         }
+        #endregion
 
-        //Método para buscar o médico pelo nome
+        #region Método para buscar o médico pelo nome
         public Medico BuscarMedicoNome(string nome)
         {
             string buscar = "SELECT * FROM medico WHERE nome LIKE @nome ";
@@ -74,8 +75,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        //Método para buscar o médico pelo CRM
+        #region Método para buscar o médico pelo CRM
         public Medico BuscarMedicoCrm(string crm)
         {
             string buscar = "SELECT * FROM medico WHERE crm = @crm ";
@@ -105,8 +107,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        //Método para editar o médico
+        #region Método para editar o médico
         public Medico EditarMedico(Medico medico)
         {
             string editar = "UPDATE medico " +
@@ -137,8 +140,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        //Verifica se médico já existe no sistema
+        #region Método para Verifica se médico já existe no sistema
         public bool medicoExiste(int crm)
         {
             // Define a consulta SQL que conta o número de registros com o CPF fornecido
@@ -163,8 +167,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
+        #endregion
 
-        //Método para excluir o médico
+        #region Método para excluir o médico
         public Medico ExcluirMedico(int crm)
         {
             string deletar = "DELETE FROM medico WHERE crm LIKE @crm";
@@ -181,8 +186,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        // Método para retonar uma list no forms de atendimento do médico
+        #region Método para retonar uma list no forms de atendimento do médico
         public List<Consulta> BuscarConsultasPorNomeMedico(string nome)
         {
             List<Consulta> consultas = new List<Consulta>();
@@ -223,6 +229,6 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return consultas;
         }
-
+        #endregion
     }
 }

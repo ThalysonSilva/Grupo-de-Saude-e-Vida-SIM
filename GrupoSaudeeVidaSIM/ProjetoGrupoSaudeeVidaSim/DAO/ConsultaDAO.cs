@@ -2,7 +2,6 @@
 using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
@@ -10,11 +9,15 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
     {
 
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
+
+        #region Método para abrir a conexão com o BD
         public MySqlConnection Conexao()
         {
             return new MySqlConnection(linkDB);
         }
-        //Método para salvar consulta
+        #endregion
+
+        #region Método para salvar consulta
         public void SalvarConsulta(Consulta consulta)
         {
             string inserir = "INSERT INTO consulta" +
@@ -37,8 +40,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.ExecuteNonQuery();
             }
         }
+        #endregion
 
-        // Método para buscar paciente no banco de dados por nome
+        #region Método para buscar paciente no banco de dados por nome
         public Paciente BuscarPacientePorNomeOuCpf(string nome, string cpf)
         {
             // comando para buscar paciente no banco de dados
@@ -70,8 +74,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             return null;
             
         }
-        
-        // método para buscar consulta por nome e nome da clinica
+        #endregion
+
+        #region Método para buscar consulta por nome e nome da clinica
         public Consulta EditarConsulta(Consulta consulta)
         {
             string editar = "UPDATE consulta SET nome = @nome, " +
@@ -111,8 +116,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return null;
         }
+        #endregion
 
-        // método para verificaar se a consulta existe, consulta feita pelo nome e nome da clinica
+        #region Método para verificaar se a consulta existe, consulta feita pelo nome e nome da clinica
         public bool consultaExiste(string nome, string nomeDaClinica)
         {
             string buscar = "SELECT COUNT(*) FROM consulta WHERE nome = @nome AND nomeDaClinica = @nomeDaClinica";
@@ -126,6 +132,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
+        #endregion
+
+        #region List buscar consultas por nome da clinica
         public List<Consulta> BuscarConsultasPorNomeClinica(string nomeDaClinica)
         {
             List<Consulta> consultas = new List<Consulta>();
@@ -164,6 +173,6 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
             }
             return consultas;
         }
-
+        #endregion
     }
 }

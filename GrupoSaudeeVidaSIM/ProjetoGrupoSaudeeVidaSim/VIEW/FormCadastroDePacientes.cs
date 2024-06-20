@@ -440,10 +440,5 @@ namespace ProjetoGrupoSaudeeVidaSim
         }
         #endregion
  
-
-        private void FormCadastroDePacientes_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

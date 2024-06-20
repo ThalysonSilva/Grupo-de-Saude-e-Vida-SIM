@@ -1,21 +1,23 @@
 ﻿using ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
-    using MySql.Data.MySqlClient;
-    using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
-
     public class AutenticacaoDAO
     {
         public readonly string linkDB = "datasource=localhost;username=root;password=;database=clinica";
 
+        #region Método para abrir a conexão com o BD
         public MySqlConnection Conexao()
         {
             return new MySqlConnection(linkDB);
         }
+        #endregion
 
+        #region Método salvar um novo usuário
         public void SalvarUsuario(Autenticacao autenticacao)
         {
             string inserir = "INSERT INTO usuario (usuario, senha, confsenha) VALUES (@usuario, @senha, @confsenha)";
@@ -31,7 +33,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 cmd.ExecuteNonQuery();
             }
         }
+        #endregion
 
+        #region Método para autenticar o usuário
         public bool AutenticarUsuario(string usuario, string senha)
         {
             string consulta = "SELECT COUNT(*) FROM usuario WHERE usuario = @usuario AND senha = @senha";
@@ -46,7 +50,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 return count > 0;
             }
         }
+        #endregion
 
+        #region Método list de consultar usuários
         public List<Autenticacao> ConsultarUsuarios(string nomeUsuario)
         {
             List<Autenticacao> listaUsuarios = new List<Autenticacao>();
@@ -69,10 +75,11 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                     }
                 }
             }
-
             return listaUsuarios;
         }
+        #endregion
 
+        #region Método para editar usuários
         public void EditarUsuario(Autenticacao autenticacao)
         {
             string atualizar = "UPDATE usuario SET usuario = @usuario, senha = @senha, confsenha = @confsenha WHERE id = @id";
@@ -101,7 +108,9 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 throw;
             }
         }
+        #endregion
 
+        #region Método para excluir usuario
         public void ExcluirUsuario(int id)
         {
             string deletar = "DELETE FROM usuario WHERE id = @id";
@@ -131,5 +140,6 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
                 throw;
             }
         }
+        #endregion
     }
 }

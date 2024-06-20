@@ -401,7 +401,6 @@
             this.Name = "FormCadastroDePacientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário de Cadastro de Pacientes";
-            this.Load += new System.EventHandler(this.FormCadastroDePacientes_Load);
             this.painelFormCadPaciente.ResumeLayout(false);
             this.painelFormCadPaciente.PerformLayout();
             this.ResumeLayout(false);
