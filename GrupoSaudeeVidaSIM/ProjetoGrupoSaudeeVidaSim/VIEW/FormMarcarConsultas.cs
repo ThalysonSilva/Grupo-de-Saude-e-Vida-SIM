@@ -11,6 +11,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         private MySqlConnection Conexao;
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
 
+        #region Método iniciar conexão
         private void IniciarConexao()
         {
 
@@ -22,6 +23,8 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             cmd.Connection = Conexao;
         }
+        #endregion
+
         public FormMarcarConsultas()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
 
         }
-
+        #region Outros
         private void FormMarcarConsultas_Load(object sender, EventArgs e)
         {
 
@@ -59,8 +62,9 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
 
         }
+        #endregion
 
-
+        #region Método cadastrar consulta
         private void cadastrarConsulta()
         {
             string nomeDaClinica = cbNomeClinicasFormMarcarConsultas.Text;
@@ -79,21 +83,24 @@ namespace ProjetoGrupoSaudeeVidaSim
             {
                 ConsultaDAO consultaDAO = new ConsultaDAO();
                 consultaDAO.SalvarConsulta(consulta);
-                MessageBox.Show("Consulta cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Consulta cadastrada com sucesso", 
+                                "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show("Erro ocorreu de Sintaxe Mysql " + ex.Message,
-                                                   "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar consulta: " + ex.Message,
-                                       "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
+        #endregion
 
+        #region Método fechar campos
         private void fecharCampos()
         {
             cbEspecialidadeFormMarcarConsultas.Enabled = false;
@@ -107,8 +114,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnBuscarMedico.Enabled = false;
             btnEditarConsulta.Enabled = false;
             txtHorarioAtendimento.Enabled = false;
-
         }
+        #endregion
+
+        #region Método abrir campos
         private void abrirCampos()
         {
             cbEspecialidadeFormMarcarConsultas.Enabled = true;
@@ -123,6 +132,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnEditarConsulta.Enabled = true;
             txtHorarioAtendimento.Enabled = true;
         }
+        #endregion
+
+        #region Método limpar campos
         private void limparCampos()
         {
             cbEspecialidadeFormMarcarConsultas.Text = string.Empty;
@@ -136,23 +148,28 @@ namespace ProjetoGrupoSaudeeVidaSim
             maskedCPFFormMarcarConsultas.Text = string.Empty;
             maskedContatoFormMarcarConsultas.Text = string.Empty;
             txtHorarioAtendimento.Text = string.Empty;
-
         }
+        #endregion
 
-
+        #region Método para fechar campos do paciente
         private void fecharCamposPaciente()
         {
             maskedCPFFormMarcarConsultas.Enabled = false;
             txtNomeFormMarcarConsultas.Enabled = false;
             maskedContatoFormMarcarConsultas.Enabled = false;
         }
+        #endregion
+
+        #region Método para abrir campos do paciente
         private void abrirCamposPaciente()
         {
             maskedCPFFormMarcarConsultas.Enabled = true;
             txtNomeFormMarcarConsultas.Enabled = true;
             maskedContatoFormMarcarConsultas.Enabled = true;
         }
+        #endregion
 
+        #region  btn para buscar paciente
         private void button1_Click(object sender, EventArgs e)
         {
             //método para buscar paciente
@@ -188,12 +205,11 @@ namespace ProjetoGrupoSaudeeVidaSim
             {
                 MessageBox.Show("Erro ao buscar paciente: " + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-
-
         }
-        //método para validar campos da consulta
+        #endregion
+
+        #region Método para validar campos da consulta
         private bool ValidarCamposConsulta(out string mensagemErro)
         {
             mensagemErro = string.Empty;
@@ -241,7 +257,9 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             return true;
         }
+        #endregion
 
+        #region Outros
         private void cbNomeClinicasFormMarcarConsultas_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
@@ -256,8 +274,9 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
 
         }
+        #endregion
 
-        //método para editar consulta
+        #region Método para editar consulta
         private void btnNovoFormMarcarConsultas_Click_1(object sender, EventArgs e)
         {
             IniciarConexao();
@@ -291,7 +310,9 @@ namespace ProjetoGrupoSaudeeVidaSim
                 Conexao.Close();
             }
         }
+        #endregion
 
+        #region btn Buscar médico
         private void btnBuscarMedico_Click_1(object sender, EventArgs e)
         {
             try
@@ -335,10 +356,11 @@ namespace ProjetoGrupoSaudeeVidaSim
             {
                 MessageBox.Show("Erro ao buscar médico: " + ex.Message,
                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
+        #endregion
 
+        #region btn Editar consulta
         private void btnEditarConsulta_Click(object sender, EventArgs e)
         {
             string nome = txtNomeFormMarcarConsultas.Text;
@@ -356,29 +378,25 @@ namespace ProjetoGrupoSaudeeVidaSim
                     Especialidade = cbEspecialidadeFormMarcarConsultas.Text,
                     NomeDoMedico = txtNomeMedicoFormMarcarConsultas.Text,
                     Crm = int.Parse(txtCrmMedicoFormMarcarConsultas.Text)
-
                 };
                 try
                 {
                     consultaDAO.EditarConsulta(consulta);
-                    MessageBox.Show("Consulta editada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MessageBox.Show("Consulta editada com sucesso", 
+                                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show("Erro ocorreu de Sintaxe Mysql " + ex.Message,
-                                                                              "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao editar consulta: " + ex.Message,
-                                                                  "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
             }
         }
-
+        #endregion
     }
 }

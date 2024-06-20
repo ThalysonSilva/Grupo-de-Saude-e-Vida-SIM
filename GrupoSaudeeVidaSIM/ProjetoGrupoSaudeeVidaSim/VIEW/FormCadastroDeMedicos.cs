@@ -356,7 +356,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         }
         #endregion
 
-        #region
+        #region Campo do CRM só aceite teclas de números e backspace
         //Para que o campo do CRM aceite apenas as teclas de números e backspace
         private void txtNCrmFormCadastroDeMedico_KeyPress(object sender, KeyPressEventArgs e)
         {

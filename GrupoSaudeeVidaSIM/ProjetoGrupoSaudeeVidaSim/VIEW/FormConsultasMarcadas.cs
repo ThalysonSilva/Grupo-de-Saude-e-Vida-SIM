@@ -37,6 +37,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
         #endregion
+
         #region Método para organizar a list view
         private void organizarLST()
         {
@@ -59,6 +60,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormConsultasMarcadasPac.Columns.Add("Valor da Consulta", 150, HorizontalAlignment.Center);
         }
         #endregion
+
         #region Método para exibir as informações
         private void ExibirResultados(List<Consulta> consultas)
         {

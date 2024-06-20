@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/06/2024 às 03:10
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Generation Time: Jun 20, 2024 at 04:05 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `clinica`
+-- Database: `clinica`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `consulta`
+-- Table structure for table `consulta`
 --
 
 CREATE TABLE `consulta` (
@@ -41,7 +41,7 @@ CREATE TABLE `consulta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `consulta`
+-- Dumping data for table `consulta`
 --
 
 INSERT INTO `consulta` (`id`, `nome`, `nomeDaClinica`, `nomeDoMedico`, `crm`, `especialidade`, `tipoDaConsulta`, `dataDaConsulta`, `horarioDaConsulta`, `valorDaConsulta`) VALUES
@@ -51,12 +51,13 @@ INSERT INTO `consulta` (`id`, `nome`, `nomeDaClinica`, `nomeDoMedico`, `crm`, `e
 (4, 'JAILTON DEIVID MORAIS', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'CARDIOLOGIA', 'Consulta Eletiva', '2024-06-19', '7:00H - 10:00H', 200),
 (5, 'THALYSON SILVA', 'Clínica São José', 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'Cardiologia', 'Exames', '2024-07-11', '14:00H - 17:00H ', 230),
 (6, 'ANGELO LEONOR MARINHO', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'Cardiologia', 'Consulta Eletiva', '2024-11-11', '7:00H - 10:00H', 124),
-(7, 'JAILTON DEIVID MORAIS', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'Cardiologia', 'Consulta Eletiva', '2024-06-19', '7:00H - 10:00H', 150);
+(7, 'JAILTON DEIVID MORAIS', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'Cardiologia', 'Consulta Eletiva', '2024-06-19', '7:00H - 10:00H', 150),
+(8, 'GILBERTO ALBERTO ROBERTO', 'Clínica Bem Estar', 'MIRELA PRIETO', 7895, 'Nefrologia', 'Consulta Eletiva', '2024-06-25', '7:00H - 12:00H', 200);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `medico`
+-- Table structure for table `medico`
 --
 
 CREATE TABLE `medico` (
@@ -69,7 +70,7 @@ CREATE TABLE `medico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `medico`
+-- Dumping data for table `medico`
 --
 
 INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, `horarioAtendimento`) VALUES
@@ -77,12 +78,13 @@ INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, 
 (2, 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'CARDIOLOGIA', 'TERÇA-FEIRA', '7:00H - 12:00H'),
 (3, 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'GASTROENTEROLOGIA', 'TERÇA-FEIRA', '14:00H - 17:00H '),
 (4, 'FABIO DOS SANTOS', 1145, 'CARDIOLOGIA', 'SEGUNDA A SÁBADO', '7:00H - 10:00H'),
-(5, 'FRANCISCO FERNANDES SANTOS', 1245, 'GERIATRIA', 'SEGUNDA-FEIRA', '7:00H - 12:00H');
+(5, 'FRANCISCO FERNANDES SANTOS', 1245, 'GERIATRIA', 'SEGUNDA-FEIRA', '7:00H - 12:00H'),
+(7, 'MIRELA PRIETO', 7895, 'Nefrologia', 'QUINTA-FEIRA', '7:00H - 12:00H');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `paciente`
+-- Table structure for table `paciente`
 --
 
 CREATE TABLE `paciente` (
@@ -100,18 +102,19 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `paciente`
+-- Dumping data for table `paciente`
 --
 
 INSERT INTO `paciente` (`id`, `nome`, `cpf`, `contato`, `dataNasc`, `cep`, `endereco`, `numCasa`, `bairro`, `cidade`, `uf`) VALUES
 (1, 'THALYSON SILVA', '23425367889', '(84) 98876-5398', '1996-09-28', '59014-210', 'RUA ANTÔNIO FÉLIX', 354, 'MÃE LUIZA', 'FORTALEZA', 'CE'),
 (2, 'JAILTON DEIVID MORAIS', '45687525998', '(84) 91546-1681', '1980-02-02', '59114-460', 'RUA MORRO DA PEDRA', 24, 'NOSSA SENHORA DA APR', 'NATAL', 'RN'),
-(3, 'ANGELO LEONOR MARINHO', '45615161861', '(84) 92426-5482', '1990-10-02', '59056-180', 'RUA DOUTOR POTY NÓBREGA', 20, 'LAGOA NOVA', 'NATAL', 'RN');
+(3, 'ANGELO LEONOR MARINHO', '45615161861', '(84) 92426-5482', '1990-10-02', '59056-180', 'RUA DOUTOR POTY NÓBREGA', 20, 'LAGOA NOVA', 'NATAL', 'RN'),
+(6, 'GILBERTO ALBERTO ROBERTO', '85623974125', '(84) 99922-2225', '1950-09-23', '59054-550', 'RUA DOS TORORÓS', 15, 'LAGOA NOVA', 'NATAL', 'RN');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -122,65 +125,65 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `senha`, `confsenha`) VALUES
 (1, 'Administrador', '123', '123');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `consulta`
+-- Indexes for table `consulta`
 --
 ALTER TABLE `consulta`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `medico`
+-- Indexes for table `medico`
 --
 ALTER TABLE `medico`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `crm` (`crm`);
 
 --
--- Índices de tabela `paciente`
+-- Indexes for table `paciente`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `consulta`
+-- AUTO_INCREMENT for table `consulta`
 --
 ALTER TABLE `consulta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `medico`
+--
+ALTER TABLE `medico`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT de tabela `medico`
+-- AUTO_INCREMENT for table `paciente`
 --
-ALTER TABLE `medico`
+ALTER TABLE `paciente`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de tabela `paciente`
---
-ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

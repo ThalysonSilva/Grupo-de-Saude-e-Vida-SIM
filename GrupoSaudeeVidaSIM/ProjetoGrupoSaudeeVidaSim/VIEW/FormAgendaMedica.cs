@@ -16,6 +16,7 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
 
+        #region Método organizar lista de consultas
         private void organizarLstConsultas()
         {
             // Estrutura de visualização no campo listViewConsultas
@@ -33,8 +34,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormAgendaMedica.Columns.Add("Nome do Médico", 150, HorizontalAlignment.Center);
             listViewFormAgendaMedica.Columns.Add("Valor da Consulta", 150, HorizontalAlignment.Center);
         }
+        #endregion
 
-
+        #region btn Retornar agenda médica
         private void btnRetornarFormAgendaMedica_Click(object sender, EventArgs e)
         {
             try
@@ -54,9 +56,10 @@ namespace ProjetoGrupoSaudeeVidaSim
             {
                 MessageBox.Show("Erro ao consultar dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+        #endregion
 
+        #region btn Consultar agenda médica
         private void btnConsultarFormAgendaMedica_Click(object sender, EventArgs e)
         {
         string nomeDaClinica = txtNomeMedFormAgendaMedica.Text.Trim();
@@ -84,5 +87,6 @@ namespace ProjetoGrupoSaudeeVidaSim
                 listViewFormAgendaMedica.Items.Add(item);
             }
         }
+        #endregion
     }
 }

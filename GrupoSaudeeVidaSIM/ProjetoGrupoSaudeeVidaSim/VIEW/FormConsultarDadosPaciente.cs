@@ -74,6 +74,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormConsultarDados.Columns.Add("UF", 50, HorizontalAlignment.Left);
         }
         #endregion
+
         #region Método exibir informações na liss view
         private void ExibirResultados(List<Paciente> pacientes)
         {
@@ -96,6 +97,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
         }
         #endregion
+
         #region Método para limpar as informações na list view
         private void btnConsultarFormLimparDados_Click(object sender, EventArgs e)
         {

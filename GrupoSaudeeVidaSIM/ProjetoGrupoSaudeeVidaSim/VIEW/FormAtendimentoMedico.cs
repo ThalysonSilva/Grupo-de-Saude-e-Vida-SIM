@@ -10,13 +10,16 @@ namespace ProjetoGrupoSaudeeVidaSim
     {
         private MedicoDAO medicoDAO;
 
+        #region Form Atendimento médico
         public FormAtendimentoMedico()
         {
             InitializeComponent();
             medicoDAO = new MedicoDAO();
             organizarList();
         }
+        #endregion
 
+        #region btn Consultar dias de atendimento do médico
         private void btnConsultarFormDiasAtendMedico_Click(object sender, System.EventArgs e)
         {
 
@@ -50,7 +53,9 @@ namespace ProjetoGrupoSaudeeVidaSim
                 
             }
         }
+        #endregion
 
+        #region Método Organizar List
         private void organizarList()
         {
             listViewFormDiasAtendMedico.View = View.Details;
@@ -66,7 +71,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             listViewFormDiasAtendMedico.Columns.Add("Especialidade", 120, HorizontalAlignment.Center);
             listViewFormDiasAtendMedico.Columns.Add("Nome da Clínica", 130, HorizontalAlignment.Center);
         }
+        #endregion
 
+        #region Método Exibir consulta
         private void ExibirConsulta(List<Consulta> consultas)
         {
             listViewFormDiasAtendMedico.Items.Clear();
@@ -83,10 +90,13 @@ namespace ProjetoGrupoSaudeeVidaSim
                 listViewFormDiasAtendMedico.Items.Add(item);
             }
         }
+        #endregion
 
+        #region btn limpar form
         private void btnLimparFormDiasAtendMedico_Click(object sender, EventArgs e)
         {
             listViewFormDiasAtendMedico.Items.Clear();
         }
+        #endregion
     }
 }
