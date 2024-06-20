@@ -13,7 +13,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
             InitializeComponent();
         }
-
+        #region btn EfetuarLogin
         private void btnEfetuarLoginFormTelaLogin_Click(object sender, EventArgs e)
         {
             try
@@ -52,19 +52,26 @@ namespace ProjetoGrupoSaudeeVidaSim
 
 
         }
+        #endregion
 
+        #region btn Cadastro Novo Usuário
         private void btnNovoFormTelaLogin_Click(object sender, EventArgs e)
         {
+            //Abri o formulário de Cadastros de Novos Usuários (Login)
             FormTelaDeRegistroUsuario formTelaDeRegistroUsuario = new FormTelaDeRegistroUsuario();
             formTelaDeRegistroUsuario.ShowDialog();
 
 
         }
+        #endregion
 
+        #region btn Sair
         private void BtnSairFormTelaLogin_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
 
     }
 }
+       

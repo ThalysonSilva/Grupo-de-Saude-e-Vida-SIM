@@ -17,16 +17,18 @@ namespace ProjetoGrupoSaudeeVidaSim
             conexaoAutenticacaoDAO = new AutenticacaoDAO();
         }
 
+        #region btn Consultar Usuários Cadastrados
         private void btnConsultarFormControleUser_Click(object sender, EventArgs e)
         {
+            // Método para Consultar Usuários Cadastrados
             AutenticacaoDAO dao = new AutenticacaoDAO();
             List<Autenticacao> usuarios = dao.ConsultarUsuarios(txtUsuario.Text);
-
             AtualizarListView(usuarios);
         }
 
         private void AtualizarListView(List<Autenticacao> usuarios)
         {
+            // Método para Atualizar ListView
             ListViewFormControleUser.Items.Clear();
             foreach (var usuario in usuarios)
             {
@@ -36,10 +38,13 @@ namespace ProjetoGrupoSaudeeVidaSim
                 ListViewFormControleUser.Items.Add(item);
             }
         }
+        #endregion
 
-
+        #region btn Editar Usuários Cadastrados
         private void btnEditarFormControleUser_Click(object sender, EventArgs e)
         {
+            // Método para Editar Usuário
+
             if (ListViewFormControleUser.SelectedItems.Count > 0)
             {
                 ListViewItem itemSelecionado = ListViewFormControleUser.SelectedItems[0];
@@ -90,9 +95,12 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
 
         }
+        #endregion
 
+        #region btn Excluir Usuários Cadastrados
         private void btnExcluirFormControleUser_Click(object sender, EventArgs e)
         {
+            // Método para Excluir Usuário
             if (ListViewFormControleUser.SelectedItems.Count > 0)
             {
                 ListViewItem itemSelecionado = ListViewFormControleUser.SelectedItems[0];
@@ -131,7 +139,8 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show("Selecione um usuário para excluir.");
             }
         }
+        #endregion
     }
 }
-
+          
 

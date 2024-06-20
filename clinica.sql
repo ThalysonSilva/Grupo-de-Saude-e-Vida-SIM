@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/06/2024 às 22:22
+-- Tempo de geração: 20/06/2024 às 03:10
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,9 +45,13 @@ CREATE TABLE `consulta` (
 --
 
 INSERT INTO `consulta` (`id`, `nome`, `nomeDaClinica`, `nomeDoMedico`, `crm`, `especialidade`, `tipoDaConsulta`, `dataDaConsulta`, `horarioDaConsulta`, `valorDaConsulta`) VALUES
-(1, 'THALYSON SILVA', 'Clínica Saúde e Vida', 'DR ANTONIO MENDES ', 1524, 'Cardiologia', 'Consulta Eletiva', '2024-06-20', '7:00H - 11:00H', 150),
-(2, 'THALYSON SILVA', 'Clínica São José', 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'Cardiologia', 'Consulta Eletiva', '2024-06-20', '7:00H - 12:00H', 124),
-(3, 'JAILTON DEIVID MORAIS', 'Clínica Saúde e Vida', 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'Gastroenterologia', 'Urgência', '2024-06-20', '14:00H - 17:00H ', 452);
+(1, 'THALYSON SILVA', 'Clínica Saúde e Vida', 'ANTONIO MENDES SILVA', 1524, 'Cardiologia', 'Consulta Eletiva', '2024-06-20', '7:00H - 11:00H', 150),
+(2, 'THALYSON SILVA', 'Clínica São José', 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'Cardiologia', 'Exames', '2024-07-11', '7:00H - 12:00H', 230),
+(3, 'JAILTON DEIVID MORAIS', 'Clínica Saúde e Vida', 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'Gastroenterologia', 'Urgência', '2024-06-20', '14:00H - 17:00H ', 452),
+(4, 'JAILTON DEIVID MORAIS', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'CARDIOLOGIA', 'Consulta Eletiva', '2024-06-19', '7:00H - 10:00H', 200),
+(5, 'THALYSON SILVA', 'Clínica São José', 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'Cardiologia', 'Exames', '2024-07-11', '14:00H - 17:00H ', 230),
+(6, 'ANGELO LEONOR MARINHO', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'Cardiologia', 'Consulta Eletiva', '2024-11-11', '7:00H - 10:00H', 124),
+(7, 'JAILTON DEIVID MORAIS', 'Clínica São José', 'FABIO DOS SANTOS', 1145, 'Cardiologia', 'Consulta Eletiva', '2024-06-19', '7:00H - 10:00H', 150);
 
 -- --------------------------------------------------------
 
@@ -69,9 +73,11 @@ CREATE TABLE `medico` (
 --
 
 INSERT INTO `medico` (`id`, `nome`, `crm`, `especialidade`, `diaDeAtendimento`, `horarioAtendimento`) VALUES
-(1, 'DR ANTONIO MENDES ', 1524, 'CARDIOLOGIA', 'SEGUNDA-FEIRA', '7:00H - 11:00H'),
+(1, 'ANTONIO MENDES SILVA', 1524, 'Cardiologia', 'Segunda-feira', '7:00h - 11:00h'),
 (2, 'RAIMUNDO OLIVEIRA DA COSTA', 2415, 'CARDIOLOGIA', 'TERÇA-FEIRA', '7:00H - 12:00H'),
-(3, 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'GASTROENTEROLOGIA', 'TERÇA-FEIRA', '14:00H - 17:00H ');
+(3, 'RAIMUNDA MARQUES SIQUEIRA', 5324, 'GASTROENTEROLOGIA', 'TERÇA-FEIRA', '14:00H - 17:00H '),
+(4, 'FABIO DOS SANTOS', 1145, 'CARDIOLOGIA', 'SEGUNDA A SÁBADO', '7:00H - 10:00H'),
+(5, 'FRANCISCO FERNANDES SANTOS', 1245, 'GERIATRIA', 'SEGUNDA-FEIRA', '7:00H - 12:00H');
 
 -- --------------------------------------------------------
 
@@ -116,6 +122,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `usuario`, `senha`, `confsenha`) VALUES
+(1, 'Administrador', '123', '123');
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -152,25 +165,25 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `consulta`
 --
 ALTER TABLE `consulta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `medico`
 --
 ALTER TABLE `medico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

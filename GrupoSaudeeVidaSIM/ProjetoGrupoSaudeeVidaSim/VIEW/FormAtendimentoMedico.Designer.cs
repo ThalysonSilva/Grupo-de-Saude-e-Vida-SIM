@@ -62,6 +62,7 @@
             this.btnLimparFormDiasAtendMedico.TabIndex = 8;
             this.btnLimparFormDiasAtendMedico.Text = "Limpar";
             this.btnLimparFormDiasAtendMedico.UseVisualStyleBackColor = false;
+            this.btnLimparFormDiasAtendMedico.Click += new System.EventHandler(this.btnLimparFormDiasAtendMedico_Click);
             // 
             // btnConsultarFormDiasAtendMedico
             // 
@@ -89,7 +90,7 @@
             this.txtFormDiasAtendMedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFormDiasAtendMedico.Location = new System.Drawing.Point(158, 80);
             this.txtFormDiasAtendMedico.Name = "txtFormDiasAtendMedico";
-            this.txtFormDiasAtendMedico.Size = new System.Drawing.Size(642, 21);
+            this.txtFormDiasAtendMedico.Size = new System.Drawing.Size(642, 25);
             this.txtFormDiasAtendMedico.TabIndex = 4;
             // 
             // labFormDiasAtendMedico
@@ -97,7 +98,7 @@
             this.labFormDiasAtendMedico.AutoSize = true;
             this.labFormDiasAtendMedico.Location = new System.Drawing.Point(12, 80);
             this.labFormDiasAtendMedico.Name = "labFormDiasAtendMedico";
-            this.labFormDiasAtendMedico.Size = new System.Drawing.Size(140, 20);
+            this.labFormDiasAtendMedico.Size = new System.Drawing.Size(166, 25);
             this.labFormDiasAtendMedico.TabIndex = 3;
             this.labFormDiasAtendMedico.Text = "Nome do Médico:";
             // 
@@ -107,13 +108,13 @@
             this.LabIdFormAtendMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabIdFormAtendMed.Location = new System.Drawing.Point(192, 9);
             this.LabIdFormAtendMed.Name = "LabIdFormAtendMed";
-            this.LabIdFormAtendMed.Size = new System.Drawing.Size(488, 29);
+            this.LabIdFormAtendMed.Size = new System.Drawing.Size(572, 32);
             this.LabIdFormAtendMed.TabIndex = 0;
             this.LabIdFormAtendMed.Text = "Formulário de Checar Dias de Atendimentos";
             // 
             // FormAtendimentoMedico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(834, 561);
@@ -125,7 +126,7 @@
             this.MinimumSize = new System.Drawing.Size(850, 600);
             this.Name = "FormAtendimentoMedico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulário de Checar Dias de Atendimentos";
+            this.Text = "Formulário Dias de Atendimentos";
             this.panelFormAtendMed.ResumeLayout(false);
             this.panelFormAtendMed.PerformLayout();
             this.ResumeLayout(false);

@@ -25,21 +25,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             fecharCampos();
         }
 
-        private void labCPFFormCadPaciente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtLogradouroFormCadPaciente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         #region btn cadastrar novo paciente
         private void btnCadastrarFormCadPaciente_Click(object sender, EventArgs e)
         {

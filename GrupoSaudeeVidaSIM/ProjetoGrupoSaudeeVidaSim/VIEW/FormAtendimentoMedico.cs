@@ -83,5 +83,10 @@ namespace ProjetoGrupoSaudeeVidaSim
                 listViewFormDiasAtendMedico.Items.Add(item);
             }
         }
+
+        private void btnLimparFormDiasAtendMedico_Click(object sender, EventArgs e)
+        {
+            listViewFormDiasAtendMedico.Items.Clear();
+        }
     }
 }

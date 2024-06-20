@@ -35,16 +35,6 @@ namespace ProjetoGrupoSaudeeVidaSim
         }
 
 
-        private void pndAgenda_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cbEspecialidadeFormAgenda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRetornarFormAgendaMedica_Click(object sender, EventArgs e)
         {
             try

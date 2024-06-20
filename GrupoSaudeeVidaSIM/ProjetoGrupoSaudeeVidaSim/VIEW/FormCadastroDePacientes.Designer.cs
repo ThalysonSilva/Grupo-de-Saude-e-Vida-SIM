@@ -250,7 +250,6 @@
             this.txtNumFormCadPaciente.Name = "txtNumFormCadPaciente";
             this.txtNumFormCadPaciente.Size = new System.Drawing.Size(91, 23);
             this.txtNumFormCadPaciente.TabIndex = 17;
-            this.txtNumFormCadPaciente.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // LabNumFormCadPaciente
             // 
@@ -270,7 +269,6 @@
             this.txtLogradouroFormCadPaciente.Name = "txtLogradouroFormCadPaciente";
             this.txtLogradouroFormCadPaciente.Size = new System.Drawing.Size(539, 23);
             this.txtLogradouroFormCadPaciente.TabIndex = 15;
-            this.txtLogradouroFormCadPaciente.TextChanged += new System.EventHandler(this.txtLogradouroFormCadPaciente_TextChanged);
             // 
             // labLogradouroFormCadPaciente
             // 
@@ -359,7 +357,6 @@
             this.labCPFFormCadPaciente.Size = new System.Drawing.Size(47, 20);
             this.labCPFFormCadPaciente.TabIndex = 4;
             this.labCPFFormCadPaciente.Text = "CPF:";
-            this.labCPFFormCadPaciente.Click += new System.EventHandler(this.labCPFFormCadPaciente_Click);
             // 
             // txtNomeFormCadPaciente
             // 

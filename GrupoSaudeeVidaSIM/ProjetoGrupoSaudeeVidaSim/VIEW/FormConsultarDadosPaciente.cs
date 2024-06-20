@@ -103,21 +103,6 @@ namespace ProjetoGrupoSaudeeVidaSim
         }
         #endregion
 
-        private void btnRetornarDadosFormConsultarDados_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormConsultarDadosPaciente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBoxCpfFormConsultarDados_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        
+                
     }
 }

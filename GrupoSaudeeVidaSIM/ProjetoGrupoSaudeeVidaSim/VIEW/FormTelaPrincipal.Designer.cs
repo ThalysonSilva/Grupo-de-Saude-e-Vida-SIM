@@ -37,7 +37,6 @@
             this.btnMenuUsuario = new System.Windows.Forms.Button();
             this.painelSubMenuMedicos = new System.Windows.Forms.Panel();
             this.btnAtendimentos = new System.Windows.Forms.Button();
-            this.btnConsultarAgenda = new System.Windows.Forms.Button();
             this.btnCadastrarMedicos = new System.Windows.Forms.Button();
             this.BtnMenuMedicos = new System.Windows.Forms.Button();
             this.painelSubMenuPaciente = new System.Windows.Forms.Panel();
@@ -46,7 +45,6 @@
             this.btnCadastrarPacientes = new System.Windows.Forms.Button();
             this.BtnMenuPacientes = new System.Windows.Forms.Button();
             this.painelSubMenuConsulta = new System.Windows.Forms.Panel();
-            this.BtnConsultaPorTipo = new System.Windows.Forms.Button();
             this.btnAgendaEDisponibilidade = new System.Windows.Forms.Button();
             this.btnMarcarConsulta = new System.Windows.Forms.Button();
             this.BtnMenuConsulta = new System.Windows.Forms.Button();
@@ -139,7 +137,6 @@
             // 
             this.painelSubMenuMedicos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.painelSubMenuMedicos.Controls.Add(this.btnAtendimentos);
-            this.painelSubMenuMedicos.Controls.Add(this.btnConsultarAgenda);
             this.painelSubMenuMedicos.Controls.Add(this.btnCadastrarMedicos);
             this.painelSubMenuMedicos.Dock = System.Windows.Forms.DockStyle.Top;
             this.painelSubMenuMedicos.Location = new System.Drawing.Point(0, 425);
@@ -154,32 +151,15 @@
             this.btnAtendimentos.FlatAppearance.BorderSize = 0;
             this.btnAtendimentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtendimentos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAtendimentos.Location = new System.Drawing.Point(0, 80);
+            this.btnAtendimentos.Location = new System.Drawing.Point(0, 62);
             this.btnAtendimentos.Name = "btnAtendimentos";
             this.btnAtendimentos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAtendimentos.Size = new System.Drawing.Size(250, 39);
+            this.btnAtendimentos.Size = new System.Drawing.Size(250, 57);
             this.btnAtendimentos.TabIndex = 2;
             this.btnAtendimentos.Text = "Atendimentos";
             this.btnAtendimentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAtendimentos.UseVisualStyleBackColor = false;
             this.btnAtendimentos.Click += new System.EventHandler(this.btnAtendimentos_Click);
-            // 
-            // btnConsultarAgenda
-            // 
-            this.btnConsultarAgenda.BackColor = System.Drawing.Color.RosyBrown;
-            this.btnConsultarAgenda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsultarAgenda.FlatAppearance.BorderSize = 0;
-            this.btnConsultarAgenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarAgenda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConsultarAgenda.Location = new System.Drawing.Point(0, 40);
-            this.btnConsultarAgenda.Name = "btnConsultarAgenda";
-            this.btnConsultarAgenda.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnConsultarAgenda.Size = new System.Drawing.Size(250, 40);
-            this.btnConsultarAgenda.TabIndex = 1;
-            this.btnConsultarAgenda.Text = "Consultar Agenda";
-            this.btnConsultarAgenda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultarAgenda.UseVisualStyleBackColor = false;
-            this.btnConsultarAgenda.Click += new System.EventHandler(this.btnConsultarAgenda_Click);
             // 
             // btnCadastrarMedicos
             // 
@@ -191,7 +171,7 @@
             this.btnCadastrarMedicos.Location = new System.Drawing.Point(0, 0);
             this.btnCadastrarMedicos.Name = "btnCadastrarMedicos";
             this.btnCadastrarMedicos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnCadastrarMedicos.Size = new System.Drawing.Size(250, 40);
+            this.btnCadastrarMedicos.Size = new System.Drawing.Size(250, 62);
             this.btnCadastrarMedicos.TabIndex = 0;
             this.btnCadastrarMedicos.Text = "Cadastrar Médico";
             this.btnCadastrarMedicos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +207,6 @@
             this.painelSubMenuPaciente.Name = "painelSubMenuPaciente";
             this.painelSubMenuPaciente.Size = new System.Drawing.Size(250, 126);
             this.painelSubMenuPaciente.TabIndex = 4;
-            this.painelSubMenuPaciente.Paint += new System.Windows.Forms.PaintEventHandler(this.painelSubMenuPaciente_Paint);
             // 
             // btnConsultasMarcadas
             // 
@@ -301,7 +280,6 @@
             // painelSubMenuConsulta
             // 
             this.painelSubMenuConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.painelSubMenuConsulta.Controls.Add(this.BtnConsultaPorTipo);
             this.painelSubMenuConsulta.Controls.Add(this.btnAgendaEDisponibilidade);
             this.painelSubMenuConsulta.Controls.Add(this.btnMarcarConsulta);
             this.painelSubMenuConsulta.Dock = System.Windows.Forms.DockStyle.Top;
@@ -309,25 +287,6 @@
             this.painelSubMenuConsulta.Name = "painelSubMenuConsulta";
             this.painelSubMenuConsulta.Size = new System.Drawing.Size(250, 119);
             this.painelSubMenuConsulta.TabIndex = 2;
-            this.painelSubMenuConsulta.Paint += new System.Windows.Forms.PaintEventHandler(this.painelSubMenuConsulta_Paint);
-            // 
-            // BtnConsultaPorTipo
-            // 
-            this.BtnConsultaPorTipo.BackColor = System.Drawing.Color.RosyBrown;
-            this.BtnConsultaPorTipo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnConsultaPorTipo.FlatAppearance.BorderSize = 0;
-            this.BtnConsultaPorTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConsultaPorTipo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnConsultaPorTipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnConsultaPorTipo.Location = new System.Drawing.Point(0, 80);
-            this.BtnConsultaPorTipo.Name = "BtnConsultaPorTipo";
-            this.BtnConsultaPorTipo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.BtnConsultaPorTipo.Size = new System.Drawing.Size(250, 39);
-            this.BtnConsultaPorTipo.TabIndex = 2;
-            this.BtnConsultaPorTipo.Text = "Consulta por Tipo";
-            this.BtnConsultaPorTipo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConsultaPorTipo.UseVisualStyleBackColor = false;
-            this.BtnConsultaPorTipo.Click += new System.EventHandler(this.BtnConsultaPorTipo_Click);
             // 
             // btnAgendaEDisponibilidade
             // 
@@ -337,12 +296,12 @@
             this.btnAgendaEDisponibilidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgendaEDisponibilidade.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAgendaEDisponibilidade.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgendaEDisponibilidade.Location = new System.Drawing.Point(0, 40);
+            this.btnAgendaEDisponibilidade.Location = new System.Drawing.Point(0, 58);
             this.btnAgendaEDisponibilidade.Name = "btnAgendaEDisponibilidade";
             this.btnAgendaEDisponibilidade.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgendaEDisponibilidade.Size = new System.Drawing.Size(250, 40);
+            this.btnAgendaEDisponibilidade.Size = new System.Drawing.Size(250, 61);
             this.btnAgendaEDisponibilidade.TabIndex = 1;
-            this.btnAgendaEDisponibilidade.Text = "Agenda";
+            this.btnAgendaEDisponibilidade.Text = "Consultas Agendadas";
             this.btnAgendaEDisponibilidade.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgendaEDisponibilidade.UseVisualStyleBackColor = false;
             this.btnAgendaEDisponibilidade.Click += new System.EventHandler(this.btnAgendaEDisponibilidade_Click_1);
@@ -358,7 +317,7 @@
             this.btnMarcarConsulta.Location = new System.Drawing.Point(0, 0);
             this.btnMarcarConsulta.Name = "btnMarcarConsulta";
             this.btnMarcarConsulta.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnMarcarConsulta.Size = new System.Drawing.Size(250, 40);
+            this.btnMarcarConsulta.Size = new System.Drawing.Size(250, 58);
             this.btnMarcarConsulta.TabIndex = 0;
             this.btnMarcarConsulta.Text = "Marcar Consultas";
             this.btnMarcarConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -411,7 +370,6 @@
             this.Name = "FormTelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
-            this.Load += new System.EventHandler(this.FormTelaPrincipal_Load);
             this.painelSideMenu.ResumeLayout(false);
             this.PanelUsuarios.ResumeLayout(false);
             this.painelSubMenuMedicos.ResumeLayout(false);
@@ -427,7 +385,6 @@
         private System.Windows.Forms.Panel painelSubMenuConsulta;
         private System.Windows.Forms.Button BtnMenuConsulta;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button BtnConsultaPorTipo;
         private System.Windows.Forms.Button btnAgendaEDisponibilidade;
         private System.Windows.Forms.Button btnMarcarConsulta;
         private System.Windows.Forms.Button BtnMenuPacientes;
@@ -437,7 +394,6 @@
         private System.Windows.Forms.Button btnCadastrarPacientes;
         private System.Windows.Forms.Panel painelSubMenuMedicos;
         private System.Windows.Forms.Button btnAtendimentos;
-        private System.Windows.Forms.Button btnConsultarAgenda;
         private System.Windows.Forms.Button btnCadastrarMedicos;
         private System.Windows.Forms.Button BtnMenuMedicos;
         private System.Windows.Forms.Button btnSair;

@@ -311,7 +311,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                     cbEspecialidadeFormMarcarConsultas.Text = medico.Especialidade;
                     txtHorarioAtendimento.Text = medico.HorarioAtendimento;
                     txtCrmMedicoFormMarcarConsultas.Text = medico.Crm.ToString();
-                    
+
 
                 }
                 else if (medicon != null)
@@ -380,9 +380,5 @@ namespace ProjetoGrupoSaudeeVidaSim
             }
         }
 
-        private void txtNomeFormMarcarConsultas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

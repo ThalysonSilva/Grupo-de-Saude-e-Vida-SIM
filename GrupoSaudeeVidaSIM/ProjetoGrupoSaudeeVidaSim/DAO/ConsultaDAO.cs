@@ -74,7 +74,11 @@ namespace ProjetoGrupoSaudeeVidaSim.DAO
         // método para buscar consulta por nome e nome da clinica
         public Consulta EditarConsulta(Consulta consulta)
         {
-            string editar = "UPDATE consulta SET nome = @nome, nomeDaClinica = @nomeDaClinica, valorDaConsulta = @valorDaConsulta, dataDaConsulta = @dataDaConsulta, tipoDaConsulta = @tipoDaConsulta, especialidade = @especialidade, nomeDoMedico = @nomeDoMedico, crm = @crm WHERE nome = @nome AND nomeDaClinica = @nomeDaClinica";
+            string editar = "UPDATE consulta SET nome = @nome, " +
+                            "nomeDaClinica = @nomeDaClinica, valorDaConsulta = @valorDaConsulta, " +
+                            "dataDaConsulta = @dataDaConsulta, tipoDaConsulta = @tipoDaConsulta, " +
+                            "especialidade = @especialidade, nomeDoMedico = @nomeDoMedico, " +
+                            "crm = @crm WHERE nome = @nome AND nomeDaClinica = @nomeDaClinica";
 
             using (MySqlConnection conexao = Conexao())
             {

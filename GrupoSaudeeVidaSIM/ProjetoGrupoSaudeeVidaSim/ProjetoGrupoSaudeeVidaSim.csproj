@@ -135,23 +135,11 @@
     <Compile Include="VIEW\FormCadastroDePacientes.Designer.cs">
       <DependentUpon>FormCadastroDePacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\FormConsultarAgendaMedica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\FormConsultarAgendaMedica.Designer.cs">
-      <DependentUpon>FormConsultarAgendaMedica.cs</DependentUpon>
-    </Compile>
     <Compile Include="VIEW\FormConsultarDadosPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\FormConsultarDadosPaciente.Designer.cs">
       <DependentUpon>FormConsultarDadosPaciente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VIEW\FormConsultarPorTipo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\FormConsultarPorTipo.Designer.cs">
-      <DependentUpon>FormConsultarPorTipo.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\FormConsultasMarcadas.cs">
       <SubType>Form</SubType>
@@ -203,14 +191,8 @@
     <EmbeddedResource Include="VIEW\FormCadastroDePacientes.resx">
       <DependentUpon>FormCadastroDePacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\FormConsultarAgendaMedica.resx">
-      <DependentUpon>FormConsultarAgendaMedica.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FormConsultarDadosPaciente.resx">
       <DependentUpon>FormConsultarDadosPaciente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\FormConsultarPorTipo.resx">
-      <DependentUpon>FormConsultarPorTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FormConsultasMarcadas.resx">
       <DependentUpon>FormConsultasMarcadas.cs</DependentUpon>

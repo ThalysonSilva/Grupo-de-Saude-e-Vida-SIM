@@ -14,9 +14,9 @@ Funcionalidades
 
     Cadastro de Consultas;
     Cadastro de pacientes; 
-    Agendamento de consultas;
+    Consultas Agendadas;
     Dias de Atendimentos Médicos;
-    Atualização e remoção de registros de pacientes, consultas, médicos e pacientes;
+    Atualização e remoção de registros de pacientes, consultas e médicos;
     Busca de pacientes e consultas
 
 Tecnologias Utilizadas
@@ -36,33 +36,33 @@ Para executar este projeto, você precisará ter o seguinte instalado em seu amb
     XAMPP (para o servidor MySQL)
 
 Instalação
-Clonar o Repositório
 
-bash
+Clonar o Repositório
 
 git clone https://github.com/ThalysonSilva/Grupo-de-Saude-e-Vida-SIM.git
 
 Configuração do Banco de Dados
 
     Inicie o XAMPP e inicie os serviços Apache e MySQL.
-    Abra o phpMyAdmin e crie um novo banco de dados chamado consultas_medicas.
-    Importe o arquivo database.sql localizado na pasta db do projeto para configurar as tabelas necessárias.
+    Abra o phpMyAdmin e crie um novo banco de dados chamado clinica.
+    Importe o arquivo clinica.sql localizado na pasta principal do projeto para configurar as tabelas necessárias.
 
 Configuração do Projeto
 
     Abra o Visual Studio e carregue o projeto clonado.
     No arquivo App.config, atualize a string de conexão com as credenciais do seu banco de dados MySQL:
 
-    xml
+   
 
     <connectionStrings>
-        <add name="ConexaoMySQL" connectionString="server=localhost;database=consultas_medicas;uid=seu_usuario;pwd=sua_senha;" providerName="MySql.Data.MySqlClient"/>
-    </connectionStrings>
+        <add linkDB = "datasource=localhost;username=root;password=;database=clinica";
+       
 
 Executar a Aplicação
 
     Compile e execute o projeto no Visual Studio.
-    A interface principal do sistema será carregada, permitindo que você comece a registrar pacientes e consultas.
+    A interface principal do sistema será carregada, permitindo que você comece a registrar pacientes, médico e consultas.
+    Login: Administrador - Senha: 123
 
 Uso
 Tela de Cadastro de Pacientes
@@ -95,4 +95,4 @@ Licença
 Este projeto está licenciado sob a MIT License.
 Contato
 
-Para dúvidas ou sugestões, entre em contato através do email: seu-email@example.com
+Para dúvidas ou sugestões, entre em contato através do email: mpthalyson@gmail.com - jailtondayvidsilva.com - pollyana.eidelwein@gmail.com - agsouzab@gmail.com

@@ -11,6 +11,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             this.WindowState = FormWindowState.Maximized;
             customizeDesing();
         }
+        #region customizarDesing
         private void customizeDesing()
         {
             painelSubMenuConsulta.Visible = false;
@@ -19,79 +20,8 @@ namespace ProjetoGrupoSaudeeVidaSim
             PanelUsuarios.Visible = false;
             // método para personalizar Designer e ocultar os subMenus
         }
-
-
-
-        private void FormTelaPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMarcarConsultas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMarcarConsulta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAgendaEDisponibilidade_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConsultasPorTipo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCadastrarPacientes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnconsultarDadosPacientes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConsultasAgendadas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCadastrarMedicos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAgendaMedica_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConsultaMarcada_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPacientes_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMedicos_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #endregion
+    
         private void button1_Click(object sender, EventArgs e)
         {
             painelSubMenuPaciente.Visible = !painelSubMenuPaciente.Visible;
@@ -99,18 +29,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             //ao clicar nos botões para expandir os submenus
         }
 
-        private void painelSubMenuConsulta_Paint(object sender, PaintEventArgs e)
-        {
-
-
-        }
-
-        private void painelSubMenuPaciente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
+        
         private void BtnMenuConsulta_Click(object sender, EventArgs e)
         {
             painelSubMenuConsulta.Visible = !painelSubMenuConsulta.Visible;
@@ -139,21 +58,10 @@ namespace ProjetoGrupoSaudeeVidaSim
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnAgendaEDisponibilidade_Click_1(object sender, EventArgs e)
         {   //Abri o formulário de Agenada Médica
             FormAgendaMedica formAgendaMedica = new FormAgendaMedica();
             formAgendaMedica.ShowDialog();
-        }
-
-        private void BtnConsultaPorTipo_Click(object sender, EventArgs e)
-        {   //Abri o formulário de Consultar por Tipo
-            FormConsultarPorTipo formConsultarPorTipo = new FormConsultarPorTipo();
-            formConsultarPorTipo.ShowDialog();
         }
 
         private void btnCadastrarPacientes_Click_1(object sender, EventArgs e)
@@ -192,12 +100,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             formAtendimentoMedico.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
+        
         private void btnMenuUsuario_Click(object sender, EventArgs e)
         {
             PanelUsuarios.Visible = !PanelUsuarios.Visible;

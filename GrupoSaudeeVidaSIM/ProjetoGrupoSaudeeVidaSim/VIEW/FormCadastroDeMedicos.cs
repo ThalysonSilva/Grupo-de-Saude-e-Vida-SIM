@@ -8,9 +8,11 @@ namespace ProjetoGrupoSaudeeVidaSim
 {
     public partial class FormCadastroDeMedicos : Form
     {
+        #region conexão
         private MySqlConnection Conexao;
         private string linkdb = "datasource=localhost;username=root;password=;database=clinica";
         private MedicoDAO conexaoMedicoDAO;
+        #endregion
 
         public FormCadastroDeMedicos()
         {
@@ -18,6 +20,7 @@ namespace ProjetoGrupoSaudeeVidaSim
             FecharCampos();
         }
 
+        #region btn Cadastrar Médico
         //Botão Salvar
         private void btnCadastrarFormCadastroDeMedico_Click(object sender, System.EventArgs e)
         {
@@ -60,10 +63,12 @@ namespace ProjetoGrupoSaudeeVidaSim
                 Conexao.Close();
             }
         }
+        #endregion
 
-        //método cadastrar Médico
+        #region Método Cadastrar Médico
         private void cadastrarMedico()
         {
+            
             string nome = txtNomeFormCadastroDeMedico.Text.ToUpper();
             int crm = Convert.ToInt32(txtNCrmFormCadastroDeMedico.Text);
             string especialidade = cbtEspMedicaFormCadastroDeMedico.Text.ToUpper();
@@ -106,8 +111,10 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error) ;
             }*/
         }
+        #endregion
 
-        //Método para validar campos para que estejam todos preenchidos corretamente
+        #region Método para validar campos para que estejam todos preenchidos corretamente
+
         private bool ValidarCampos(out string mensagemErro)
         {
             mensagemErro = string.Empty;
@@ -152,8 +159,9 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             return true;
         }
+        #endregion
 
-        //método para iniciar conexão com o MySQL
+        #region Método para iniciar conexão com o MySQL
         private void IniciarConexao()
         {
             Conexao = new MySqlConnection(linkdb);
@@ -164,8 +172,9 @@ namespace ProjetoGrupoSaudeeVidaSim
 
             cmd.Connection = Conexao;
         }
+        #endregion
 
-        //Botão Consultar médico
+        #region btn Consultar médico
         private void btnConsultarFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
             try
@@ -212,8 +221,9 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show("Ocorreu um erro ao procurar o Médico: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
-        //Botão Editar médico
+        #region btn Editar médico
         private void btnEditarFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
             int crm = Convert.ToInt32(txtNCrmFormCadastroDeMedico.Text);
@@ -252,8 +262,9 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show($"Médico com o CRM {crm} não encontrado no sistema.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
-        //Botão Excluir médico
+        #region btn Excluir médico
         private void btnExcluirFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
             try
@@ -287,8 +298,9 @@ namespace ProjetoGrupoSaudeeVidaSim
                 MessageBox.Show("Ocorreu um erro ao excluir o Médico: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
 
-        //Botão Novo Médico
+        #region btn Novo Médico
         private void btnNovoFormCadastroDeMedico_Click(object sender, EventArgs e)
         {
 
@@ -296,8 +308,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             AbrirCampos();
             txtNomeFormCadastroDeMedico.Focus();
         }
+        #endregion
 
-        //método para abrir todos os campos 
+        #region Método para abrir todos os campos 
         private void AbrirCampos()
         {
             txtNomeFormCadastroDeMedico.Enabled = true;
@@ -312,8 +325,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnEditarFormCadastroDeMedico.Enabled = true;
             btnExcluirFormCadastroDeMedico.Enabled = true;
         }
+        #endregion
 
-        //método para fechar alguns campos 
+        #region Método para fechar alguns campos 
         private void FecharCampos()
         {
             txtNomeFormCadastroDeMedico.Enabled = true;
@@ -328,8 +342,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             btnEditarFormCadastroDeMedico.Enabled = false;
             btnExcluirFormCadastroDeMedico.Enabled = false;
         }
+        #endregion
 
-        //método limpar todo o conteúdo dos campos
+        #region Método limpar todo o conteúdo dos campos
         private void LimparCampos()
         {
 
@@ -339,7 +354,9 @@ namespace ProjetoGrupoSaudeeVidaSim
             cbDiaAtendimentoFormCadastroDeMedico.Text = String.Empty;
             cbhorarioFormCadastroDeMedico.Text = String.Empty;
         }
+        #endregion
 
+        #region
         //Para que o campo do CRM aceite apenas as teclas de números e backspace
         private void txtNCrmFormCadastroDeMedico_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -350,5 +367,7 @@ namespace ProjetoGrupoSaudeeVidaSim
                 e.Handled = true;
             }
         }
+        #endregion
     }
 }
+       

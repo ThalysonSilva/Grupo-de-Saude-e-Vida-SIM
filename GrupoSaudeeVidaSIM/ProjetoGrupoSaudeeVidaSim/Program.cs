@@ -13,7 +13,7 @@ namespace ProjetoGrupoSaudeeVidaSim
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTelaPrincipal());
+            Application.Run(new FormTelaLogin());
         }
     }
 }

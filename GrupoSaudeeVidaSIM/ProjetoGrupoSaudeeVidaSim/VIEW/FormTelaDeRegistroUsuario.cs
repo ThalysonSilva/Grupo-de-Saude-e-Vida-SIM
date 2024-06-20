@@ -10,24 +10,31 @@ namespace ProjetoGrupoSaudeeVidaSim
 {
     public partial class FormTelaDeRegistroUsuario : Form
     {
+        #region Conexão
+
         private MySqlConnection Conexao;
         private string linkDB = "datasource=localhost;username=root;password=;database=clinica";
         private AutenticacaoDAO conexaoAutenticacaoDAO;
 
+        #endregion
 
         public FormTelaDeRegistroUsuario()
         {
+            
             InitializeComponent();
 
         }
+
+        #region btn Salvar Novo Registro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
             IniciarConexao();
 
             try
             {
                 // Chama a função de cadastro de usuário
-                cadastrarusuario();
+                Cadastrarusuario();
             }
             catch (MySqlException ex)
             {
@@ -45,44 +52,57 @@ namespace ProjetoGrupoSaudeeVidaSim
                 {
                     Conexao.Close();
                 }
-            }
+                
+
         }
-        private void cadastrarusuario()
-        {
+      }
+        #endregion
+
+        #region Método Cadastrar Usuário
+        private void Cadastrarusuario()
+        {  //método é responsável por cadastrar um novo usuário no sistema
+
+           // Obtém os dados dos campos de texto
             string usuario = txtUsuario.Text;
             string senha = txtSenha.Text;
             string confsenha = txtConfSenha.Text;
 
+            // Verifica se as senhas coincidem
             if (senha != confsenha)
             {
                 MessageBox.Show("As senhas não coincidem. Por favor, verifique.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            // Cria um objeto de autenticação com os dados fornecidos
             Autenticacao autenticacao = new Autenticacao(0, usuario, senha, confsenha);
             conexaoAutenticacaoDAO = new AutenticacaoDAO();
             try
             {
-                conexaoAutenticacaoDAO.SalvarUsuario(autenticacao); // chama a classe ConexaoDB e executa o método
+                // Salva o usuário no banco de dados
+                conexaoAutenticacaoDAO.SalvarUsuario(autenticacao); 
                 MessageBox.Show("Usuário foi inserido com sucesso!", "Sucesso",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
+                // Exibe uma mensagem de erro se ocorrer uma exceção
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
         private void IniciarConexao()
         {
+            // Cria e abre uma conexão com o banco de dados MySQL
             Conexao = new MySqlConnection("datasource=localhost;username=root;password=;database=clinica");
 
             Conexao.Open();
 
+            // Cria um comando MySQL e associa a conexão a ele
             MySqlCommand cmd = new MySqlCommand(); //montagem de objeto no mysql
 
             cmd.Connection = Conexao;
         }
-
+        #endregion
     }
 
 }

@@ -136,7 +136,6 @@
             this.Name = "FormConsultarDadosPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário Consulta de Dados Pacientes";
-            this.Load += new System.EventHandler(this.FormConsultarDadosPaciente_Load);
             this.PainelFormConsultarDados.ResumeLayout(false);
             this.PainelFormConsultarDados.PerformLayout();
             this.ResumeLayout(false);
