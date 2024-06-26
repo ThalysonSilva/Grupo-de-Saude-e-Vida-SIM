@@ -107,10 +107,10 @@
     <Compile Include="DAO\PacienteDAO.cs" />
     <Compile Include="DTO\Autenticacao.cs" />
     <Compile Include="DTO\Consulta.cs" />
+    <Compile Include="DTO\Endereco.cs" />
     <Compile Include="DTO\Medico.cs" />
     <Compile Include="DTO\Paciente.cs" />
     <Compile Include="DTO\Pessoas.cs" />
-    <Compile Include="Models\Endereco.cs" />
     <Compile Include="VIEW\FormAgendaMedica.cs">
       <SubType>Form</SubType>
     </Compile>

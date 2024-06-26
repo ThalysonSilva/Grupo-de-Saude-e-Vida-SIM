@@ -1,6 +1,5 @@
 ﻿using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
-using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
-using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
 using System;
 using System.Windows.Forms;
 

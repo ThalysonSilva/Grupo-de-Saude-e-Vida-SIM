@@ -1,4 +1,4 @@
-﻿namespace ProjetoGrupoSaudeeVidaSim.Models
+﻿namespace ProjetoGrupoSaudeeVidaSim.DTO
 {
     public class Endereco
     {
@@ -6,7 +6,5 @@
         public string Localidade { get; set; }
         public string Bairro { get; set; }
         public string UF { get; set; }
-        public string DDD { get; set; }
-
     }
 }

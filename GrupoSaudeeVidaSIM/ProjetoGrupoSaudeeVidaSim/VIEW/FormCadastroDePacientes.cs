@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using ProjetoGrupoSaudeeVidaSim.DAO;
 using ProjetoGrupoSaudeeVidaSim.DTO;
-using ProjetoGrupoSaudeeVidaSim.Models;
 using System;
 using System.Net;
 using System.Net.Http;

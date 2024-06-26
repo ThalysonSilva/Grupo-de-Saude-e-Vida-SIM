@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
-using ProjetoGrupoSaudeeVidaSim.DTO.ProjetoGrupoSaudeeVidaSim.DTO;
 
 namespace ProjetoGrupoSaudeeVidaSim.DAO
 {
